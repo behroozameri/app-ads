@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe | Classic Strategy Game</title>
+  <link rel="canonical" href="https://bpzone.info/app/tic-tac-toe.html" />
+  <link rel="icon" type="image/png" href="/app/tic-tac-toe-icon-512.png" />
+  <link rel="apple-touch-icon" href="/app/tic-tac-toe-icon-512.png" />
+  <meta name="description" content="Tic Tac Toe is a polished classic strategy game with smart AI, two-player mode, board sizes, themes, and daily challenges. Available on Android." />
+  <meta name="keywords" content="Tic Tac Toe, strategy game, board game, AI game, two player game, Android game, BPZone" />
+
+  <meta property="og:title" content="Tic Tac Toe" />
+  <meta property="og:description" content="Play a polished classic with smart AI, two-player mode, board sizes, themes, and daily challenges. Available on Android." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bpzone.info/app/tic-tac-toe.html" />
+  <meta property="og:site_name" content="BPZone" />
+  <meta property="og:image" content="https://bpzone.info/app/tic-tac-toe-feature.png" />
+  <meta property="og:image:secure_url" content="https://bpzone.info/app/tic-tac-toe-feature.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="500" />
+  <meta property="og:image:alt" content="Tic Tac Toe app feature graphic" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tic Tac Toe" />
+  <meta name="twitter:description" content="A polished classic strategy game with smart AI, two-player mode, board sizes, themes, and daily challenges." />
+  <meta name="twitter:image" content="https://bpzone.info/app/tic-tac-toe-feature.png" />
+  <meta name="twitter:image:alt" content="Tic Tac Toe app feature graphic" />
+
+  <style>
+    :root {
+      --ink: #111318;
+      --text: #f8fafc;
+      --body: #172033;
+      --muted: #627085;
+      --surface: #ffffff;
+      --soft: #f4f7fb;
+      --line: #dfe6ef;
+      --green: #21c45d;
+      --yellow: #f9c74f;
+      --pink: #f472b6;
+      --blue: #38bdf8;
+      --shadow: 0 18px 50px rgba(17, 19, 24, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--body);
+      background: var(--soft);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(17, 19, 24, 0.08);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(17, 19, 24, 0.18);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #4b5565;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .hero {
+      position: relative;
+      min-height: min(690px, 76vh);
+      display: flex;
+      align-items: flex-end;
+      color: var(--text);
+      background:
+        linear-gradient(90deg, rgba(13, 16, 23, 0.94) 0%, rgba(13, 16, 23, 0.80) 44%, rgba(13, 16, 23, 0.35) 100%),
+        linear-gradient(180deg, rgba(13, 16, 23, 0.2) 0%, rgba(13, 16, 23, 0.76) 100%),
+        url("/app/tic-tac-toe-feature.png") center / cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(680px, 100%);
+      padding: 88px 0 72px;
+    }
+
+    .app-icon {
+      width: 104px;
+      height: 104px;
+      border-radius: 24px;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.34);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #d8f8e4;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(33, 196, 93, 0.18);
+    }
+
+    h1 {
+      font-size: clamp(54px, 9vw, 108px);
+      line-height: 0.9;
+      letter-spacing: 0;
+      margin: 0 0 22px;
+    }
+
+    .hero p {
+      max-width: 660px;
+      color: #dbe5f3;
+      font-size: clamp(18px, 2.2vw, 23px);
+      margin: 0 0 28px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .store-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 58px;
+      transition: transform .2s ease, filter .2s ease;
+    }
+
+    .store-link:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .google-play-badge {
+      height: 76px;
+      width: auto;
+      margin: -9px 0;
+      display: block;
+    }
+
+    .availability {
+      color: #bfd0e6;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: 0;
+      color: var(--ink);
+      margin: 0 0 12px;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      min-height: 170px;
+      box-shadow: 0 10px 24px rgba(17, 19, 24, 0.05);
+    }
+
+    .feature-card strong {
+      display: block;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .feature-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: #0b1723;
+    }
+
+    .feature-card:nth-child(1) .feature-mark { background: var(--green); }
+    .feature-card:nth-child(2) .feature-mark { background: var(--yellow); }
+    .feature-card:nth-child(3) .feature-mark { background: var(--blue); }
+    .feature-card:nth-child(4) .feature-mark { background: var(--pink); }
+
+    .showcase {
+      background: #111318;
+      color: var(--text);
+    }
+
+    .showcase .section-heading h2 { color: var(--text); }
+    .showcase .section-heading p { color: #b9c6d8; }
+
+    .screens {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      align-items: start;
+    }
+
+    .screen {
+      background: linear-gradient(180deg, #2a303b, #151922);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 30px;
+      padding: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .screen img {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      border-radius: 22px;
+      display: block;
+    }
+
+    .screen-caption {
+      padding: 14px 6px 4px;
+      color: #d6e1f0;
+      font-size: 14px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .download-band {
+      background: var(--surface);
+    }
+
+    .download-panel {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+      padding: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(33, 196, 93, 0.12), rgba(249, 199, 79, 0.10) 48%, rgba(244, 114, 182, 0.10)),
+        #ffffff;
+      box-shadow: 0 16px 42px rgba(17, 19, 24, 0.08);
+    }
+
+    .download-panel h2 {
+      margin: 0 0 12px;
+      color: var(--ink);
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .download-panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 620px;
+    }
+
+    .download-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .privacy-link {
+      color: #355171;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    footer {
+      padding: 28px 0;
+      background: #0d1017;
+      color: #a9b7ca;
+      font-size: 14px;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .footer-row a { color: #e7eef8; }
+
+    @media (max-width: 900px) {
+      .hero {
+        min-height: 720px;
+        background-position: center right;
+      }
+
+      .hero-inner { padding: 70px 0 60px; }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .screens { grid-template-columns: repeat(3, minmax(180px, 1fr)); overflow-x: auto; padding-bottom: 8px; }
+      .screen { min-width: 210px; }
+      .download-panel { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, 1120px); }
+      header { position: static; }
+      .nav { height: auto; padding: 16px 0; }
+      .nav-links { display: none; }
+      .hero { min-height: 660px; }
+      .app-icon { width: 88px; height: 88px; border-radius: 20px; }
+      .cta-row { align-items: flex-start; }
+      .feature-grid { grid-template-columns: 1fr; }
+      section { padding: 54px 0; }
+      .screens { grid-template-columns: 1fr; overflow: visible; }
+      .screen { min-width: 0; width: min(290px, 100%); margin: 0 auto; }
+      .download-panel { padding: 28px 20px; }
+      .download-actions { align-items: flex-start; }
+      .google-play-badge { max-width: 230px; height: auto; margin: 0; }
+      .store-link { height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Tic Tac Toe home">
+        <img src="/app/tic-tac-toe-icon-512.png" alt="Tic Tac Toe app icon" width="512" height="512" />
+        <span>Tic Tac Toe</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#download">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Tic Tac Toe introduction">
+      <div class="container">
+        <div class="hero-inner">
+          <img class="app-icon" src="/app/tic-tac-toe-icon-512.png" alt="Tic Tac Toe app icon" width="512" height="512" />
+          <div class="eyebrow">Classic strategy for quick rounds</div>
+          <h1>Tic Tac Toe</h1>
+          <p>
+            Play a polished classic with smart AI, pass-and-play two-player mode,
+            flexible board sizes, colorful themes, and daily challenges.
+          </p>
+          <div class="cta-row">
+            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.tictactoe" target="_blank" rel="noopener noreferrer" aria-label="Download on Google Play">
+              <img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
+            <span class="availability">Available now on Android</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="container">
+      <div class="section-heading">
+        <h2>A familiar game with more room to think</h2>
+        <p>Fast enough for short breaks, flexible enough for different moods, and clean enough to replay again and again.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-mark">AI</div>
+          <strong>Play solo against AI</strong>
+          <p>Choose your round and test your next move against the computer.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-mark">2P</div>
+          <strong>Two players, one phone</strong>
+          <p>Pass the board back and forth for quick local matches.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-mark">5x</div>
+          <strong>3x3, 4x4, and 5x5 boards</strong>
+          <p>Switch board size when the classic grid feels too small.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-mark">XO</div>
+          <strong>Themes and daily challenges</strong>
+          <p>Change the look, track progress, and return for fresh goals.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="screenshots" class="showcase">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Built for clean, quick play</h2>
+          <p>The interface stays focused on the board while giving you mode, score, and strategy options within easy reach.</p>
+        </div>
+        <div class="screens">
+          <figure class="screen">
+            <img src="/app/tic-tac-toe-screen-home.png" alt="Tic Tac Toe home screen" width="1080" height="1920" loading="lazy" />
+            <figcaption class="screen-caption">Choose solo or two-player mode</figcaption>
+          </figure>
+          <figure class="screen">
+            <img src="/app/tic-tac-toe-screen-ai.png" alt="Tic Tac Toe AI challenge screen" width="1080" height="1920" loading="lazy" />
+            <figcaption class="screen-caption">Challenge the AI</figcaption>
+          </figure>
+          <figure class="screen">
+            <img src="/app/tic-tac-toe-screen-board-sizes.png" alt="Tic Tac Toe board size options" width="1080" height="1920" loading="lazy" />
+            <figcaption class="screen-caption">Switch board sizes</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="download-band">
+      <div class="container">
+        <div class="download-panel">
+          <div>
+            <h2>Start a quick match</h2>
+            <p>Download Tic Tac Toe on Google Play and keep a classic strategy game ready whenever you have a few minutes.</p>
+          </div>
+          <div class="download-actions">
+            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.tictactoe" target="_blank" rel="noopener noreferrer" aria-label="Download on Google Play">
+              <img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
+            <a class="privacy-link" href="/tic-tac-toe-privacy-policy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>&copy; <span id="year"></span> BPZone. All rights reserved.</span>
+      <span>Support: <a href="mailto:bpzone.ca@gmail.com">bpzone.ca@gmail.com</a></span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
