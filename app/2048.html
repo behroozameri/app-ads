@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2048 | Merge Tile Puzzle Game</title>
+  <link rel="canonical" href="https://bpzone.info/app/2048.html" />
+  <link rel="icon" type="image/png" href="/app/2048-icon-512.png" />
+  <link rel="apple-touch-icon" href="/app/2048-icon-512.png" />
+  <meta name="description" content="2048 is a polished merge tile puzzle game with smooth swipes, score tracking, undo support, rewarded rescue options, and a clean mobile board. Available on Android." />
+  <meta name="keywords" content="2048, 2048 puzzle, merge puzzle, tile game, number puzzle, Android game, BPZone" />
+
+  <meta property="og:title" content="2048" />
+  <meta property="og:description" content="Merge matching tiles, reach 2048, keep playing for bigger numbers, and chase your best score. Available on Android." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bpzone.info/app/2048.html" />
+  <meta property="og:site_name" content="BPZone" />
+  <meta property="og:image" content="https://bpzone.info/app/2048-feature.png" />
+  <meta property="og:image:secure_url" content="https://bpzone.info/app/2048-feature.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="500" />
+  <meta property="og:image:alt" content="2048 merge puzzle feature graphic" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="2048" />
+  <meta name="twitter:description" content="A polished merge tile puzzle game with smooth swipes, score tracking, undo support, and clean mobile play." />
+  <meta name="twitter:image" content="https://bpzone.info/app/2048-feature.png" />
+  <meta name="twitter:image:alt" content="2048 merge puzzle feature graphic" />
+
+  <style>
+    :root {
+      --ink: #12151b;
+      --text: #f8fafc;
+      --body: #263142;
+      --muted: #687586;
+      --surface: #ffffff;
+      --soft: #f2f6fb;
+      --line: #dde5ef;
+      --amber: #f6a72d;
+      --coral: #f06f5f;
+      --mint: #42c48e;
+      --cyan: #36b7d6;
+      --violet: #7c6ee6;
+      --tile-dark: #4b3d32;
+      --shadow: 0 20px 58px rgba(18, 21, 27, 0.20);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--body);
+      background: var(--soft);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; }
+
+    .container {
+      width: min(1140px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(18, 21, 27, 0.08);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(18, 21, 27, 0.18);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      color: #4f5d70;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .hero {
+      color: var(--text);
+      background:
+        linear-gradient(90deg, rgba(18, 21, 27, 0.94) 0%, rgba(18, 21, 27, 0.78) 44%, rgba(18, 21, 27, 0.25) 100%),
+        linear-gradient(180deg, rgba(18, 21, 27, 0.10) 0%, rgba(18, 21, 27, 0.78) 100%),
+        url("/app/2048-feature.png") center / cover no-repeat;
+      min-height: min(720px, 78vh);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 54px;
+      align-items: center;
+      padding: 76px 0;
+    }
+
+    .app-icon {
+      width: 106px;
+      height: 106px;
+      border-radius: 24px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.34);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #ffe1a7;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--amber);
+      box-shadow: 0 0 0 6px rgba(246, 167, 45, 0.20);
+    }
+
+    h1 {
+      font-size: clamp(68px, 12vw, 132px);
+      line-height: 0.85;
+      letter-spacing: 0;
+      margin: 0 0 22px;
+    }
+
+    .hero p {
+      max-width: 660px;
+      color: #dce6f3;
+      font-size: clamp(18px, 2.2vw, 22px);
+      margin: 0 0 28px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .store-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 58px;
+      transition: transform .2s ease, filter .2s ease;
+    }
+
+    .store-link:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .google-play-badge {
+      height: 76px;
+      width: auto;
+      margin: -9px 0;
+      display: block;
+    }
+
+    .availability {
+      color: #bfd0e6;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .phone {
+      width: min(390px, 100%);
+      padding: 16px;
+      border-radius: 36px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.06));
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      box-shadow: var(--shadow);
+    }
+
+    .screen {
+      min-height: 600px;
+      border-radius: 28px;
+      padding: 26px 22px;
+      background:
+        radial-gradient(circle at 18% 8%, rgba(246, 167, 45, 0.22), transparent 32%),
+        radial-gradient(circle at 88% 10%, rgba(54, 183, 214, 0.18), transparent 28%),
+        linear-gradient(180deg, #f9f4eb 0%, #e9eff7 100%);
+      border: 1px solid rgba(255, 255, 255, 0.42);
+    }
+
+    .game-head {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .mini-title {
+      color: var(--tile-dark);
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .score {
+      min-width: 70px;
+      border-radius: 8px;
+      padding: 7px 8px;
+      background: #7d6d61;
+      color: #fff;
+      text-align: center;
+      font-weight: 900;
+    }
+
+    .score span {
+      display: block;
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.74);
+      text-transform: uppercase;
+    }
+
+    .hint {
+      color: #6d5f55;
+      font-size: 14px;
+      font-weight: 800;
+      margin: 0 0 16px;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 10px;
+      border-radius: 12px;
+      background: #a9988a;
+      box-shadow: inset 0 0 0 1px rgba(75, 61, 50, 0.10);
+    }
+
+    .tile {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      font-weight: 900;
+      font-size: clamp(20px, 4vw, 34px);
+      color: #4b3d32;
+      background: #cfc3b7;
+      box-shadow: inset 0 6px rgba(255, 255, 255, 0.20), inset 0 -6px rgba(0, 0, 0, 0.08);
+    }
+
+    .t2 { background: #eee4da; }
+    .t4 { background: #ede0c8; }
+    .t8 { background: #f2b179; color: #fff; }
+    .t16 { background: #f59563; color: #fff; }
+    .t32 { background: #f67c5f; color: #fff; }
+    .t64 { background: #f65e3b; color: #fff; }
+    .t128 { background: #edcf72; color: #fff; font-size: clamp(18px, 3.4vw, 28px); }
+    .t256 { background: #edcc61; color: #fff; font-size: clamp(18px, 3.4vw, 28px); }
+    .t512 { background: #ecc850; color: #fff; font-size: clamp(18px, 3.4vw, 28px); }
+
+    .mini-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .mini-button {
+      border-radius: 8px;
+      padding: 11px 8px;
+      text-align: center;
+      color: #fff;
+      background: #7fa37b;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .mini-button.alt { background: #2f7d7e; }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      color: var(--ink);
+      font-size: clamp(30px, 4.4vw, 50px);
+      line-height: 1.06;
+      letter-spacing: 0;
+      margin: 0 0 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .feature-card {
+      min-height: 178px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      box-shadow: 0 10px 24px rgba(18, 21, 27, 0.05);
+    }
+
+    .feature-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 16px;
+      background: var(--amber);
+    }
+
+    .feature-card:nth-child(2) .feature-mark { background: var(--mint); }
+    .feature-card:nth-child(3) .feature-mark { background: var(--cyan); }
+    .feature-card:nth-child(4) .feature-mark { background: var(--violet); }
+
+    .feature-card strong {
+      display: block;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .showcase {
+      background: #12151b;
+      color: var(--text);
+    }
+
+    .showcase .section-heading h2 { color: var(--text); }
+    .showcase .section-heading p { color: #c2cedf; }
+
+    .screens {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .shot {
+      margin: 0;
+      border-radius: 28px;
+      padding: 9px;
+      background: linear-gradient(180deg, #2a303b, #151922);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: var(--shadow);
+    }
+
+    .shot img {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      border-radius: 21px;
+      display: block;
+    }
+
+    .shot figcaption {
+      padding: 13px 6px 4px;
+      color: #dce5f2;
+      font-size: 13px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .download-band {
+      background: var(--surface);
+    }
+
+    .download-panel {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+      padding: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(246, 167, 45, 0.12), rgba(66, 196, 142, 0.10), rgba(54, 183, 214, 0.10)),
+        #ffffff;
+      box-shadow: 0 16px 42px rgba(18, 21, 27, 0.08);
+    }
+
+    .download-panel h2 {
+      color: var(--ink);
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.06;
+      letter-spacing: 0;
+      margin: 0 0 12px;
+    }
+
+    .download-panel p {
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0;
+      max-width: 620px;
+    }
+
+    .download-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .privacy-link {
+      color: #355171;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    footer {
+      padding: 28px 0;
+      background: #111318;
+      color: #a9b7ca;
+      font-size: 14px;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .footer-row a { color: #e7eef8; }
+
+    @media (max-width: 1040px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .phone { width: min(390px, 100%); }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .screens { grid-template-columns: repeat(4, minmax(180px, 1fr)); overflow-x: auto; padding-bottom: 8px; }
+      .shot { min-width: 205px; }
+      .download-panel { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, 1140px); }
+      header { position: static; }
+      .nav { padding: 16px 0; }
+      .nav-links { display: none; }
+      .hero { min-height: auto; }
+      .hero-layout { padding: 54px 0; gap: 34px; }
+      .app-icon { width: 88px; height: 88px; border-radius: 20px; }
+      .phone { padding: 10px; border-radius: 28px; }
+      .screen { min-height: auto; padding: 18px; border-radius: 22px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .screens { grid-template-columns: 1fr; overflow: visible; }
+      .shot { min-width: 0; width: min(290px, 100%); margin: 0 auto; }
+      section { padding: 54px 0; }
+      .download-panel { padding: 28px 20px; }
+      .google-play-badge { max-width: 230px; height: auto; margin: 0; }
+      .store-link { height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="2048 home">
+        <img src="/app/2048-icon-512.png" alt="2048 app icon" width="512" height="512" />
+        <span>2048</span>
+      </a>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#download">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="2048 introduction">
+      <div class="container hero-layout">
+        <div>
+          <img class="app-icon" src="/app/2048-icon-512.png" alt="2048 app icon" width="512" height="512" />
+          <div class="eyebrow">Merge tiles and chase the next number</div>
+          <h1>2048</h1>
+          <p>
+            Swipe to combine matching tiles, reach 2048, keep playing for bigger numbers,
+            and protect your best score with helpful undo and rescue options.
+          </p>
+          <div class="cta-row">
+            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.merge2048" target="_blank" rel="noopener noreferrer" aria-label="Download on Google Play">
+              <img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
+            <span class="availability">Available now on Android</span>
+          </div>
+        </div>
+
+        <div class="phone" aria-label="2048 gameplay preview">
+          <div class="screen">
+            <div class="game-head">
+              <div class="mini-title">2048</div>
+              <div class="score"><span>Score</span>1832</div>
+              <div class="score"><span>Best</span>4096</div>
+            </div>
+            <p class="hint">Swipe to combine equal tiles</p>
+            <div class="board" aria-hidden="true">
+              <div class="tile t2">2</div>
+              <div class="tile t4">4</div>
+              <div class="tile t8">8</div>
+              <div class="tile t16">16</div>
+              <div class="tile t32">32</div>
+              <div class="tile t64">64</div>
+              <div class="tile t128">128</div>
+              <div class="tile t2">2</div>
+              <div class="tile"></div>
+              <div class="tile t256">256</div>
+              <div class="tile t512">512</div>
+              <div class="tile t4">4</div>
+              <div class="tile t8">8</div>
+              <div class="tile"></div>
+              <div class="tile t16">16</div>
+              <div class="tile t32">32</div>
+            </div>
+            <div class="mini-actions">
+              <div class="mini-button">New Game</div>
+              <div class="mini-button alt">Undo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="container">
+      <div class="section-heading">
+        <h2>A clean board for smarter merging</h2>
+        <p>Classic 2048 play with smooth mobile controls, persistent progress, and a few safety nets for tougher boards.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-mark">2x</div>
+          <strong>Merge matching tiles</strong>
+          <p>Slide tiles together, build larger numbers, and plan ahead before the board fills.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-mark">BS</div>
+          <strong>Score and best tracking</strong>
+          <p>Keep your best score saved locally and return to beat your previous run.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-mark">UN</div>
+          <strong>Undo support</strong>
+          <p>Use undo credits when one swipe changes the shape of the whole board.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-mark">RS</div>
+          <strong>Continue options</strong>
+          <p>Optional rescue tools can help clear space and keep a promising game alive.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="screenshots" class="showcase">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Designed for quick, focused play</h2>
+          <p>Readable tiles, simple actions, and clear progress make each round easy to pick up.</p>
+        </div>
+        <div class="screens">
+          <figure class="shot">
+            <img src="/app/2048-screen-classic.png" alt="2048 classic gameplay screen" width="1080" height="1920" loading="lazy" />
+            <figcaption>Classic gameplay</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="/app/2048-screen-bigger-tiles.png" alt="2048 board with bigger tiles" width="1080" height="1920" loading="lazy" />
+            <figcaption>Build bigger tiles</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="/app/2048-screen-undo.png" alt="2048 rewarded undo screen" width="1080" height="1920" loading="lazy" />
+            <figcaption>Undo support</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="/app/2048-screen-victory.png" alt="2048 victory screen" width="1080" height="1920" loading="lazy" />
+            <figcaption>Reach 2048</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="download-band">
+      <div class="container">
+        <div class="download-panel">
+          <div>
+            <h2>Start merging tiles</h2>
+            <p>Download 2048 on Google Play and keep a thoughtful number puzzle ready whenever you have a few minutes.</p>
+          </div>
+          <div class="download-actions">
+            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.merge2048" target="_blank" rel="noopener noreferrer" aria-label="Download on Google Play">
+              <img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
+            <a class="privacy-link" href="/2048-puzzle-privacy-policy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>&copy; <span id="year"></span> BPZone. All rights reserved.</span>
+      <span>Support: <a href="mailto:bpzone.ca@gmail.com">bpzone.ca@gmail.com</a></span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
