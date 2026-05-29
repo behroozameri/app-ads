@@ -508,6 +508,28 @@
       min-width: 280px;
     }
 
+    .home-button {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border: 1px solid var(--ink);
+      border-radius: 8px;
+      background: var(--ink);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 900;
+      text-decoration: none;
+      box-shadow: 0 10px 22px rgba(16, 19, 26, 0.14);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .home-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(16, 19, 26, 0.18);
+    }
+
     .privacy-link {
       color: var(--ink);
       font-size: 14px;
@@ -625,11 +647,12 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Memory Tap Challenge home">
+      <a class="brand" href="/" aria-label="Go to BPZone home">
         <img src="/assets/apps/games/memory-tap-challenge/icon-512.png" alt="Memory Tap Challenge app icon" width="512" height="512" />
         <span>Memory Tap Challenge</span>
       </a>
       <nav class="nav-links" aria-label="Page navigation">
+        <a href="/">Home</a>
         <a href="#features">Features</a>
         <a href="#screenshots">Screenshots</a>
         <a href="#modes">Modes</a>
@@ -783,6 +806,7 @@
             <a class="store-link" href="https://apps.apple.com/us/app/memory-tap-challenge/id6772366258" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
               <img class="app-store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
             </a>
+            <a class="home-button" href="/">Home</a>
             <a class="privacy-link" href="/memory-tap-privacy-policy.html">Privacy Policy</a>
           </div>
         </div>
