@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>Tic Tac Toe | Classic Strategy Game</title>
   <link rel="canonical" href="https://bpzone.info/apps/games/tic-tac-toe/" />
   <link rel="icon" type="image/png" href="/assets/apps/games/tic-tac-toe/icon-512.png" />
   <link rel="apple-touch-icon" href="/assets/apps/games/tic-tac-toe/icon-512.png" />
-  <meta name="description" content="Tic Tac Toe is a polished classic strategy game with smart AI, two-player mode, board sizes, themes, and daily challenges. Available on Android." />
-  <meta name="keywords" content="Tic Tac Toe, strategy game, board game, AI game, two player game, Android game, BPZone" />
+  <meta name="description" content="Tic Tac Toe is a polished classic strategy game with smart AI, two-player mode, board sizes, themes, and daily challenges. Available on Google Play and the App Store." />
+  <meta name="keywords" content="Tic Tac Toe, strategy game, board game, AI game, two player game, mobile game, BPZone" />
 
   <meta property="og:title" content="Tic Tac Toe" />
-  <meta property="og:description" content="Play a polished classic with smart AI, two-player mode, board sizes, themes, and daily challenges. Available on Android." />
+  <meta property="og:description" content="Play a polished classic with smart AI, two-player mode, board sizes, themes, and daily challenges." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bpzone.info/apps/games/tic-tac-toe/" />
   <meta property="og:site_name" content="BPZone" />
@@ -59,7 +62,7 @@
     a { color: inherit; text-decoration: none; }
 
     .container {
-      width: min(1120px, calc(100% - 40px));
+      width: min(1140px, calc(100% - 40px));
       margin: 0 auto;
     }
 
@@ -67,24 +70,57 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.9);
       border-bottom: 1px solid rgba(17, 19, 24, 0.08);
       backdrop-filter: blur(16px);
     }
 
     .nav {
-      height: 72px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
 
+    .nav-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .home-icon-link {
+      width: 38px;
+      height: 38px;
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--ink);
+      box-shadow: 0 8px 20px rgba(17, 19, 24, 0.08);
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .home-icon-link:hover {
+      transform: translateY(-1px);
+      border-color: color-mix(in srgb, var(--green) 36%, var(--line));
+      box-shadow: 0 12px 24px rgba(17, 19, 24, 0.12);
+    }
+
+    .home-icon-link svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2.2;
+    }
+
     .brand {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      font-weight: 800;
+      font-weight: 900;
       color: var(--ink);
     }
 
@@ -101,29 +137,29 @@
       gap: 20px;
       color: #4b5565;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .nav-links a:hover { color: var(--ink); }
 
     .hero {
-      position: relative;
-      min-height: min(690px, 76vh);
-      display: flex;
-      align-items: flex-end;
       color: var(--text);
       background:
-        linear-gradient(90deg, rgba(13, 16, 23, 0.94) 0%, rgba(13, 16, 23, 0.80) 44%, rgba(13, 16, 23, 0.35) 100%),
-        linear-gradient(180deg, rgba(13, 16, 23, 0.2) 0%, rgba(13, 16, 23, 0.76) 100%),
+        linear-gradient(90deg, rgba(4, 18, 16, 0.96) 0%, rgba(4, 18, 16, 0.82) 44%, rgba(4, 18, 16, 0.28) 100%),
+        linear-gradient(180deg, rgba(4, 18, 16, 0.16) 0%, rgba(4, 18, 16, 0.82) 100%),
         url("/assets/apps/games/tic-tac-toe/feature.png") center / cover no-repeat;
+      min-height: min(720px, 78vh);
+      display: flex;
+      align-items: center;
       overflow: hidden;
     }
 
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      width: min(680px, 100%);
-      padding: 88px 0 72px;
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 54px;
+      align-items: center;
+      padding: 76px 0;
     }
 
     .app-icon {
@@ -155,8 +191,9 @@
     }
 
     h1 {
-      font-size: clamp(54px, 9vw, 108px);
-      line-height: 0.9;
+      max-width: 760px;
+      font-size: clamp(48px, 7.6vw, 92px);
+      line-height: 0.94;
       letter-spacing: 0;
       margin: 0 0 22px;
     }
@@ -195,10 +232,119 @@
       display: block;
     }
 
+    .app-store-badge {
+      height: 58px;
+      width: auto;
+      display: block;
+    }
+
     .availability {
       color: #bfd0e6;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
+    }
+
+    .phone {
+      width: min(390px, 100%);
+      padding: 16px;
+      border-radius: 36px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.06));
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      box-shadow: var(--shadow);
+    }
+
+    .phone-screen {
+      min-height: 600px;
+      border-radius: 28px;
+      padding: 24px 22px;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(33, 196, 93, 0.24), transparent 32%),
+        radial-gradient(circle at 88% 8%, rgba(249, 199, 79, 0.20), transparent 30%),
+        linear-gradient(155deg, #051514 0%, #0e4b3f 58%, #07131c 100%);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      color: var(--text);
+      overflow: hidden;
+    }
+
+    .game-title {
+      text-align: center;
+      font-weight: 900;
+      font-size: 20px;
+      margin: 2px 0 16px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .stat {
+      min-height: 46px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.13);
+      color: #e0fff0;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .tic-board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 12px;
+      border-radius: 24px;
+      background: rgba(1, 10, 14, 0.38);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.04);
+    }
+
+    .tic-cell {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 1;
+      box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.04);
+    }
+
+    .tic-cell.x {
+      color: var(--green);
+      text-shadow: 0 0 16px rgba(33, 196, 93, 0.72);
+    }
+
+    .tic-cell.o {
+      color: var(--yellow);
+      text-shadow: 0 0 16px rgba(249, 199, 79, 0.62);
+    }
+
+    .mini-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .mini-button {
+      min-height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--green);
+      color: #042018;
+      font-weight: 900;
+    }
+
+    .mini-button.alt {
+      background: var(--yellow);
+      color: #3a2504;
     }
 
     section {
@@ -270,66 +416,111 @@
     .feature-card:nth-child(4) .feature-mark { background: var(--pink); }
 
     .showcase {
-      background: #111318;
-      color: var(--text);
+      background: #ffffff;
     }
 
-    .showcase .section-heading h2 { color: var(--text); }
-    .showcase .section-heading p { color: #b9c6d8; }
-
-    .screens {
+    .preview-layout {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-      align-items: start;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 28px;
+      align-items: center;
     }
 
-    .screen {
-      background: linear-gradient(180deg, #2a303b, #151922);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 30px;
-      padding: 10px;
+    .preview-shot {
+      margin: 0;
+      border-radius: 8px;
+      overflow: hidden;
       box-shadow: var(--shadow);
+      background: #071512;
     }
 
-    .screen img {
+    .preview-shot img {
       width: 100%;
-      aspect-ratio: 9 / 16;
+      aspect-ratio: 1024 / 500;
       object-fit: cover;
-      border-radius: 22px;
       display: block;
     }
 
-    .screen-caption {
-      padding: 14px 6px 4px;
-      color: #d6e1f0;
+    .preview-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .preview-item {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 10px 24px rgba(17, 19, 24, 0.05);
+    }
+
+    .preview-item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .preview-item span {
+      display: block;
+      color: var(--muted);
       font-size: 14px;
-      font-weight: 800;
-      text-align: center;
+    }
+
+    .modes {
+      background: var(--soft);
+    }
+
+    .mode-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .mode {
+      min-height: 156px;
+      padding: 22px;
+      border-radius: 8px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 24px rgba(17, 19, 24, 0.05);
+    }
+
+    .mode strong {
+      display: block;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .mode p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
     }
 
     .download-band {
-      background: var(--surface);
+      background: var(--soft);
     }
 
     .download-panel {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 36px;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
       align-items: center;
-      padding: 42px;
+      padding: 34px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background:
-        linear-gradient(135deg, rgba(33, 196, 93, 0.12), rgba(249, 199, 79, 0.10) 48%, rgba(244, 114, 182, 0.10)),
-        #ffffff;
-      box-shadow: 0 16px 42px rgba(17, 19, 24, 0.08);
+      background: var(--surface);
+      box-shadow: 0 12px 32px rgba(17, 19, 24, 0.08);
     }
 
     .download-panel h2 {
-      margin: 0 0 12px;
+      margin: 0 0 8px;
       color: var(--ink);
-      font-size: clamp(30px, 4vw, 46px);
+      font-size: clamp(28px, 4vw, 42px);
       line-height: 1.05;
       letter-spacing: 0;
     }
@@ -337,29 +528,31 @@
     .download-panel p {
       margin: 0;
       color: var(--muted);
-      font-size: 18px;
-      max-width: 620px;
+      font-size: 17px;
     }
 
     .download-actions {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      min-width: 280px;
     }
 
     .privacy-link {
-      color: #355171;
+      color: var(--ink);
       font-size: 14px;
-      font-weight: 800;
+      font-weight: 900;
       text-decoration: underline;
       text-underline-offset: 4px;
     }
 
     footer {
-      padding: 28px 0;
-      background: #0d1017;
-      color: #a9b7ca;
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+      background: var(--ink);
+      color: rgba(255, 255, 255, 0.74);
       font-size: 14px;
     }
 
@@ -372,34 +565,73 @@
 
     .footer-row a { color: #e7eef8; }
 
-    @media (max-width: 900px) {
-      .hero {
-        min-height: 720px;
-        background-position: center right;
+    @media (max-width: 980px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
       }
 
-      .hero-inner { padding: 70px 0 60px; }
+      .phone {
+        justify-self: center;
+      }
+
       .feature-grid { grid-template-columns: repeat(2, 1fr); }
-      .screens { grid-template-columns: repeat(3, minmax(180px, 1fr)); overflow-x: auto; padding-bottom: 8px; }
-      .screen { min-width: 210px; }
+
+      .preview-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .mode-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .download-panel { grid-template-columns: 1fr; }
+
+      .download-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        gap: 14px;
+      }
+
+      .nav-left {
+        gap: 10px;
+      }
+
+      .brand span {
+        max-width: 180px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 13px;
+      }
     }
 
     @media (max-width: 620px) {
-      .container { width: min(100% - 28px, 1120px); }
-      header { position: static; }
-      .nav { height: auto; padding: 16px 0; }
+      .container { width: min(100% - 28px, 1140px); }
+      .nav { min-height: 64px; }
       .nav-links { display: none; }
-      .hero { min-height: 660px; }
+      .home-icon-link { width: 36px; height: 36px; }
+      .brand img { width: 38px; height: 38px; }
+      .hero { min-height: auto; }
+      .hero-layout { padding: 54px 0; gap: 34px; }
+      h1 { font-size: clamp(42px, 15vw, 58px); }
       .app-icon { width: 88px; height: 88px; border-radius: 20px; }
       .cta-row { align-items: flex-start; }
       .feature-grid { grid-template-columns: 1fr; }
+      .mode-grid { grid-template-columns: 1fr; }
       section { padding: 54px 0; }
-      .screens { grid-template-columns: 1fr; overflow: visible; }
-      .screen { min-width: 0; width: min(290px, 100%); margin: 0 auto; }
+      .phone { display: none; }
       .download-panel { padding: 28px 20px; }
-      .download-actions { align-items: flex-start; }
+      .download-actions { width: 100%; }
       .google-play-badge { max-width: 230px; height: auto; margin: 0; }
+      .app-store-badge { max-width: 190px; height: auto; }
       .store-link { height: auto; }
     }
   </style>
@@ -407,13 +639,23 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Tic Tac Toe home">
-        <img src="/assets/apps/games/tic-tac-toe/icon-512.png" alt="Tic Tac Toe app icon" width="512" height="512" />
-        <span>Tic Tac Toe</span>
-      </a>
+      <div class="nav-left">
+        <a class="home-icon-link" href="/" aria-label="Go to BPZone home">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 10 9-7 9 7" />
+            <path d="M5 10v10h14V10" />
+            <path d="M10 20v-6h4v6" />
+          </svg>
+        </a>
+        <a class="brand" href="/" aria-label="Go to BPZone home">
+          <img src="/assets/apps/games/tic-tac-toe/icon-512.png" alt="Tic Tac Toe app icon" width="512" height="512" />
+          <span>Tic Tac Toe</span>
+        </a>
+      </div>
       <nav class="nav-links" aria-label="Page navigation">
         <a href="#features">Features</a>
         <a href="#screenshots">Screenshots</a>
+        <a href="#modes">Modes</a>
         <a href="#download">Download</a>
       </nav>
     </div>
@@ -421,8 +663,8 @@
 
   <main id="top">
     <section class="hero" aria-label="Tic Tac Toe introduction">
-      <div class="container">
-        <div class="hero-inner">
+      <div class="container hero-layout">
+        <div>
           <img class="app-icon" src="/assets/apps/games/tic-tac-toe/icon-512.png" alt="Tic Tac Toe app icon" width="512" height="512" />
           <div class="eyebrow">Classic strategy for quick rounds</div>
           <h1>Tic Tac Toe</h1>
@@ -434,7 +676,36 @@
             <a class="store-link" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.tictactoe" target="_blank" rel="noopener noreferrer" aria-label="Download on Google Play">
               <img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
             </a>
-            <span class="availability">Available now on Android</span>
+            <a class="store-link" href="https://apps.apple.com/us/app/memory-tap-challenge/id6772366258" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+              <img class="app-store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
+            </a>
+            <span class="availability">Available now on Android and iOS</span>
+          </div>
+        </div>
+
+        <div class="phone" aria-label="Tic Tac Toe gameplay preview">
+          <div class="phone-screen">
+            <div class="game-title">Classic Match</div>
+            <div class="stats">
+              <div class="stat">AI</div>
+              <div class="stat">3x3</div>
+              <div class="stat">2P</div>
+            </div>
+            <div class="tic-board" aria-hidden="true">
+              <div class="tic-cell x">X</div>
+              <div class="tic-cell"></div>
+              <div class="tic-cell o">O</div>
+              <div class="tic-cell"></div>
+              <div class="tic-cell x">X</div>
+              <div class="tic-cell"></div>
+              <div class="tic-cell o">O</div>
+              <div class="tic-cell"></div>
+              <div class="tic-cell x">X</div>
+            </div>
+            <div class="mini-actions" aria-hidden="true">
+              <div class="mini-button">Challenge AI</div>
+              <div class="mini-button alt">Two Player</div>
+            </div>
           </div>
         </div>
       </div>
@@ -472,22 +743,54 @@
     <section id="screenshots" class="showcase">
       <div class="container">
         <div class="section-heading">
-          <h2>Built for clean, quick play</h2>
-          <p>The interface stays focused on the board while giving you mode, score, and strategy options within easy reach.</p>
+          <h2>Smart classic play at a glance</h2>
+          <p>The store preview highlights the core loop: pick your opponent, plan the board, and chase the winning line.</p>
         </div>
-        <div class="screens">
-          <figure class="screen">
-            <img src="/assets/apps/games/tic-tac-toe/screenshots/home.png" alt="Tic Tac Toe home screen" width="1080" height="1920" loading="lazy" />
-            <figcaption class="screen-caption">Choose solo or two-player mode</figcaption>
+        <div class="preview-layout">
+          <figure class="preview-shot">
+            <img src="/assets/apps/games/tic-tac-toe/feature.png" alt="Tic Tac Toe feature preview with AI and two-player modes" width="1024" height="500" loading="lazy" />
           </figure>
-          <figure class="screen">
-            <img src="/assets/apps/games/tic-tac-toe/screenshots/ai.png" alt="Tic Tac Toe AI challenge screen" width="1080" height="1920" loading="lazy" />
-            <figcaption class="screen-caption">Challenge the AI</figcaption>
-          </figure>
-          <figure class="screen">
-            <img src="/assets/apps/games/tic-tac-toe/screenshots/board-sizes.png" alt="Tic Tac Toe board size options" width="1080" height="1920" loading="lazy" />
-            <figcaption class="screen-caption">Switch board sizes</figcaption>
-          </figure>
+          <div class="preview-list">
+            <div class="preview-item">
+              <strong>Challenge AI</strong>
+              <span>Play solo rounds against a computer opponent and sharpen each move.</span>
+            </div>
+            <div class="preview-item">
+              <strong>Play with a friend</strong>
+              <span>Pass the phone for local two-player matches without extra setup.</span>
+            </div>
+            <div class="preview-item">
+              <strong>Switch board sizes</strong>
+              <span>Move from classic 3x3 into larger 4x4 and 5x5 boards when you want more room.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modes" class="modes">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Choose how you want to play</h2>
+          <p>Keep it classic, challenge the AI, play locally with a friend, or move into larger grids.</p>
+        </div>
+        <div class="mode-grid">
+          <article class="mode">
+            <strong>Classic 3x3</strong>
+            <p>The familiar quick match for short breaks and clean strategy.</p>
+          </article>
+          <article class="mode">
+            <strong>AI Challenge</strong>
+            <p>Practice against the computer and improve your next move.</p>
+          </article>
+          <article class="mode">
+            <strong>Two Player</strong>
+            <p>Share one phone for fast pass-and-play matches.</p>
+          </article>
+          <article class="mode">
+            <strong>4x4 and 5x5</strong>
+            <p>Play bigger boards when classic Tic Tac Toe feels too compact.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -497,11 +800,14 @@
         <div class="download-panel">
           <div>
             <h2>Start a quick match</h2>
-            <p>Download Tic Tac Toe on Google Play and keep a classic strategy game ready whenever you have a few minutes.</p>
+            <p>Download Tic Tac Toe on Google Play or the App Store and keep a classic strategy game ready whenever you have a few minutes.</p>
           </div>
           <div class="download-actions">
             <a class="store-link" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.tictactoe" target="_blank" rel="noopener noreferrer" aria-label="Download on Google Play">
               <img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
+            <a class="store-link" href="https://apps.apple.com/us/app/memory-tap-challenge/id6772366258" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+              <img class="app-store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
             </a>
             <a class="privacy-link" href="/tic-tac-toe-privacy-policy.html">Privacy Policy</a>
           </div>
