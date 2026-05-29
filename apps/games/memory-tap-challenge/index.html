@@ -84,6 +84,39 @@
       gap: 20px;
     }
 
+    .nav-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .home-icon-link {
+      width: 38px;
+      height: 38px;
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--ink);
+      box-shadow: 0 8px 20px rgba(16, 19, 26, 0.08);
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .home-icon-link:hover {
+      transform: translateY(-1px);
+      border-color: color-mix(in srgb, var(--teal) 36%, var(--line));
+      box-shadow: 0 12px 24px rgba(16, 19, 26, 0.12);
+    }
+
+    .home-icon-link svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2.2;
+    }
+
     .brand {
       display: inline-flex;
       align-items: center;
@@ -508,28 +541,6 @@
       min-width: 280px;
     }
 
-    .home-button {
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 18px;
-      border: 1px solid var(--ink);
-      border-radius: 8px;
-      background: var(--ink);
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: 900;
-      text-decoration: none;
-      box-shadow: 0 10px 22px rgba(16, 19, 26, 0.14);
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .home-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px rgba(16, 19, 26, 0.18);
-    }
-
     .privacy-link {
       color: var(--ink);
       font-size: 14px;
@@ -647,12 +658,20 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="/" aria-label="Go to BPZone home">
-        <img src="/assets/apps/games/memory-tap-challenge/icon-512.png" alt="Memory Tap Challenge app icon" width="512" height="512" />
-        <span>Memory Tap Challenge</span>
-      </a>
+      <div class="nav-left">
+        <a class="home-icon-link" href="/" aria-label="Go to BPZone home">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 10 9-7 9 7" />
+            <path d="M5 10v10h14V10" />
+            <path d="M10 20v-6h4v6" />
+          </svg>
+        </a>
+        <a class="brand" href="/" aria-label="Go to BPZone home">
+          <img src="/assets/apps/games/memory-tap-challenge/icon-512.png" alt="Memory Tap Challenge app icon" width="512" height="512" />
+          <span>Memory Tap Challenge</span>
+        </a>
+      </div>
       <nav class="nav-links" aria-label="Page navigation">
-        <a href="/">Home</a>
         <a href="#features">Features</a>
         <a href="#screenshots">Screenshots</a>
         <a href="#modes">Modes</a>
@@ -806,7 +825,6 @@
             <a class="store-link" href="https://apps.apple.com/us/app/memory-tap-challenge/id6772366258" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
               <img class="app-store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
             </a>
-            <a class="home-button" href="/">Home</a>
             <a class="privacy-link" href="/memory-tap-privacy-policy.html">Privacy Policy</a>
           </div>
         </div>
