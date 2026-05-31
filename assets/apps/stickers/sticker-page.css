@@ -200,13 +200,6 @@ h1 {
   height: auto;
 }
 
-.text-link {
-  color: var(--ink);
-  font-weight: 800;
-  text-decoration: none;
-  border-bottom: 2px solid var(--accent);
-}
-
 .app-visual {
   position: relative;
   display: grid;
