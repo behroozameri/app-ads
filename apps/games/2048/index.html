@@ -423,89 +423,101 @@
     }
 
     .showcase {
-      background: #12151b;
-      color: var(--text);
+      background: #ffffff;
     }
 
-    .showcase .section-heading h2 { color: var(--text); }
-    .showcase .section-heading p { color: #c2cedf; }
-
-    .screens {
+    .preview-layout {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 18px;
-      align-items: start;
     }
 
-    .shot {
+    .preview-shot {
       margin: 0;
-      border-radius: 28px;
-      padding: 9px;
-      background: linear-gradient(180deg, #2a303b, #151922);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      overflow: hidden;
       box-shadow: var(--shadow);
+      background: #12151b;
     }
 
-    .shot img {
+    .preview-shot img {
       width: 100%;
-      aspect-ratio: 9 / 16;
-      object-fit: cover;
-      border-radius: 21px;
+      height: auto;
+      object-fit: contain;
       display: block;
     }
 
-    .shot figcaption {
-      padding: 13px 6px 4px;
-      color: #dce5f2;
-      font-size: 13px;
-      font-weight: 900;
-      text-align: center;
+    .preview-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .preview-item {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 10px 24px rgba(18, 21, 27, 0.05);
+    }
+
+    .preview-item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .preview-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .download-band {
-      background: var(--surface);
+      background: var(--soft);
     }
 
     .download-panel {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 36px;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
       align-items: center;
-      padding: 42px;
+      padding: 34px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background:
-        linear-gradient(135deg, rgba(246, 167, 45, 0.12), rgba(66, 196, 142, 0.10), rgba(54, 183, 214, 0.10)),
-        #ffffff;
-      box-shadow: 0 16px 42px rgba(18, 21, 27, 0.08);
+      background: var(--surface);
+      box-shadow: 0 12px 32px rgba(18, 21, 27, 0.08);
     }
 
     .download-panel h2 {
       color: var(--ink);
-      font-size: clamp(30px, 4vw, 46px);
-      line-height: 1.06;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.05;
       letter-spacing: 0;
-      margin: 0 0 12px;
+      margin: 0 0 8px;
     }
 
     .download-panel p {
       color: var(--muted);
-      font-size: 18px;
+      font-size: 17px;
       margin: 0;
-      max-width: 620px;
     }
 
     .download-actions {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      min-width: 280px;
     }
 
     .privacy-link {
-      color: #355171;
+      color: var(--ink);
       font-size: 14px;
-      font-weight: 800;
+      font-weight: 900;
       text-decoration: underline;
       text-underline-offset: 4px;
     }
@@ -530,9 +542,12 @@
       .hero-layout { grid-template-columns: 1fr; }
       .phone { width: min(390px, 100%); }
       .feature-grid { grid-template-columns: repeat(2, 1fr); }
-      .screens { grid-template-columns: repeat(4, minmax(180px, 1fr)); overflow-x: auto; padding-bottom: 8px; }
-      .shot { min-width: 205px; }
       .download-panel { grid-template-columns: 1fr; }
+      .download-actions { justify-content: flex-start; }
+    }
+
+    @media (max-width: 720px) {
+      .preview-list { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 620px) {
@@ -548,8 +563,6 @@
       .phone { padding: 10px; border-radius: 28px; }
       .screen { min-height: auto; padding: 18px; border-radius: 22px; }
       .feature-grid { grid-template-columns: 1fr; }
-      .screens { grid-template-columns: 1fr; overflow: visible; }
-      .shot { min-width: 0; width: min(290px, 100%); margin: 0 auto; }
       section { padding: 54px 0; }
       .download-panel { padding: 28px 20px; }
       .google-play-badge { max-width: 230px; height: auto; margin: 0; }
@@ -576,7 +589,7 @@
       </div>
       <nav class="nav-links" aria-label="Page navigation">
         <a href="#features">Features</a>
-        <a href="#screenshots">Screenshots</a>
+        <a href="#screenshots">Preview</a>
         <a href="#download">Download</a>
       </nav>
     </div>
@@ -671,26 +684,27 @@
     <section id="screenshots" class="showcase">
       <div class="container">
         <div class="section-heading">
-          <h2>Designed for quick, focused play</h2>
-          <p>Readable tiles, simple actions, and clear progress make each round easy to pick up.</p>
+          <h2>Merge tiles at a glance</h2>
+          <p>The store preview keeps the whole board visible while highlighting score chasing, undo support, and longer runs.</p>
         </div>
-        <div class="screens">
-          <figure class="shot">
-            <img src="/assets/apps/games/2048/screenshots/classic.png" alt="2048 classic gameplay screen" width="1080" height="1920" loading="lazy" />
-            <figcaption>Classic gameplay</figcaption>
+        <div class="preview-layout">
+          <figure class="preview-shot">
+            <img src="/assets/apps/games/2048/feature.png" alt="2048 merge puzzle feature preview" width="1024" height="500" loading="lazy" />
           </figure>
-          <figure class="shot">
-            <img src="/assets/apps/games/2048/screenshots/bigger-tiles.png" alt="2048 board with bigger tiles" width="1080" height="1920" loading="lazy" />
-            <figcaption>Build bigger tiles</figcaption>
-          </figure>
-          <figure class="shot">
-            <img src="/assets/apps/games/2048/screenshots/undo.png" alt="2048 rewarded undo screen" width="1080" height="1920" loading="lazy" />
-            <figcaption>Undo support</figcaption>
-          </figure>
-          <figure class="shot">
-            <img src="/assets/apps/games/2048/screenshots/victory.png" alt="2048 victory screen" width="1080" height="1920" loading="lazy" />
-            <figcaption>Reach 2048</figcaption>
-          </figure>
+          <div class="preview-list">
+            <div class="preview-item">
+              <strong>Classic merge play</strong>
+              <span>Swipe tiles together, combine matching numbers, and keep the board open.</span>
+            </div>
+            <div class="preview-item">
+              <strong>Score and best tracking</strong>
+              <span>Watch each run climb and return to beat your strongest score.</span>
+            </div>
+            <div class="preview-item">
+              <strong>Undo and rescue options</strong>
+              <span>Use helpful support when one move changes the whole board.</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
