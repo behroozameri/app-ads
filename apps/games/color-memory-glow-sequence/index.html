@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Color Memory: Glow Sequence | Color Recall Puzzle Game</title>
+  <link rel="canonical" href="https://bpzone.info/apps/games/color-memory-glow-sequence/" />
+  <link rel="icon" type="image/png" href="/assets/apps/games/color-memory-glow-sequence/icon-512.png" />
+  <link rel="apple-touch-icon" href="/assets/apps/games/color-memory-glow-sequence/icon-512.png" />
+  <meta name="description" content="Color Memory: Glow Sequence is a glowing color recall puzzle game with classic, reverse, and speed run modes. Available on Google Play and the App Store." />
+  <meta name="keywords" content="Color Memory Glow Sequence, color memory game, glow sequence, brain training, memory puzzle, mobile game, BPZone" />
+
+  <meta property="og:title" content="Color Memory: Glow Sequence" />
+  <meta property="og:description" content="Watch the glowing colors, remember the sequence, and repeat it back across classic, reverse, and speed run modes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bpzone.info/apps/games/color-memory-glow-sequence/" />
+  <meta property="og:site_name" content="BPZone" />
+  <meta property="og:image" content="https://bpzone.info/assets/apps/games/color-memory-glow-sequence/feature.png" />
+  <meta property="og:image:secure_url" content="https://bpzone.info/assets/apps/games/color-memory-glow-sequence/feature.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1488" />
+  <meta property="og:image:height" content="719" />
+  <meta property="og:image:alt" content="Color Memory Glow Sequence feature graphic" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Color Memory: Glow Sequence" />
+  <meta name="twitter:description" content="A glowing color memory game with classic, reverse, and speed run challenges." />
+  <meta name="twitter:image" content="https://bpzone.info/assets/apps/games/color-memory-glow-sequence/feature.png" />
+  <meta name="twitter:image:alt" content="Color Memory Glow Sequence feature graphic" />
+
+  <style>
+    :root {
+      --ink: #10131a;
+      --text: #f8fafc;
+      --body: #243042;
+      --muted: #637184;
+      --surface: #ffffff;
+      --soft: #f3f7fb;
+      --line: #dde6f0;
+      --cyan: #5ddcff;
+      --green: #45d18f;
+      --pink: #ff5d84;
+      --yellow: #ffcf3f;
+      --blue: #5d9dff;
+      --shadow: 0 20px 58px rgba(16, 19, 26, 0.22);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--body);
+      background: var(--soft);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; }
+
+    .container {
+      width: min(1140px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(16, 19, 26, 0.08);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .home-icon-link {
+      width: 38px;
+      height: 38px;
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--ink);
+      box-shadow: 0 8px 20px rgba(16, 19, 26, 0.08);
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .home-icon-link:hover {
+      transform: translateY(-1px);
+      border-color: color-mix(in srgb, var(--cyan) 40%, var(--line));
+      box-shadow: 0 12px 24px rgba(16, 19, 26, 0.12);
+    }
+
+    .home-icon-link svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2.2;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(16, 19, 26, 0.18);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      color: #4f5d70;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .hero {
+      color: var(--text);
+      background:
+        linear-gradient(90deg, rgba(5, 12, 28, 0.96) 0%, rgba(5, 12, 28, 0.78) 44%, rgba(5, 12, 28, 0.28) 100%),
+        linear-gradient(180deg, rgba(5, 12, 28, 0.18) 0%, rgba(5, 12, 28, 0.80) 100%),
+        url("/assets/apps/games/color-memory-glow-sequence/feature.png") center / cover no-repeat;
+      min-height: min(720px, 78vh);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 54px;
+      align-items: center;
+      padding: 76px 0;
+    }
+
+    .app-icon {
+      width: 106px;
+      height: 106px;
+      border-radius: 24px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #d9fbff;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--cyan);
+      box-shadow: 0 0 0 6px rgba(93, 220, 255, 0.18);
+    }
+
+    h1 {
+      max-width: 780px;
+      font-size: clamp(44px, 7.4vw, 88px);
+      line-height: 0.96;
+      letter-spacing: 0;
+      margin: 0 0 22px;
+    }
+
+    .hero p {
+      max-width: 670px;
+      color: #d7e4f4;
+      font-size: clamp(18px, 2.2vw, 22px);
+      margin: 0 0 28px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .store-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 58px;
+      transition: transform .2s ease, filter .2s ease;
+    }
+
+    .store-link:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .google-play-badge {
+      height: 76px;
+      width: auto;
+      margin: -9px 0;
+      display: block;
+    }
+
+    .app-store-badge {
+      height: 58px;
+      width: auto;
+      display: block;
+    }
+
+    .availability {
+      color: #bfd0e6;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .phone {
+      width: min(390px, 100%);
+      padding: 16px;
+      border-radius: 36px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.06));
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      box-shadow: var(--shadow);
+    }
+
+    .screen {
+      min-height: 600px;
+      border-radius: 28px;
+      padding: 24px 22px;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(69, 209, 143, 0.22), transparent 32%),
+        radial-gradient(circle at 82% 0%, rgba(93, 157, 255, 0.32), transparent 30%),
+        linear-gradient(155deg, #051229 0%, #0d2948 58%, #171031 100%);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      color: var(--text);
+      overflow: hidden;
+    }
+
+    .game-title {
+      text-align: center;
+      font-weight: 900;
+      font-size: 20px;
+      margin: 2px 0 16px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .stat {
+      min-height: 46px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.13);
+      color: #dff7ff;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .glow-board {
+      position: relative;
+      min-height: 360px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(2, 8, 23, 0.30);
+      overflow: hidden;
+    }
+
+    .glow-line {
+      position: absolute;
+      inset: 82px 58px 100px;
+      border: 8px solid rgba(255, 255, 255, 0.50);
+      border-left-color: rgba(255, 255, 255, 0.16);
+      border-bottom-color: rgba(255, 255, 255, 0.24);
+      border-radius: 999px;
+      transform: rotate(-22deg);
+    }
+
+    .orb {
+      width: 82px;
+      height: 82px;
+      position: absolute;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      border: 5px solid rgba(255, 255, 255, 0.90);
+      box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.10), 0 0 34px currentColor;
+    }
+
+    .orb::after {
+      content: "";
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.36);
+      transform: translate(-12px, -12px);
+    }
+
+    .orb.green { top: 48px; left: 42px; color: var(--green); background: var(--green); }
+    .orb.blue { top: 34px; right: 36px; width: 110px; height: 110px; color: var(--blue); background: var(--blue); }
+    .orb.pink { bottom: 82px; left: 46px; color: var(--pink); background: var(--pink); }
+    .orb.yellow { bottom: 56px; right: 72px; color: var(--yellow); background: var(--yellow); }
+
+    .mini-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .mini-button {
+      min-height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: #5ddcff;
+      color: #04121f;
+      font-weight: 900;
+    }
+
+    .mini-button.alt {
+      background: #ffcf3f;
+      color: #3a2504;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-heading {
+      max-width: 780px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: 0;
+      color: var(--ink);
+      margin: 0 0 12px;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .feature-grid,
+    .mode-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .feature-card,
+    .mode {
+      min-height: 178px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 10px 24px rgba(16, 19, 26, 0.05);
+    }
+
+    .feature-card strong,
+    .mode strong {
+      display: block;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p,
+    .mode p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .feature-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      background: #e9faff;
+      color: #0f5d78;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .feature-card:nth-child(2) .feature-mark { background: #e9fff3; color: #087044; }
+    .feature-card:nth-child(3) .feature-mark { background: #fff3f6; color: #b21847; }
+    .feature-card:nth-child(4) .feature-mark { background: #fff8db; color: #8a5a00; }
+
+    .showcase {
+      background: #ffffff;
+    }
+
+    .preview-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .preview-shot {
+      margin: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #061022;
+    }
+
+    .preview-shot img {
+      width: 100%;
+      aspect-ratio: 1488 / 719;
+      object-fit: cover;
+      display: block;
+    }
+
+    .preview-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .preview-item {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 10px 24px rgba(16, 19, 26, 0.05);
+    }
+
+    .preview-item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    .preview-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .modes,
+    .download-band {
+      background: var(--soft);
+    }
+
+    .download-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 12px 32px rgba(16, 19, 26, 0.08);
+    }
+
+    .download-panel h2 {
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .download-panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .download-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      min-width: 280px;
+    }
+
+    .privacy-link {
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 900;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--line);
+      background: var(--ink);
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 14px;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .footer-row a { color: #e7eef8; }
+
+    @media (max-width: 980px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .phone {
+        justify-self: center;
+      }
+
+      .feature-grid,
+      .mode-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .preview-layout,
+      .download-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .download-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        gap: 14px;
+      }
+
+      .nav-left {
+        gap: 10px;
+      }
+
+      .brand span {
+        max-width: 220px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, 1140px); }
+      .nav { min-height: 64px; }
+      .nav-links { display: none; }
+      .home-icon-link { width: 36px; height: 36px; }
+      .brand img { width: 38px; height: 38px; }
+      .hero { min-height: auto; }
+      .hero-layout { padding: 54px 0; gap: 34px; }
+      h1 { font-size: clamp(38px, 13vw, 56px); }
+      .app-icon { width: 88px; height: 88px; border-radius: 20px; }
+      .cta-row { align-items: flex-start; }
+      .feature-grid,
+      .mode-grid { grid-template-columns: 1fr; }
+      section { padding: 54px 0; }
+      .phone { display: none; }
+      .download-panel { padding: 28px 20px; }
+      .download-actions { width: 100%; }
+      .google-play-badge { max-width: 230px; height: auto; margin: 0; }
+      .app-store-badge { max-width: 190px; height: auto; }
+      .store-link { height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="nav-left">
+        <a class="home-icon-link" href="/" aria-label="Go to BPZone home">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 10 9-7 9 7" />
+            <path d="M5 10v10h14V10" />
+            <path d="M10 20v-6h4v6" />
+          </svg>
+        </a>
+        <a class="brand" href="/" aria-label="Go to BPZone home">
+          <img src="/assets/apps/games/color-memory-glow-sequence/icon-512.png" alt="Color Memory: Glow Sequence app icon" width="512" height="512" />
+          <span>Color Memory</span>
+        </a>
+      </div>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#features">Features</a>
+        <a href="#screenshots">Preview</a>
+        <a href="#modes">Modes</a>
+        <a href="#download">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Color Memory Glow Sequence introduction">
+      <div class="container hero-layout">
+        <div>
+          <img class="app-icon" src="/assets/apps/games/color-memory-glow-sequence/icon-512.png" alt="Color Memory: Glow Sequence app icon" width="512" height="512" />
+          <div class="eyebrow">Glowing color recall puzzles</div>
+          <h1>Color Memory: Glow Sequence</h1>
+          <p>
+            Watch the glowing pattern, remember the order, and repeat the sequence back.
+            Play classic rounds, reverse recall, and speed runs with bright themes.
+          </p>
+          <div class="cta-row">
+            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.glowsequence" target="_blank" rel="noopener noreferrer" aria-label="Download on Google Play">
+              <img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
+            <a class="store-link" href="https://apps.apple.com/us/developer/behrooz-amerishahrabi/id6772366260" target="_blank" rel="noopener noreferrer" aria-label="View on the App Store">
+              <img class="app-store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
+            </a>
+            <span class="availability">Available now on Google Play and App Store</span>
+          </div>
+        </div>
+
+        <div class="phone" aria-label="Color Memory Glow Sequence gameplay preview">
+          <div class="screen">
+            <div class="game-title">Classic Round</div>
+            <div class="stats">
+              <div class="stat">4 / 9</div>
+              <div class="stat">Streak 6</div>
+              <div class="stat">Speed</div>
+            </div>
+            <div class="glow-board" aria-hidden="true">
+              <div class="glow-line"></div>
+              <div class="orb green"></div>
+              <div class="orb blue"></div>
+              <div class="orb pink"></div>
+              <div class="orb yellow"></div>
+            </div>
+            <div class="mini-actions" aria-hidden="true">
+              <div class="mini-button">Repeat</div>
+              <div class="mini-button alt">Reverse</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="container">
+      <div class="section-heading">
+        <h2>Built for quick memory training</h2>
+        <p>Simple colors, glowing feedback, and focused rules make every round easy to start and satisfying to replay.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-mark">01</div>
+          <strong>Watch and repeat</strong>
+          <p>Study the highlighted colors, then tap them back in the same order.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-mark">02</div>
+          <strong>Train recall</strong>
+          <p>Practice short-term memory, attention, and visual pattern recognition in compact sessions.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-mark">03</div>
+          <strong>Reverse challenge</strong>
+          <p>Flip the pattern and rebuild it backward when you want an extra twist.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-mark">04</div>
+          <strong>Theme variety</strong>
+          <p>Switch visual themes and keep the glowing color board feeling fresh.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="screenshots" class="showcase">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Glowing sequence play at a glance</h2>
+          <p>The store preview shows classic play, reverse recall, speed run pressure, and theme options.</p>
+        </div>
+        <div class="preview-layout">
+          <figure class="preview-shot">
+            <img src="/assets/apps/games/color-memory-glow-sequence/feature.png" alt="Color Memory Glow Sequence feature preview with classic, reverse, speed run, and themes" width="1488" height="719" loading="lazy" />
+          </figure>
+          <div class="preview-list">
+            <div class="preview-item">
+              <strong>Classic color sequence</strong>
+              <span>Follow the glow and replay each color in order.</span>
+            </div>
+            <div class="preview-item">
+              <strong>Speed run pressure</strong>
+              <span>React faster as sequences grow and the clock keeps moving.</span>
+            </div>
+            <div class="preview-item">
+              <strong>Bright themes</strong>
+              <span>Choose different looks while keeping the board readable and fast.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modes" class="modes">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Choose the challenge that fits the moment</h2>
+          <p>Move between familiar pattern play, reversed recall, faster sessions, and theme-based practice.</p>
+        </div>
+        <div class="mode-grid">
+          <article class="mode">
+            <strong>Classic</strong>
+            <p>Watch the order and repeat the glowing colors back step by step.</p>
+          </article>
+          <article class="mode">
+            <strong>Reverse</strong>
+            <p>Remember the same sequence, then replay it backward.</p>
+          </article>
+          <article class="mode">
+            <strong>Speed Run</strong>
+            <p>Keep up with quicker prompts and test your reaction speed.</p>
+          </article>
+          <article class="mode">
+            <strong>Themes</strong>
+            <p>Change the board style and keep each memory session visually fresh.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="download-band">
+      <div class="container">
+        <div class="download-panel">
+          <div>
+            <h2>Start a glowing memory run</h2>
+            <p>Download Color Memory: Glow Sequence on Google Play or open the App Store profile to find BPZone apps.</p>
+          </div>
+          <div class="download-actions">
+            <a class="store-link" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.glowsequence" target="_blank" rel="noopener noreferrer" aria-label="Download on Google Play">
+              <img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
+            <a class="store-link" href="https://apps.apple.com/us/developer/behrooz-amerishahrabi/id6772366260" target="_blank" rel="noopener noreferrer" aria-label="View on the App Store">
+              <img class="app-store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
+            </a>
+            <a class="privacy-link" href="/color-memory-privacy-policy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>&copy; <span id="year"></span> BPZone. All rights reserved.</span>
+      <span>Support: <a href="mailto:bpzone.ca@gmail.com">bpzone.ca@gmail.com</a></span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
