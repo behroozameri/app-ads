@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BPZone Apps | Games and Sticker Apps</title>
   <link rel="canonical" href="https://bpzone.info/" />
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
   <meta name="description" content="Explore BPZone mobile apps, including puzzle games, strategy games, and WhatsApp sticker apps on Google Play and the App Store." />
   <meta name="keywords" content="BPZone, mobile games, WhatsApp sticker apps, puzzle games, mobile apps, Google Play, App Store" />
   <meta property="og:title" content="BPZone Apps" />
@@ -12,15 +14,16 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bpzone.info/" />
   <meta property="og:site_name" content="BPZone" />
-  <meta property="og:image" content="https://bpzone.info/assets/apps/games/memory-tap-challenge/icon-512.png" />
-  <meta property="og:image:secure_url" content="https://bpzone.info/assets/apps/games/memory-tap-challenge/icon-512.png" />
+  <meta property="og:image" content="https://bpzone.info/logo.png" />
+  <meta property="og:image:secure_url" content="https://bpzone.info/logo.png" />
   <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="512" />
-  <meta property="og:image:height" content="512" />
+  <meta property="og:image:width" content="1076" />
+  <meta property="og:image:height" content="992" />
+  <meta property="og:image:alt" content="BPZone Apps logo" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="BPZone Apps" />
   <meta name="twitter:description" content="Games and WhatsApp sticker apps on Google Play and the App Store." />
-  <meta name="twitter:image" content="https://bpzone.info/assets/apps/games/memory-tap-challenge/icon-512.png" />
+  <meta name="twitter:image" content="https://bpzone.info/logo.png" />
   <style>
     * {
       box-sizing: border-box;
@@ -97,13 +100,11 @@
     .brand-mark {
       width: 38px;
       height: 38px;
-      display: grid;
-      place-items: center;
+      display: block;
+      flex: 0 0 auto;
       border-radius: 8px;
-      background: var(--ink);
-      color: #ffffff;
-      font-size: 0.82rem;
-      letter-spacing: 0;
+      object-fit: contain;
+      box-shadow: 0 8px 18px rgba(18, 23, 34, 0.14);
     }
 
     .nav-links {
@@ -645,7 +646,7 @@
   <header class="site-header">
     <nav class="nav" aria-label="Site navigation">
       <a class="brand" href="/">
-        <span class="brand-mark">BP</span>
+        <img class="brand-mark" src="/logo.png" alt="" width="1076" height="992" />
         <span>BPZone Apps</span>
       </a>
       <div class="nav-links">
