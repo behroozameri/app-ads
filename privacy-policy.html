@@ -2,92 +2,301 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy - WhatsApp Stickers</title>
   <style>
+    :root {
+      color-scheme: light;
+      --accent: #d63384;
+      --ink: #222;
+      --muted: #666;
+      --surface: #fff;
+      --soft: #fff1f6;
+      --line: #eadde3;
+    }
+
     body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.65;
-      max-width: 840px;
+      max-width: 880px;
       margin: 48px auto;
       padding: 0 20px;
-      color: #222;
+      color: var(--ink);
       background: #fafafa;
     }
+
     h1, h2 {
-      color: #d63384;
+      color: var(--accent);
+      line-height: 1.25;
     }
+
     h1 {
       text-align: center;
-      margin-bottom: 32px;
-      letter-spacing: 0.3px;
+      margin-bottom: 28px;
+      letter-spacing: 0.2px;
     }
+
+    h2 {
+      margin-top: 32px;
+    }
+
     p, li {
       margin-bottom: 12px;
     }
+
     ul {
       margin: 0 0 16px 20px;
+      padding: 0;
     }
+
     code {
-      background: #fff1f6;
+      background: var(--soft);
       padding: 2px 6px;
       border-radius: 6px;
       font-size: 0.95em;
     }
+
+    .summary {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin-bottom: 28px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
     footer {
       margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
       text-align: center;
       font-size: 0.9em;
-      color: #666;
+      color: var(--muted);
     }
-    a { color: #0d6efd; }
+
+    a {
+      color: #0d6efd;
+    }
   </style>
 </head>
 <body>
   <h1>Privacy Policy</h1>
 
-  <p><strong>WhatsApp Stickers</strong></p>
-  <p><em>Effective Date: August 2025</em></p>
+  <div class="summary">
+    <p><strong>WhatsApp Stickers</strong></p>
+    <p class="muted"><em>Effective Date: June 1, 2026</em></p>
+    <p>
+      This Privacy Policy explains how information is collected, used, and shared when you use
+      the Android or iOS version of <strong>WhatsApp Stickers</strong> and related
+      WhatsApp sticker apps published by BPZone.
+    </p>
+  </div>
 
-  <p>This Privacy Policy explains what information is collected, used, and shared when you use the <strong>WhatsApp Stickers</strong> Android application.</p>
-
-  <h2>1) What We Collect</h2>
-  <p><strong>We do not collect any personally identifiable information (PII) ourselves.</strong> The app does not require you to create an account or provide any personal details.</p>
-
-  <h2>2) Third‑Party Services (Ads)</h2>
-  <p>The app uses <strong>Google AdMob</strong> to show ads. AdMob may collect certain information independently to provide, maintain, and improve its advertising services. This may include:</p>
+  <h2>1) Scope</h2>
+  <p>
+    This policy applies to both the Android and iOS versions of the app, including:
+  </p>
   <ul>
-    <li>Device information (e.g., model, OS version, network)</li>
-    <li>Advertising ID (for personalized or non‑personalized ads)</li>
-    <li>IP address and coarse location</li>
-    <li>App interactions (e.g., ad views/clicks)</li>
+    <li>Android package: <code>com.bpzone.ca.romantickisssstickers</code></li>
+    <li>iOS bundle ID: <code>com.bpzone.ca.romantickisssstickers</code></li>
   </ul>
-  <p>AdMob’s collection and use of data is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s Privacy Policy</a> and <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google’s Advertising Policies</a>. You can learn how Google uses information from apps that use its services at <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">this page</a>.</p>
+  <p>
+    The app is a third-party sticker app for WhatsApp. It is not affiliated with, endorsed by,
+    or sponsored by WhatsApp or Meta.
+  </p>
 
-  <h2>3) Stickers & App Content</h2>
-  <p>The application provides sticker packs for WhatsApp. The content is suitable for a general audience and does not contain explicit material.</p>
+  <h2>2) Information We Collect Directly</h2>
+  <p>
+    We do not require you to create an account, sign in, or provide your name, email address,
+    phone number, contacts, photos, messages, or payment information.
+  </p>
+  <p>
+    The app may store small local settings on your device, such as sticker pack unlock status,
+    ad frequency timing, or basic app preferences. These local settings are used to operate the
+    app and are not sent by us to our own servers.
+  </p>
 
-  <h2>4) Children’s Privacy</h2>
-  <p>This app is designed for a general audience and can be used by users of all ages. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal information to us through any channel, please contact us and we will take appropriate steps to delete such information.</p>
-
-  <h2>5) Your Choices</h2>
+  <h2>3) Sticker and WhatsApp Functionality</h2>
+  <p>
+    The app provides sticker packs that can be added to WhatsApp.
+  </p>
   <ul>
-    <li><strong>Ad personalization:</strong> You can reset or limit the <code>Advertising ID</code> in your Android device settings, and you can opt out of ad personalization there.</li>
-    <li><strong>Permissions:</strong> The app requests only the minimal permissions required for core functionality.</li>
+    <li>
+      On Android, WhatsApp may read sticker pack files from the app through Android's sticker
+      content provider flow.
+    </li>
+    <li>
+      On iOS, when you tap "Add to WhatsApp", the app temporarily places the sticker pack payload
+      on the system pasteboard so WhatsApp can import it. This pasteboard item is used only for
+      the sticker import flow and is configured to expire shortly.
+    </li>
   </ul>
+  <p>
+    We do not read your WhatsApp chats, WhatsApp contacts, or WhatsApp messages. WhatsApp's own
+    handling of imported stickers is governed by WhatsApp/Meta's privacy policies.
+  </p>
 
-  <h2>6) Data Security</h2>
-  <p>We do not store any sensitive personal data on our servers. Third‑party providers like Google AdMob implement their own security measures to protect data they process.</p>
+  <h2>4) Third-Party Services</h2>
+  <p>
+    The app uses third-party services that may collect and process data independently according
+    to their own privacy policies.
+  </p>
 
-  <h2>7) Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. Material changes will be reflected by updating the “Effective Date” above.</p>
+  <h2>Google AdMob</h2>
+  <p>
+    The app uses <strong>Google AdMob</strong> to show ads, including banner, interstitial, and
+    rewarded ads. AdMob may collect information such as:
+  </p>
+  <ul>
+    <li>Device information, such as device model, operating system, language, and network details</li>
+    <li>Advertising identifiers, such as Android Advertising ID or Apple's IDFA where available and permitted</li>
+    <li>IP address and approximate location derived from IP address</li>
+    <li>Ad interactions, such as ad views, clicks, rewarded ad completion, and related advertising data</li>
+    <li>Diagnostic, crash, and performance information related to ads and SDK operation</li>
+  </ul>
+  <p>
+    AdMob may use this information to provide ads, measure ad performance, prevent fraud and abuse,
+    improve services, and, where permitted, personalize ads.
+  </p>
+  <p>
+    Learn more:
+    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>,
+    <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google Advertising</a>,
+    and
+    <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses information from apps and sites that use Google services</a>.
+  </p>
 
-  <h2>8) Contact Us</h2>
-  <p>If you have any questions or concerns about this policy, please contact:<br/>
-  📧 <a href="mailto:bpzone.ca@gmail.com">bpzone.ca@gmail.com</a></p>
+  <h2>Google User Messaging Platform</h2>
+  <p>
+    The app may use Google's User Messaging Platform (UMP) to request and manage privacy choices
+    where required, such as consent for personalized ads or privacy options in supported regions.
+    If privacy choices are required, the app may show a "Privacy Choices" option in the app's
+    information/settings screen.
+  </p>
+
+  <h2>Firebase Analytics</h2>
+  <p>
+    The Android and iOS versions may use <strong>Firebase Analytics</strong> to understand general
+    app usage and improve the app. Firebase Analytics may collect data such as:
+  </p>
+  <ul>
+    <li>App opens and basic app usage events</li>
+    <li>Sticker pack interactions, such as opening a pack or tapping "Add to WhatsApp"</li>
+    <li>Rewarded ad unlock events</li>
+    <li>App instance identifiers and device/app information used for analytics</li>
+  </ul>
+  <p>
+    We use analytics in aggregated form to understand app performance, feature usage, and audience
+    behavior. We do not use Firebase Analytics to collect names, email addresses, phone numbers,
+    contacts, or WhatsApp messages.
+  </p>
+  <p>
+    Learn more:
+    <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy and Security</a>
+    and
+    <a href="https://support.google.com/firebase/answer/6318039" target="_blank" rel="noopener">Firebase data collection</a>.
+  </p>
+
+  <h2>Firebase Cloud Messaging on Android</h2>
+  <p>
+    The Android version may use <strong>Firebase Cloud Messaging</strong> to receive app
+    notifications, if notifications are enabled. Firebase may generate a registration token for
+    notification delivery. The iOS version of this app does not use push notifications or Firebase
+    Messaging.
+  </p>
+
+  <h2>5) Tracking and Advertising Choices</h2>
+  <p>
+    Advertising and analytics partners may use identifiers to measure ads or, where allowed,
+    personalize advertising.
+  </p>
+  <ul>
+    <li>
+      <strong>Android:</strong> You can reset or delete your Android Advertising ID and manage ad
+      personalization in your device's Google or privacy settings.
+    </li>
+    <li>
+      <strong>iOS:</strong> Where required, the app may ask for permission through Apple's App
+      Tracking Transparency framework before allowing tracking across apps and websites owned by
+      other companies. You can change this choice in iOS Settings.
+    </li>
+    <li>
+      <strong>Ad consent:</strong> In supported regions, the app may show Google privacy or consent
+      forms and may provide a "Privacy Choices" option.
+    </li>
+  </ul>
+  <p>
+    If you decline personalized advertising or tracking where applicable, the app may still show
+    non-personalized or contextual ads.
+  </p>
+
+  <h2>6) App Permissions</h2>
+  <p>
+    The app requests only permissions needed for app functionality, advertising, analytics, and
+    optional notifications where applicable. You can manage app permissions in your device settings.
+  </p>
+
+  <h2>7) Data Sharing</h2>
+  <p>
+    We may share data with third-party service providers only as needed to operate, analyze, and
+    monetize the app. These providers include Google services such as AdMob, Firebase Analytics,
+    Firebase Cloud Messaging on Android, and Google User Messaging Platform. These providers process
+    data according to their own policies and applicable laws.
+  </p>
+  <p>
+    We do not sell your name, email address, phone number, contacts, photos, WhatsApp messages, or
+    WhatsApp chats because the app does not collect those items from you.
+  </p>
+
+  <h2>8) Children and Families</h2>
+  <p>
+    The app is intended for a general audience and is not specifically directed to children under
+    13. We do not knowingly collect personal information from children under 13. If you believe a
+    child has provided personal information to us, please contact us and we will take appropriate
+    steps to delete such information.
+  </p>
+
+  <h2>9) Data Security</h2>
+  <p>
+    We do not operate our own account system or store sensitive personal data on our own servers.
+    Third-party providers such as Google implement their own security measures for data they process.
+    No method of transmission or storage is completely secure, but we aim to use reputable service
+    providers and limit the data collected by the app.
+  </p>
+
+  <h2>10) Data Retention</h2>
+  <p>
+    Local app settings remain on your device until you delete the app or clear app data. Data
+    processed by third-party services is retained according to those providers' policies and your
+    privacy choices.
+  </p>
+
+  <h2>11) International Data Transfers</h2>
+  <p>
+    Third-party services may process information on servers located outside your country or region.
+    By using the app, you understand that information may be processed in countries with different
+    data protection laws than your own.
+  </p>
+
+  <h2>12) Changes to This Policy</h2>
+  <p>
+    We may update this Privacy Policy from time to time. Material changes will be reflected by
+    updating the effective date above and publishing the updated policy at the same privacy policy
+    URL.
+  </p>
+
+  <h2>13) Contact Us</h2>
+  <p>
+    If you have questions or concerns about this Privacy Policy, contact us at:
+    <br />
+    <a href="mailto:bpzone.ca@gmail.com">bpzone.ca@gmail.com</a>
+  </p>
 
   <footer>
-    &copy; 2025 WhatsApp Stickers
+    &copy; 2026 WhatsApp Stickers
   </footer>
 </body>
 </html>
