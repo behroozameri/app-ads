@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Laser Box Puzzle | Mirror and Light Logic Game</title>
+  <link rel="canonical" href="https://bpzone.info/apps/games/laser-box-puzzle/" />
+  <link rel="icon" type="image/png" href="/assets/apps/games/laser-box-puzzle/icon-512.png" />
+  <link rel="apple-touch-icon" href="/assets/apps/games/laser-box-puzzle/icon-512.png" />
+  <meta name="description" content="Laser Box Puzzle is a mirror and light logic game where you move and rotate optical boxes to guide laser beams through checkpoints and into a receiver." />
+  <meta name="keywords" content="Laser Box Puzzle, laser puzzle, mirror puzzle, light puzzle, logic puzzle, optics puzzle, BPZone" />
+
+  <meta property="og:title" content="Laser Box Puzzle" />
+  <meta property="og:description" content="Move mirrors, split light through glass, illuminate every checkpoint, and solve endless laser logic puzzles." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bpzone.info/apps/games/laser-box-puzzle/" />
+  <meta property="og:site_name" content="BPZone" />
+  <meta property="og:image" content="https://bpzone.info/assets/apps/games/laser-box-puzzle/feature.png" />
+  <meta property="og:image:secure_url" content="https://bpzone.info/assets/apps/games/laser-box-puzzle/feature.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="500" />
+  <meta property="og:image:alt" content="Laser Box Puzzle feature graphic" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Laser Box Puzzle" />
+  <meta name="twitter:description" content="A mirror and light logic puzzle game with handcrafted tutorials and endless generated circuits." />
+  <meta name="twitter:image" content="https://bpzone.info/assets/apps/games/laser-box-puzzle/feature.png" />
+  <meta name="twitter:image:alt" content="Laser Box Puzzle feature graphic" />
+
+  <style>
+    :root {
+      --ink: #10131a;
+      --text: #f8fafc;
+      --body: #243042;
+      --muted: #667386;
+      --surface: #ffffff;
+      --soft: #f4f7fb;
+      --soft-2: #eaf2f6;
+      --line: #dde6f0;
+      --night: #07111d;
+      --cyan: #59dcf5;
+      --cyan-dark: #047f99;
+      --amber: #ffb84d;
+      --green: #66e5a3;
+      --violet: #7c3aed;
+      --shadow: 0 20px 58px rgba(16, 19, 26, 0.22);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--body);
+      background: var(--soft);
+      line-height: 1.6;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1140px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid rgba(16, 19, 26, 0.08);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .home-icon-link {
+      width: 38px;
+      height: 38px;
+      display: inline-grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--ink);
+      box-shadow: 0 8px 20px rgba(16, 19, 26, 0.08);
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .home-icon-link:hover {
+      transform: translateY(-1px);
+      border-color: color-mix(in srgb, var(--cyan) 38%, var(--line));
+      box-shadow: 0 12px 24px rgba(16, 19, 26, 0.12);
+    }
+
+    .home-icon-link svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2.2;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(16, 19, 26, 0.18);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      color: #4f5d70;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .hero {
+      color: var(--text);
+      background:
+        linear-gradient(90deg, rgba(5, 13, 23, 0.97) 0%, rgba(5, 13, 23, 0.82) 47%, rgba(5, 13, 23, 0.26) 100%),
+        linear-gradient(180deg, rgba(5, 13, 23, 0.20) 0%, rgba(5, 13, 23, 0.86) 100%),
+        url("/assets/apps/games/laser-box-puzzle/feature.png") center / cover no-repeat;
+      min-height: min(720px, 78vh);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 54px;
+      align-items: center;
+      padding: 74px 0;
+    }
+
+    .hero-layout > * {
+      min-width: 0;
+    }
+
+    .app-icon {
+      width: 106px;
+      height: 106px;
+      border-radius: 24px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #c8f8ff;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--cyan);
+      box-shadow: 0 0 0 6px rgba(89, 220, 245, 0.18);
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(46px, 7.6vw, 90px);
+      line-height: 0.94;
+      letter-spacing: 0;
+      margin: 0 0 22px;
+      overflow-wrap: break-word;
+    }
+
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    .hero p {
+      max-width: min(660px, 100%);
+      color: #d7e4f4;
+      font-size: clamp(18px, 2.2vw, 22px);
+      margin: 0 0 28px;
+      overflow-wrap: break-word;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      max-width: 100%;
+    }
+
+    .store-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 58px;
+      transition: transform .2s ease, filter .2s ease;
+    }
+
+    .store-link.google-play-link {
+      width: 206px;
+    }
+
+    .store-link.app-store-link {
+      width: 190px;
+    }
+
+    .store-link:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .store-link:focus-visible,
+    .privacy-link:focus-visible {
+      outline: 3px solid rgba(89, 220, 245, 0.36);
+      outline-offset: 3px;
+    }
+
+    .google-play-badge {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      display: block;
+    }
+
+    .app-store-badge {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .availability {
+      color: #bfd0e6;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .phone {
+      width: min(390px, 100%);
+      padding: 16px;
+      border-radius: 36px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.06));
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      box-shadow: var(--shadow);
+    }
+
+    .phone-screen {
+      aspect-ratio: 9 / 19.5;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #07111d;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-heading {
+      max-width: 780px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      color: var(--ink);
+      font-size: clamp(30px, 4.4vw, 50px);
+      line-height: 1.06;
+      letter-spacing: 0;
+      margin: 0 0 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .feature-card {
+      min-height: 178px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      box-shadow: 0 10px 24px rgba(16, 19, 26, 0.05);
+    }
+
+    .feature-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: #07111d;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .feature-card:nth-child(1) .feature-mark { background: var(--cyan); }
+    .feature-card:nth-child(2) .feature-mark { background: var(--amber); }
+    .feature-card:nth-child(3) .feature-mark { background: var(--green); }
+    .feature-card:nth-child(4) .feature-mark { background: #c7b6ff; }
+
+    .feature-card strong {
+      display: block;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .modes {
+      background: var(--night);
+      color: var(--text);
+    }
+
+    .modes .section-heading h2 { color: var(--text); }
+    .modes .section-heading p { color: #becadd; }
+
+    .mode-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .mode {
+      border-radius: 8px;
+      padding: 24px;
+      min-height: 210px;
+      background:
+        linear-gradient(135deg, rgba(89, 220, 245, 0.18), rgba(255, 184, 77, 0.10)),
+        rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .mode strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .mode p {
+      margin: 0;
+      color: #c8d4e5;
+    }
+
+    .screens {
+      background: var(--soft-2);
+    }
+
+    .screen-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .screen-card {
+      margin: 0;
+      border-radius: 8px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: 0 12px 28px rgba(16, 19, 26, 0.08);
+    }
+
+    .screen-shot {
+      aspect-ratio: 9 / 19.5;
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--night);
+      border: 1px solid rgba(16, 19, 26, 0.08);
+    }
+
+    .screen-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .screen-card figcaption {
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 900;
+      margin-top: 12px;
+    }
+
+    .download-band {
+      background: var(--soft);
+    }
+
+    .download-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 12px 32px rgba(16, 19, 26, 0.08);
+    }
+
+    .download-panel h2 {
+      color: var(--ink);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.05;
+      letter-spacing: 0;
+      margin: 0 0 8px;
+    }
+
+    .download-panel p {
+      color: var(--muted);
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .download-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      min-width: 280px;
+    }
+
+    .privacy-link {
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 900;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    footer {
+      padding: 28px 0;
+      background: var(--night);
+      color: #a9b7ca;
+      font-size: 14px;
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .footer-row a { color: #e7eef8; }
+
+    @media (max-width: 980px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .phone { width: min(380px, 100%); }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .mode-grid { grid-template-columns: 1fr; }
+      .screen-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .download-panel { grid-template-columns: 1fr; }
+      .download-actions { justify-content: flex-start; }
+    }
+
+    @media (max-width: 720px) {
+      .screen-grid { grid-template-columns: 1fr; }
+      .screen-card {
+        width: min(100%, 360px);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(calc(100vw - 28px), 362px);
+        max-width: 362px;
+        margin-left: 14px;
+        margin-right: 14px;
+      }
+      header { position: static; }
+      .nav { padding: 16px 0; }
+      .nav-links { display: none; }
+      .home-icon-link { width: 36px; height: 36px; }
+      .brand img { width: 38px; height: 38px; }
+      .hero { min-height: auto; }
+      .hero-layout { padding: 54px 0; gap: 34px; }
+      h1 { font-size: 42px; }
+      h1,
+      .hero p,
+      .section-heading,
+      .download-panel p {
+        max-width: calc(100vw - 28px);
+      }
+      .app-icon { width: 88px; height: 88px; border-radius: 20px; }
+      .phone {
+        width: 100%;
+        max-width: 362px;
+        padding: 10px;
+        border-radius: 28px;
+      }
+      .phone-screen { border-radius: 22px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      section { padding: 54px 0; }
+      .download-panel {
+        max-width: 362px;
+        padding: 28px 20px;
+      }
+      .store-link.google-play-link { width: 180px; }
+      .store-link.app-store-link { width: 145px; }
+      .store-link { height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="nav-left">
+        <a class="home-icon-link" href="/" aria-label="Go to BPZone home">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 10 9-7 9 7" />
+            <path d="M5 10v10h14V10" />
+            <path d="M10 20v-6h4v6" />
+          </svg>
+        </a>
+        <a class="brand" href="/" aria-label="Go to BPZone home">
+          <img src="/assets/apps/games/laser-box-puzzle/icon-512.png" alt="Laser Box Puzzle app icon" width="512" height="512" />
+          <span>Laser Box Puzzle</span>
+        </a>
+      </div>
+      <nav class="nav-links" aria-label="Page navigation">
+        <a href="#features">Features</a>
+        <a href="#puzzles">Puzzles</a>
+        <a href="#screens">Screens</a>
+        <a href="#download">Download</a>
+        <a href="/support/?app=laser-box-puzzle">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Laser Box Puzzle introduction">
+      <div class="container hero-layout">
+        <div>
+          <img class="app-icon" src="/assets/apps/games/laser-box-puzzle/icon-512.png" alt="Laser Box Puzzle app icon" width="512" height="512" />
+          <div class="eyebrow">Move. Rotate. Illuminate.</div>
+          <h1>Laser Box Puzzle</h1>
+          <p>
+            Guide laser beams through mirrors, glass splitters, checkpoints, and receivers
+            in compact logic circuits built for thoughtful puzzle sessions.
+          </p>
+          <div class="cta-row">
+            <a class="store-link google-play-link" href="https://play.google.com/store/apps/developer?id=%C3%9FPZ%C3%B6ne" target="_blank" rel="noopener noreferrer" aria-label="View BPZone on Google Play">
+              <img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
+            <a class="store-link app-store-link" href="https://apps.apple.com/us/app/laser-box-puzzle/id6779222874" target="_blank" rel="noopener noreferrer" aria-label="Download Laser Box Puzzle on the App Store">
+              <img class="app-store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
+            </a>
+            <span class="availability">Available for Android and iOS</span>
+          </div>
+        </div>
+
+        <div class="phone" aria-label="Laser Box Puzzle gameplay preview">
+          <div class="phone-screen">
+            <img src="/assets/apps/games/laser-box-puzzle/screenshots/first-reflection.png" alt="Laser Box Puzzle gameplay board with a beam and mirror" width="1080" height="2400" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="container">
+      <div class="section-heading">
+        <h2>Optics puzzles with instant beam feedback</h2>
+        <p>Every move changes the path of light, so each circuit becomes a small spatial logic problem.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-mark">MI</div>
+          <strong>Movable mirrors</strong>
+          <p>Slide and rotate optical boxes to bend the laser around corners and toward the receiver.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-mark">GL</div>
+          <strong>Glass splitters</strong>
+          <p>Use glass to continue the beam forward while creating a reflected branch.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-mark">CP</div>
+          <strong>Checkpoint circuits</strong>
+          <p>Complete a level by lighting every checkpoint and at least one receiver.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-mark">3S</div>
+          <strong>Three-star scoring</strong>
+          <p>Solve efficiently, beat the par, and keep your best stars saved locally.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="puzzles" class="modes">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Six tutorials, then endless generated levels</h2>
+          <p>The opening experiments teach reflection, splitting, rotation, walls, and checkpoints before the game expands into deterministic generated circuits.</p>
+        </div>
+        <div class="mode-grid">
+          <article class="mode">
+            <strong>Handcrafted tutorials</strong>
+            <p>Start with six guided circuits that introduce each optical rule one step at a time.</p>
+          </article>
+          <article class="mode">
+            <strong>Stable generated puzzles</strong>
+            <p>Later levels are generated from known solved layouts, so each level stays consistent when you return.</p>
+          </article>
+          <article class="mode">
+            <strong>Undo and restart</strong>
+            <p>Experiment freely with undo history, restart, and extra mirrors when you want another route.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="screens" class="screens">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Move the boxes and bend the beam</h2>
+          <p>Small boards, clear controls, live laser paths, and readable puzzle states.</p>
+        </div>
+        <div class="screen-grid">
+          <figure class="screen-card">
+            <div class="screen-shot">
+              <img src="/assets/apps/games/laser-box-puzzle/screenshots/home.png" alt="Laser Box Puzzle home screen" width="1080" height="2400" />
+            </div>
+            <figcaption>Continue from your latest circuit</figcaption>
+          </figure>
+          <figure class="screen-card">
+            <div class="screen-shot">
+              <img src="/assets/apps/games/laser-box-puzzle/screenshots/two-corners.png" alt="Laser Box Puzzle level with two mirror corners" width="1080" height="2400" />
+            </div>
+            <figcaption>Route light around corners</figcaption>
+          </figure>
+          <figure class="screen-card">
+            <div class="screen-shot">
+              <img src="/assets/apps/games/laser-box-puzzle/screenshots/split-light.png" alt="Laser Box Puzzle level with glass splitter paths" width="1080" height="2400" />
+            </div>
+            <figcaption>Split beams through glass</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="download-band">
+      <div class="container">
+        <div class="download-panel">
+          <div>
+            <h2>Start bending the light</h2>
+            <p>Download Laser Box Puzzle on the App Store or visit BPZone on Google Play for Android releases.</p>
+          </div>
+          <div class="download-actions">
+            <a class="store-link google-play-link" href="https://play.google.com/store/apps/developer?id=%C3%9FPZ%C3%B6ne" target="_blank" rel="noopener noreferrer" aria-label="View BPZone on Google Play">
+              <img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
+            </a>
+            <a class="store-link app-store-link" href="https://apps.apple.com/us/app/laser-box-puzzle/id6779222874" target="_blank" rel="noopener noreferrer" aria-label="Download Laser Box Puzzle on the App Store">
+              <img class="app-store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
+            </a>
+            <a class="privacy-link" href="/laser-box-puzzle-privacy-policy.html">Privacy Policy</a>
+            <a class="privacy-link" href="/support/?app=laser-box-puzzle">Support</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>&copy; <span id="year"></span> BPZone. All rights reserved.</span>
+      <span><a href="/support/?app=laser-box-puzzle">Support Center</a> | <a href="mailto:bpzone.ca@gmail.com">bpzone.ca@gmail.com</a></span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

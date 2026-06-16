@@ -7,8 +7,8 @@
   <link rel="canonical" href="https://bpzone.info/" />
   <link rel="icon" type="image/png" href="/logo.png" />
   <link rel="apple-touch-icon" href="/logo.png" />
-  <meta name="description" content="Explore BPZone mobile apps, including puzzle games, strategy games, and WhatsApp sticker apps on Google Play and the App Store." />
-  <meta name="keywords" content="BPZone, mobile games, WhatsApp sticker apps, puzzle games, mobile apps, Google Play, App Store" />
+  <meta name="description" content="Explore BPZone mobile apps, including laser logic puzzles, brain-training games, classic puzzles, and WhatsApp sticker apps on Google Play and the App Store." />
+  <meta name="keywords" content="BPZone, mobile games, Laser Box Puzzle, WhatsApp sticker apps, puzzle games, mobile apps, Google Play, App Store" />
   <meta property="og:title" content="BPZone Apps" />
   <meta property="og:description" content="Games and WhatsApp sticker apps on Google Play and the App Store." />
   <meta property="og:type" content="website" />
@@ -57,6 +57,7 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.5;
       letter-spacing: 0;
+      overflow-x: hidden;
     }
 
     img {
@@ -187,6 +188,7 @@
       margin-bottom: 16px;
       font-size: 3.35rem;
       line-height: 1.02;
+      overflow-wrap: break-word;
     }
 
     .intro {
@@ -212,6 +214,14 @@
       transition: transform 160ms ease, filter 160ms ease;
     }
 
+    .store-badge-link.google-play-link {
+      width: 204px;
+    }
+
+    .store-badge-link.app-store-link {
+      width: 188px;
+    }
+
     .store-badge-link:hover {
       transform: translateY(-2px);
       filter: brightness(1.06);
@@ -223,16 +233,16 @@
     }
 
     .google-play-badge {
-      width: auto;
-      max-width: min(220px, 100%);
-      height: 74px;
-      margin: -9px 0;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0;
     }
 
     .app-store-badge {
-      width: auto;
-      max-width: min(188px, 100%);
-      height: 56px;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
     }
 
     .store-icon {
@@ -338,6 +348,7 @@
       margin-bottom: 0;
       font-size: 2rem;
       line-height: 1.16;
+      overflow-wrap: break-word;
     }
 
     .section-copy {
@@ -354,6 +365,7 @@
 
     .app-card {
       min-height: 300px;
+      min-width: 0;
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -411,12 +423,14 @@
       margin-bottom: 9px;
       font-size: 1.12rem;
       line-height: 1.18;
+      overflow-wrap: break-word;
     }
 
     .app-card p {
       margin-bottom: 18px;
       color: var(--body);
       font-size: 0.95rem;
+      overflow-wrap: break-word;
     }
 
     .app-meta {
@@ -428,6 +442,7 @@
       color: var(--muted);
       font-size: 0.88rem;
       font-weight: 800;
+      min-width: 0;
     }
 
     .app-meta span:last-child {
@@ -492,28 +507,33 @@
       }
 
       .hero-app-icon:nth-child(2) {
-        top: 34px;
-        left: 116px;
+        top: 54px;
+        left: 122px;
       }
 
       .hero-app-icon:nth-child(3) {
-        top: 14px;
-        left: 230px;
+        top: 18px;
+        left: 242px;
       }
 
       .hero-app-icon:nth-child(4) {
-        top: 96px;
-        left: 42px;
+        top: 18px;
+        left: 322px;
       }
 
       .hero-app-icon:nth-child(5) {
-        top: 104px;
-        left: 180px;
+        top: 116px;
+        left: 36px;
       }
 
       .hero-app-icon:nth-child(6) {
-        top: 144px;
-        left: 132px;
+        top: 106px;
+        left: 236px;
+      }
+
+      .hero-app-icon:nth-child(7) {
+        top: 134px;
+        left: 164px;
       }
 
       .section-head {
@@ -533,7 +553,10 @@
       .nav,
       .hero-inner,
       .section-inner {
-        width: min(100% - 28px, 1160px);
+        width: min(calc(100vw - 28px), 362px);
+        max-width: 362px;
+        margin-left: 14px;
+        margin-right: 14px;
       }
 
       .nav-links {
@@ -552,6 +575,17 @@
         font-size: 2.18rem;
       }
 
+      h2 {
+        font-size: 1.82rem;
+      }
+
+      h1,
+      h2,
+      .intro,
+      .section-copy {
+        max-width: calc(100vw - 28px);
+      }
+
       .intro,
       .section-copy {
         font-size: 0.98rem;
@@ -565,12 +599,12 @@
         height: 50px;
       }
 
-      .google-play-badge {
-        height: 68px;
+      .store-badge-link.google-play-link {
+        width: 180px;
       }
 
-      .app-store-badge {
-        height: 50px;
+      .store-badge-link.app-store-link {
+        width: 145px;
       }
 
       section {
@@ -583,6 +617,8 @@
 
       .app-card {
         min-height: 0;
+        width: 100%;
+        max-width: 362px;
       }
 
       .hero-showcase {
@@ -606,8 +642,10 @@
       }
 
       .hero-app-icon:nth-child(2) {
-        top: 22px;
-        left: 106px;
+        width: 88px;
+        height: 88px;
+        top: 30px;
+        left: 118px;
       }
 
       .hero-app-icon:nth-child(3),
@@ -615,18 +653,28 @@
         display: none;
       }
 
+      .hero-app-icon:nth-child(3) {
+        display: block;
+        top: 14px;
+        left: 232px;
+      }
+
       .hero-app-icon:nth-child(4) {
-        width: 78px;
-        height: 78px;
-        top: 82px;
-        left: 34px;
+        display: none;
       }
 
       .hero-app-icon:nth-child(5) {
+        width: 70px;
+        height: 70px;
+        top: 92px;
+        left: 28px;
+      }
+
+      .hero-app-icon:nth-child(7) {
         width: 68px;
         height: 68px;
-        top: 90px;
-        left: 164px;
+        top: 102px;
+        left: 220px;
       }
     }
   </style>
@@ -668,21 +716,22 @@
           <h1>BPZone Apps</h1>
           <p class="intro">A clean catalog for BPZone mobile apps, including brain-training games, classic puzzles, and WhatsApp sticker collections.</p>
           <div class="hero-actions">
-            <a class="store-badge-link" href="https://play.google.com/store/apps/developer?id=%C3%9FPZ%C3%B6ne" target="_blank" rel="noopener noreferrer" aria-label="View BPZone on Google Play">
+            <a class="store-badge-link google-play-link" href="https://play.google.com/store/apps/developer?id=%C3%9FPZ%C3%B6ne" target="_blank" rel="noopener noreferrer" aria-label="View BPZone on Google Play">
               <img class="google-play-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
             </a>
-            <a class="store-badge-link" href="https://apps.apple.com/us/developer/behrooz-amerishahrabi/id6772366260" target="_blank" rel="noopener noreferrer" aria-label="View BPZone on the App Store">
+            <a class="store-badge-link app-store-link" href="https://apps.apple.com/us/developer/behrooz-amerishahrabi/id6772366260" target="_blank" rel="noopener noreferrer" aria-label="View BPZone on the App Store">
               <img class="app-store-badge" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" />
             </a>
           </div>
         </div>
         <div class="hero-showcase" aria-hidden="true">
           <img class="hero-app-icon" src="/assets/apps/stickers/sticker-land/icon-512.png" alt="" width="512" height="512" style="--size: 70px; --top: 22px; --left: 16px; --rotate: -8deg;" />
-          <img class="hero-app-icon" src="/assets/apps/games/tic-tac-toe/icon-512.png?v=20260529" alt="" width="512" height="512" style="--size: 82px; --top: 54px; --left: 126px; --rotate: 5deg;" />
-          <img class="hero-app-icon" src="/assets/apps/stickers/nice-emoji/icon-512.png" alt="" width="512" height="512" style="--size: 72px; --top: 20px; --left: 256px; --rotate: 9deg;" />
-          <img class="hero-app-icon is-main" src="/assets/apps/games/memory-tap-challenge/icon-512.png" alt="" width="512" height="512" style="--size: 112px; --top: 136px; --left: 44px; --rotate: 4deg;" />
-          <img class="hero-app-icon" src="/assets/apps/games/2048/icon-512.png" alt="" width="512" height="512" style="--size: 90px; --top: 150px; --left: 198px; --rotate: -6deg;" />
-          <img class="hero-app-icon" src="/assets/apps/games/block-drop-puzzle/icon-512.png" alt="" width="512" height="512" style="--size: 76px; --top: 244px; --left: 142px; --rotate: 8deg;" />
+          <img class="hero-app-icon is-main" src="/assets/apps/games/laser-box-puzzle/icon-512.png" alt="" width="512" height="512" style="--size: 118px; --top: 112px; --left: 82px; --rotate: -4deg;" />
+          <img class="hero-app-icon" src="/assets/apps/games/tic-tac-toe/icon-512.png?v=20260529" alt="" width="512" height="512" style="--size: 72px; --top: 44px; --left: 200px; --rotate: 5deg;" />
+          <img class="hero-app-icon" src="/assets/apps/stickers/nice-emoji/icon-512.png" alt="" width="512" height="512" style="--size: 68px; --top: 20px; --left: 300px; --rotate: 9deg;" />
+          <img class="hero-app-icon" src="/assets/apps/games/memory-tap-challenge/icon-512.png" alt="" width="512" height="512" style="--size: 82px; --top: 216px; --left: 28px; --rotate: 4deg;" />
+          <img class="hero-app-icon" src="/assets/apps/games/2048/icon-512.png" alt="" width="512" height="512" style="--size: 84px; --top: 170px; --left: 222px; --rotate: -6deg;" />
+          <img class="hero-app-icon" src="/assets/apps/games/block-drop-puzzle/icon-512.png" alt="" width="512" height="512" style="--size: 74px; --top: 252px; --left: 148px; --rotate: 8deg;" />
         </div>
       </div>
     </section>
@@ -697,6 +746,16 @@
           <p class="section-copy">Fast mobile games for memory, logic, strategy, and short puzzle sessions.</p>
         </div>
         <div class="app-grid">
+          <a class="app-card" href="/apps/games/laser-box-puzzle/" style="--accent: #047f99;">
+            <div class="app-top">
+              <img class="app-icon" src="/assets/apps/games/laser-box-puzzle/icon-512.png" alt="" width="512" height="512" />
+              <span class="category">Logic</span>
+            </div>
+            <h3>Laser Box Puzzle</h3>
+            <p>Move mirrors and glass splitters to guide laser beams through checkpoints and receivers.</p>
+            <div class="app-meta"><span>Light puzzle</span><span>View app</span></div>
+          </a>
+
           <a class="app-card" href="/apps/games/memory-tap-challenge/" style="--accent: #7c3aed;">
             <div class="app-top">
               <img class="app-icon" src="/assets/apps/games/memory-tap-challenge/icon-512.png" alt="" width="512" height="512" />

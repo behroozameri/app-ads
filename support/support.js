@@ -1,6 +1,18 @@
 const SUPPORT_EMAIL = "bpzone.ca@gmail.com";
 
 const apps = {
+  "laser-box-puzzle": {
+    name: "Laser Box Puzzle",
+    icon: "/assets/apps/games/laser-box-puzzle/icon-512.png",
+    page: "/apps/games/laser-box-puzzle/",
+    privacy: "/laser-box-puzzle-privacy-policy.html",
+    platforms: "Android and iOS",
+    accent: "#047f99",
+    accentDark: "#065f73",
+    accentSoft: "#e7f8fb",
+    faqQuestion: "A laser route, mirror move, or level result does not look right",
+    faqAnswer: "Restart the level first. Include the level number, move count, mirror inventory, and a screenshot of the board when you contact support."
+  },
   "memory-tap-challenge": {
     name: "Memory Tap Challenge",
     icon: "/assets/apps/games/memory-tap-challenge/icon-512.png",
