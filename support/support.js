@@ -1,6 +1,18 @@
 const SUPPORT_EMAIL = "bpzone.ca@gmail.com";
 
 const apps = {
+  "thread-circle": {
+    name: "Thread Circle",
+    icon: "/assets/apps/tools/thread-circle/icon-512.png",
+    page: "/apps/tools/thread-circle/",
+    privacy: "/apps/tools/thread-circle/privacy-policy.html",
+    platforms: "iPhone and iPad",
+    accent: "#e94d24",
+    accentDark: "#bd3415",
+    accentSoft: "#f9e8dd",
+    faqQuestion: "Generation, export, or the pin sequence does not look right",
+    faqAnswer: "Keep the app open while generation finishes. If an export or pattern still looks wrong, include your selected preset, pin count, thread moves, and a screenshot when you contact support."
+  },
   "laser-box-puzzle": {
     name: "Laser Box Puzzle",
     icon: "/assets/apps/games/laser-box-puzzle/icon-512.png",
