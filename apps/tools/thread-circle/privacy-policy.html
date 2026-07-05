@@ -229,48 +229,90 @@
       <header>
         <p class="eyebrow">Thread Circle by BPZone</p>
         <h1>Privacy Policy</h1>
-        <p class="updated">Effective and last updated: June 18, 2026</p>
+        <p class="updated">Effective and last updated: July 5, 2026</p>
       </header>
 
       <div class="content">
         <p class="summary">
-          Thread Circle processes your selected photos entirely on your device.
-          Thread Circle does not upload photos or generated artwork to BPZone,
-          Google, or an app server. Version 2.0 uses Google services for
-          advertising, consent management, analytics, diagnostics, and crash
-          reporting.
+          Thread Circle for iOS, iPadOS, and Android processes your selected
+          photos entirely on your device. Thread Circle does not upload photos,
+          generated artwork, pin maps, or thread sequences to BPZone, Google,
+          Apple, or an app server. Current versions use Google services for ads,
+          consent management, analytics, and diagnostics. The iOS/iPadOS version
+          also includes Firebase Crashlytics for crash reporting.
         </p>
 
-        <h2>1. Scope and Current App Version</h2>
+        <h2>1. Scope and Supported Apps</h2>
         <p>
-          This Privacy Policy applies to the iOS application
-          <strong>Thread Circle by BPZone</strong>, also displayed on your device
-          as <strong>Thread Circle</strong>. The app is developed and published
-          by BPZone. It describes the data practices of Thread Circle version
-          2.0 and later unless a newer policy is posted.
+          This Privacy Policy applies to the <strong>Thread Circle by BPZone</strong>
+          mobile application, also displayed on your device as
+          <strong>Thread Circle</strong>, on Apple iOS/iPadOS and Google Android.
+          It covers the Apple App Store app with bundle identifier
+          <strong>com.bpzone.ca.threadcircle.ios</strong> and the Google Play app
+          with package name <strong>com.bpzone.ca.threadcircle</strong>. The app
+          is developed and published by BPZone.
+        </p>
+        <p>
+          Unless a newer policy is posted, this policy describes the data
+          practices of Thread Circle version 3.0 and later on iOS/iPadOS and
+          version <strong>tc06</strong> / version code 6 and later on Android.
         </p>
 
         <h2>2. Photos and On-Device Processing</h2>
         <p>
           Thread Circle lets you choose a photo to create a circular string art
           pattern. The selected image, crop settings, generated design, numbered
-          pin sequence, and preview are processed locally on your iPhone or iPad.
-          Thread Circle does not upload them to BPZone, Google, or an app server.
+          pin sequence, and preview are processed locally on your iPhone, iPad,
+          or Android device. Thread Circle does not upload them to BPZone,
+          Google, or an app server.
         </p>
         <p>
           Photo access is used only to let you select the image you want to
           process. Thread Circle does not scan, copy, or upload your photo
           library. No account or registration is required.
         </p>
+        <p>
+          On iOS/iPadOS, photo selection uses Apple's photo picker and the
+          system photo library permission text shown by iOS. On Android, photo
+          selection uses Android's system content picker. Thread Circle uses the
+          selected image only for the pattern-generation workflow you start.
+        </p>
 
         <h2>3. Data Collected by Service Providers</h2>
         <p>
-          Thread Circle includes Google Mobile Ads, Google's User Messaging
-          Platform, Firebase Analytics, and Firebase Crashlytics. Depending on
-          your device, region, consent choices, ad availability, and Google
-          configuration, these providers may collect the following categories.
-          This list is aligned with the app's Apple App Store privacy
-          disclosures:
+          Thread Circle integrates third-party SDKs whose data practices may
+          differ by platform, region, consent choice, device setting, ad
+          availability, and Google configuration.
+        </p>
+
+        <div class="table-wrap" role="region" aria-label="Integrated services by platform" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>Integrated services</th>
+                <th>Primary purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>iOS and iPadOS</td>
+                <td>Google Mobile Ads, Google's User Messaging Platform, Firebase Analytics, Firebase Crashlytics</td>
+                <td>Ads, consent management, analytics, diagnostics, and crash reporting</td>
+              </tr>
+              <tr>
+                <td>Android</td>
+                <td>Google Mobile Ads, Google's User Messaging Platform, Firebase Analytics</td>
+                <td>Ads, consent management, analytics, and service diagnostics</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          These providers may collect the following categories. This list is
+          aligned with the app's Apple App Store privacy disclosures and Google
+          Play Data safety disclosures:
         </p>
 
         <div class="table-wrap" role="region" aria-label="Collected data categories" tabindex="0">
@@ -292,13 +334,13 @@
               </tr>
               <tr>
                 <td>Device ID</td>
-                <td>Advertising or other device-level identifiers where permitted</td>
+                <td>Advertising ID, IDFV, instance IDs, installation IDs, or other device-level identifiers where permitted</td>
                 <td>Advertising, ad measurement, and analytics</td>
                 <td>May be linked and used for tracking where permitted</td>
               </tr>
               <tr>
                 <td>Product Interaction</td>
-                <td>App launches, feature use, taps, and ad interactions</td>
+                <td>App launches, screen views, feature use, taps, and ad interactions</td>
                 <td>Advertising, analytics, and service improvement</td>
                 <td>May be linked to a device</td>
               </tr>
@@ -310,8 +352,8 @@
               </tr>
               <tr>
                 <td>Crash Data</td>
-                <td>Crash logs and crash-related technical details</td>
-                <td>App functionality, reliability, and analytics</td>
+                <td>Crash logs and crash-related technical details, primarily from Firebase Crashlytics on iOS/iPadOS</td>
+                <td>App functionality, reliability, diagnostics, and analytics</td>
                 <td>Not linked to your identity by BPZone</td>
               </tr>
               <tr>
@@ -334,7 +376,9 @@
           Thread Circle does not request your name, email address, phone number,
           physical address, contacts, precise GPS location, health data,
           financial information, purchase history, browsing history, search
-          history, or sensitive personal information.
+          history, or sensitive personal information. Thread Circle does not
+          transmit your selected photos or generated artwork as user content to
+          BPZone or Google.
         </p>
 
         <h2>4. How This Data Is Used</h2>
@@ -353,7 +397,7 @@
 
         <h2>5. Advertising, Consent, and Privacy Choices</h2>
         <p>
-          Version 2.0 may display banner advertisements on the Settings,
+          Current versions may display banner advertisements on the Settings,
           generation progress, and result screens. Creating a PDF export requires
           the user to choose to watch and complete a rewarded advertisement.
           PNG export and the app's core pattern-generation features do not
@@ -361,27 +405,34 @@
         </p>
         <p>
           Where required, Google's User Messaging Platform displays a consent
-          message before ads are requested. Ads may be personalized or
-          non-personalized depending on applicable law, your consent choices,
-          device settings, and ad availability.
+          message before ads are requested. Ads may be personalized,
+          non-personalized, or limited depending on applicable law, your consent
+          choices, device settings, platform rules, and ad availability.
         </p>
         <p>
           A <strong>Privacy Choices</strong> option appears in the app's Settings
           page when Google indicates that privacy options are required for the
           user. You can use it to review or update applicable advertising consent
-          choices. You may also limit ad tracking through iOS privacy settings.
+          choices. You may also limit ad tracking through your iOS or Android
+          privacy settings.
+        </p>
+        <p>
+          Debug and development builds may use Google's sample ad identifiers.
+          Public App Store and Google Play release builds use BPZone's production
+          AdMob app and ad unit identifiers.
         </p>
 
         <h2>6. Generated Files and Sharing</h2>
         <p>
-          PNG and PDF exports, including the 40 × 40 cm printable pin template,
-          are created locally and temporarily on your device. Thread Circle does
-          not automatically upload these files.
+          PNG and PDF exports, including the printable pin template, preview,
+          and thread sequence, are created locally and temporarily on your
+          device. Thread Circle does not automatically upload these files.
         </p>
         <p>
-          If you choose to save or share an export using the iOS share sheet, the
-          file is provided to the destination or third-party service you select.
-          Apple or that service may process the file under its own privacy policy.
+          If you choose to save or share an export using the device's system
+          sharing interface, the file is provided to the destination or
+          third-party service you select. Apple, Google, your device provider,
+          or that service may process the file under its own privacy policy.
           BPZone does not control those external services.
         </p>
 
@@ -389,21 +440,33 @@
         <p>
           BPZone has no server-side copy of your photos, patterns, or exports and
           therefore does not retain them. The app does not save projects between
-          sessions. Temporary export files are managed locally by iOS, and files
-          saved or shared by you remain wherever you choose to place them.
-          Analytics, diagnostic, consent, and advertising data may be retained
-          by Google according to its policies, legal obligations, and the
-          applicable service settings.
+          sessions. Temporary export files are managed locally by iOS or
+          Android, and files saved or shared by you remain wherever you choose
+          to place them.
+        </p>
+        <p>
+          Analytics, diagnostic, crash, consent, and advertising data may be
+          retained by Google according to its policies, legal obligations, and
+          the applicable Firebase, Google Mobile Ads, and User Messaging Platform
+          service settings.
         </p>
 
         <h2>8. Third-Party Services</h2>
         <p>
-          The app integrates Google Firebase Analytics, Firebase Crashlytics,
-          Google Mobile Ads, and Google's User Messaging Platform. These services
-          may transmit the data described above to Google. Their processing is
+          The app integrates Google Firebase Analytics, Google Mobile Ads, and
+          Google's User Messaging Platform on both iOS/iPadOS and Android. The
+          iOS/iPadOS app also integrates Firebase Crashlytics. These services may
+          transmit the data described above to Google. Their processing is
           governed by Google's privacy practices:
           <a href="https://policies.google.com/privacy" rel="noopener noreferrer">
             https://policies.google.com/privacy
+          </a>.
+        </p>
+        <p>
+          Firebase privacy and security information is available at
+          <a href="https://firebase.google.com/support/privacy"
+             rel="noopener noreferrer">
+            https://firebase.google.com/support/privacy
           </a>.
         </p>
         <p>
@@ -413,8 +476,9 @@
              rel="noopener noreferrer">
             https://policies.google.com/technologies/partner-sites
           </a>.
-          Standard Apple features, including the photo picker and share sheet,
-          are governed by Apple's terms and privacy practices.
+          Standard Apple and Android features, including photo selection and
+          system sharing, are governed by Apple, Google, and the applicable
+          device platform's terms and privacy practices.
         </p>
 
         <h2>9. Your Choices and Privacy Rights</h2>
@@ -431,6 +495,8 @@
           Google using the controls and contact methods in Google's privacy
           policy. You may also withdraw or update eligible advertising consent
           through the in-app Privacy Choices option when it is available.
+          Platform-level controls may also be available in Apple's iOS/iPadOS
+          privacy settings or Android's privacy and ads settings.
         </p>
 
         <h2>10. Children's Privacy</h2>
