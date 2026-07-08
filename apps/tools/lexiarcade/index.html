@@ -363,38 +363,6 @@
       color: var(--body);
     }
 
-    .screens {
-      background: var(--surface);
-    }
-
-    .screen-grid {
-      display: grid;
-      grid-template-columns: minmax(260px, 0.72fr) minmax(320px, 1fr);
-      align-items: center;
-      gap: 26px;
-    }
-
-    .screen-card {
-      margin: 0;
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--soft);
-      box-shadow: 0 16px 36px rgba(20, 36, 58, 0.08);
-    }
-
-    .screen-card img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .screen-card figcaption {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 800;
-    }
-
     .privacy-panel,
     .download-panel {
       padding: 30px;
@@ -462,7 +430,6 @@
     @media (max-width: 900px) {
       .hero-layout,
       .mode-grid,
-      .screen-grid,
       .download-panel {
         grid-template-columns: 1fr;
       }
@@ -556,7 +523,6 @@
       </div>
       <nav class="nav-links" aria-label="Page navigation">
         <a href="#modes">Modes</a>
-        <a href="#screens">Screens</a>
         <a href="#download">Download</a>
         <a href="/support/?app=lexiarcade">Support</a>
       </nav>
@@ -616,26 +582,6 @@
             <strong>Knot Logic</strong>
             <p>Arrange zone letters until every row and column forms a word, turning vocabulary into a compact logic challenge.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="screens" class="screens">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-kicker">Inside the app</p>
-          <h2>Progress, stars, and free hints</h2>
-          <p class="lead">LexiArcade keeps progress on the device, offers free hints, and scales through deterministic levels for quick learning sessions.</p>
-        </div>
-        <div class="screen-grid">
-          <figure class="screen-card">
-            <img src="/assets/apps/tools/lexiarcade/screenshots/iphone-home.png" alt="LexiArcade iPhone home screen with three word game modes" width="1206" height="2622" loading="lazy" />
-            <figcaption>iPhone home with puzzle progress</figcaption>
-          </figure>
-          <figure class="screen-card">
-            <img src="/assets/apps/tools/lexiarcade/screenshots/ipad-home.png" alt="LexiArcade iPad home screen with Hidden Trails, Wonder Words, and Knot Logic" width="1640" height="2360" loading="lazy" />
-            <figcaption>iPad layout for the same learning flow</figcaption>
-          </figure>
         </div>
       </div>
     </section>
