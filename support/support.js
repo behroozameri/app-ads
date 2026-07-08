@@ -1,6 +1,18 @@
 const SUPPORT_EMAIL = "bpzone.ca@gmail.com";
 
 const apps = {
+  "lexiarcade": {
+    name: "LexiArcade",
+    icon: "/assets/apps/tools/lexiarcade/icon-512.png",
+    page: "/apps/tools/lexiarcade/",
+    privacy: "/apps/tools/wordvoyage/privacy-policy.html",
+    platforms: "Android and iOS",
+    accent: "#2389ea",
+    accentDark: "#1769b7",
+    accentSoft: "#e8f5ff",
+    faqQuestion: "Progress, hints, or a puzzle result does not look right",
+    faqAnswer: "Close and reopen the app first. Include the game mode, level, stars or hints used, and a screenshot when you contact support."
+  },
   "thread-circle": {
     name: "Thread Circle",
     icon: "/assets/apps/tools/thread-circle/icon-512.png",
