@@ -200,6 +200,11 @@ h1 {
   height: auto;
 }
 
+.app-store-badge {
+  width: 162px;
+  height: auto;
+}
+
 .app-visual {
   position: relative;
   display: grid;

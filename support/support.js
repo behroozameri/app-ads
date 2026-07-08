@@ -149,7 +149,7 @@ const apps = {
     name: "Romantic Kiss Stickers",
     icon: "/assets/apps/stickers/romantic-kiss-2/icon-512.png",
     page: "/apps/stickers/romantic-kiss-2/",
-    privacy: "/apps/stickers/privacy-policy-ios-romantic-stickers.html",
+    privacy: "/apps/stickers/privacy-policy-ios-love-note-studio.html",
     platforms: "Android and iOS",
     accent: "#db2777",
     accentDark: "#b51461",
