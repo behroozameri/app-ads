@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Privacy Policy for the VocaMingo app.">
+  <meta name="description" content="Privacy Policy for the VocaMingo Android and iOS apps.">
   <title>VocaMingo Privacy Policy</title>
   <style>
     :root {
@@ -149,40 +149,53 @@
     <header>
       <p class="eyebrow">VocaMingo</p>
       <h1>Privacy Policy</h1>
-      <p class="effective-date">Effective date: July 11, 2026</p>
+      <p class="effective-date">Effective date: July 20, 2026</p>
     </header>
 
     <article>
       <section>
-        <h2>1. Overview</h2>
+        <h2>1. Scope and overview</h2>
         <p>
           This Privacy Policy explains how VocaMingo handles information when you use the
-          VocaMingo iOS app. VocaMingo is provided by BPZone (“we,” “us,” or “our”).
+          VocaMingo app on Android or iOS. VocaMingo is provided by BPZone (“we,” “us,” or
+          “our”). References to “the app” in this policy include both platform versions unless
+          a platform-specific difference is stated.
         </p>
         <p>
           VocaMingo does not require a traditional account with an email address, password,
-          phone number, or social login. The iOS app may create an anonymous Firebase user
-          identifier to support profile sync, progress sync, and leaderboard features. We do
-          not ask for access to your contacts, photos, camera, microphone, precise location,
-          or payment information.
+          phone number, or social login. The app automatically creates an anonymous Firebase
+          user identifier to support profile sync, progress sync, and leaderboard features.
+          We do not ask for access to your contacts, photos, camera, microphone, precise
+          location, or payment information.
+        </p>
+        <p>
+          The main categories handled by the app and its service providers are gameplay and
+          profile content, product interactions, device or app identifiers, advertising data,
+          approximate location inferred from an IP address, and crash, performance, and other
+          diagnostic information. The sections below explain when and why these categories are
+          processed.
+        </p>
+        <p>
+          To request deletion of online VocaMingo data without reinstalling the app, see
+          <a href="#data-deletion">Your rights and data deletion</a> below.
         </p>
       </section>
 
       <section>
         <h2>2. Information stored on your device</h2>
         <p>
-          The iOS app uses local app storage, including UserDefaults, to remember app
-          information on your device, such as:
+          VocaMingo uses local app storage, including SharedPreferences on Android and
+          UserDefaults on iOS, to remember information such as:
         </p>
         <ul>
-          <li>Completed game levels, stars, hints, coins, speed bonuses, and unlocked progress;</li>
+          <li>Completed levels, stars, hints, coins, speed bonuses, unlocked progress, and best completion times;</li>
           <li>Vocabulary words saved to the Leitner review box, review boxes, and due dates;</li>
-          <li>Speaking practice parts completed today and related daily coin rewards;</li>
+          <li>Speaking practice parts completed and related daily coin rewards;</li>
           <li>Your chosen profile name, built-in avatar selection, and profile start date;</li>
-          <li>Leitner reminder preferences, reminder time, and whether notification permission was requested;</li>
-          <li>Haptic feedback, diagnostics, help-tip, and gameplay preference settings;</li>
+          <li>Reminder preferences, reminder time, and notification permission state;</li>
+          <li>Haptic feedback, diagnostics, help-tip, review-prompt, and gameplay preferences;</li>
           <li>Ad reward, frequency, and cooldown counters used to manage ad limits; and</li>
-          <li>Unfinished Knot Logic puzzle drafts and other in-progress gameplay state.</li>
+          <li>Unfinished puzzle drafts and other in-progress gameplay state.</li>
         </ul>
         <p>
           This information is used to operate the app, remember your progress, schedule local
@@ -190,10 +203,12 @@
           and gameplay progress information is also synced online as described below.
         </p>
         <p>
-          Local app data may be included in iCloud or device backups depending on your Apple
-          and device backup settings. You can remove most local progress information by using
-          <strong>Reset Progress</strong> in the app, or remove local app information by deleting
-          the app from your device.
+          VocaMingo disables Android cloud backup and device transfer for its local app data.
+          On iOS, local app data may be included in iCloud or device backups depending on your
+          Apple and device backup settings. You can remove most local progress using
+          <strong>Reset Progress</strong>, or remove local app information by deleting the app.
+          These actions do not by themselves submit a request to delete data already processed
+          by service providers or stored in VocaMingo’s online profile system.
         </p>
       </section>
 
@@ -201,18 +216,15 @@
         <h2>3. Online profile, progress sync, and leaderboard</h2>
         <p>
           VocaMingo uses Firebase Authentication and Cloud Firestore to create an anonymous
-          app identifier and sync profile and progress information. This helps show your
-          profile, preserve gameplay progress for app features, calculate your rank, and
-          display a global leaderboard. The anonymous identifier is created automatically by
-          the app and is not an email address, phone number, or social login.
+          app identifier and sync profile and progress information. This supports your profile,
+          gameplay features, rankings, and the global leaderboard. The identifier is created
+          automatically and is not an email address, phone number, or social login.
         </p>
-        <p>
-          Synced information may include:
-        </p>
+        <p>Synced information may include:</p>
         <ul>
           <li>Your anonymous Firebase user ID;</li>
           <li>Your chosen profile name and built-in avatar selection;</li>
-          <li>Your operating system, currently recorded as iOS;</li>
+          <li>Your operating system, recorded as Android or iOS;</li>
           <li>Coins, lifetime coins earned, stars, score, speed bonus, and completed levels;</li>
           <li>Highest level reached and average completion time for each game mode;</li>
           <li>Overall average completion time and gameplay statistics used for ranking; and</li>
@@ -220,54 +232,58 @@
         </ul>
         <p>
           Your profile name, built-in avatar, score, total completed levels, total stars,
-          average time, and rank may be visible to other VocaMingo users in leaderboard
+          average time, and rank may be visible to other VocaMingo users through leaderboard
           features. Your coin balance, detailed per-game statistics, anonymous Firebase user
           ID, and last-seen timestamp are not intentionally displayed to other users.
         </p>
         <p>
           Profile names are optional and should not include sensitive personal information.
-          VocaMingo only offers built-in avatars; it does not ask you to upload photos or
-          grant photo library access for profile pictures.
+          VocaMingo offers only built-in avatars and does not ask you to upload a profile photo.
+          The anonymous user ID is linked to the profile and gameplay information stored in
+          Firebase so those features can operate.
         </p>
         <p>
-          VocaMingo uses Firebase App Check with Apple DeviceCheck in production builds to
-          help protect backend services from abuse.
+          VocaMingo uses Firebase App Check with Play Integrity on Android and Apple
+          DeviceCheck on iOS production builds to help verify app requests and protect backend
+          services from abuse. These services may process app, device, and integrity signals.
         </p>
       </section>
 
       <section>
         <h2>4. Usage analytics and crash diagnostics</h2>
         <p>
-          VocaMingo uses Google Analytics for Firebase to understand how the app is used and
-          Firebase Crashlytics to understand crashes and stability issues. These services help
-          improve future versions. They may process information such as:
+          VocaMingo uses Google Analytics for Firebase to understand app usage and Firebase
+          Crashlytics to diagnose crashes and stability problems. Depending on your diagnostics
+          setting, these services may process:
         </p>
         <ul>
-          <li>App launches, screen views, and time spent in general app sections or modes;</li>
-          <li>Vocabulary category opens, vocabulary search result counts, and selected word IDs;</li>
+          <li>App launches, screen views, time spent, and general feature interactions;</li>
+          <li>Vocabulary category opens, search-result counts, and selected word IDs;</li>
           <li>Leitner additions and review outcomes;</li>
-          <li>Speaking practice screen engagement and completion or reward events;</li>
-          <li>Game level starts, completions, difficulty, stars, coins, and the number of hints used;</li>
-          <li>Rewarded ad prompts, rewards earned, and unavailable rewarded ads;</li>
-          <li>Crash reports, stack traces, app version, and device state at the time of a crash;</li>
-          <li>App instance and device information; and</li>
+          <li>Speaking-practice engagement, completion, and reward events;</li>
+          <li>Game mode, level, difficulty, completion time, stars, coins, and hints used;</li>
+          <li>Ad prompts, ad format, rewards earned, and unavailable ads;</li>
+          <li>Rating-prompt eligibility and request events, but not the rating or review text you submit to a store;</li>
+          <li>Crash reports, stack traces, app version, device state, and diagnostic logs;</li>
+          <li>Firebase installation, app instance, and device information; and</li>
           <li>General performance and diagnostic information.</li>
         </ul>
         <p>
-          We do not send spoken answers, typed search text, puzzle board contents, selected
-          letters, discussion prompt answers, your email address, precise location, or a
-          custom analytics user ID to Firebase Analytics or Crashlytics. Profile and
-          leaderboard data, such as your chosen profile name and anonymous Firebase user ID,
-          may be processed separately through Firebase Authentication and Cloud Firestore as
-          described above.
+          We do not intentionally send spoken answers, typed vocabulary search text, puzzle
+          board contents, selected letters, discussion-prompt answers, your support email
+          address, precise location, profile name, or anonymous Firebase Authentication user
+          ID to Firebase Analytics or Crashlytics. Profile and leaderboard information is
+          processed separately through Firebase Authentication and Cloud Firestore as described
+          above.
         </p>
         <p>
-          You can turn analytics and crash diagnostics collection on or off at any time using
-          <strong>Share Diagnostics</strong> in the app’s Settings screen. Turning it off stops
-          future analytics and Crashlytics collection from the app on that device.
+          You can turn future Analytics and Crashlytics collection from the app on that device
+          on or off at any time using <strong>Share Diagnostics</strong> in Settings. Google may
+          retain information sent before the setting was turned off according to its retention
+          policies.
         </p>
         <p>
-          Firebase Analytics and Crashlytics are provided by Google. Learn more in
+          Learn more in
           <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">
             Firebase Privacy and Security
           </a>.
@@ -277,18 +293,35 @@
       <section>
         <h2>5. Advertising</h2>
         <p>
-          VocaMingo may display advertising provided by Google AdMob. Ads may include banner,
-          interstitial, and rewarded ad formats. Rewarded ads are optional and are shown only
-          when you choose to watch an ad to earn in-app coins.
+          VocaMingo may display banner, interstitial, and rewarded ads provided by Google
+          AdMob. Rewarded ads are optional and are shown only when you choose to watch one for
+          an in-app benefit, such as coins or help when you do not have enough coins for a hint.
         </p>
         <p>
-          Advertising providers may process device and advertising information, such as app
-          interactions, approximate device information, IP address, consent choices, and ad
-          performance information, to deliver, measure, limit, and improve ads. The iOS app
-          does not request App Tracking Transparency permission, configures Google Mobile Ads
-          with a general-audience maximum ad content rating, and disables publisher ad
-          personalization signals where supported. Debug builds use Google test ad units,
-          while production builds use VocaMingo’s AdMob ad units.
+          Google Mobile Ads may automatically process and share an IP address, which can be
+          used to estimate coarse or approximate location; product interactions such as app
+          launches, taps, and video views; diagnostic and performance information; consent
+          choices; and device or app identifiers for advertising, analytics, measurement,
+          frequency capping, security, and fraud prevention. On Android, this may include the
+          Android advertising ID and app set ID when available. Advertising IDs can be reset or
+          deleted through supported Android device settings. Depending on your consent choices,
+          region, and platform settings, Google may associate advertising and usage information
+          with device or app identifiers.
+        </p>
+        <p>
+          Both apps configure Google Mobile Ads with a general-audience maximum ad content
+          rating. The iOS app does not request App Tracking Transparency permission and disables
+          Google Mobile Ads publisher first-party identification and publisher personalization
+          signals where supported. The Android app uses the consent choices available through
+          Google’s consent platform when determining whether ads can be requested.
+        </p>
+        <p>
+          Learn more about how Google processes information in its
+          <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Privacy Policy</a>
+          and its explanation of
+          <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer">
+            information from apps that use Google services
+          </a>.
         </p>
       </section>
 
@@ -296,136 +329,178 @@
         <h2>6. Consent and advertising choices</h2>
         <p>
           Where required, VocaMingo uses Google’s User Messaging Platform to request and manage
-          advertising consent before requesting ads. If advertising privacy choices are required
-          in your region, they may be available from the app’s Settings screen under
-          <strong>Ad Privacy Choices</strong>. You may also be able to manage advertising
-          choices through Apple device settings, Google settings, or Google account settings.
+          advertising consent before requesting ads. If a privacy-options form is required in
+          your region, you can reopen it from Settings under <strong>Ad Privacy Choices</strong>.
+          You may also manage advertising choices through applicable Android, Apple, Google,
+          or device privacy settings. Choices available to you depend on your platform, region,
+          and device settings.
         </p>
       </section>
 
       <section>
-        <h2>7. How information is shared</h2>
+        <h2>7. Notifications</h2>
         <p>
-          We do not sell personal information or share personal information with third parties
-          for BPZone’s own direct marketing. Profile and leaderboard information that you choose
-          to use in the app, such as your profile name and built-in avatar, may be shown to other
-          VocaMingo users as part of app functionality. Information may also be processed by
-          Google and Firebase in connection with authentication, Firestore sync, app integrity,
-          advertising, analytics, crash diagnostics, and consent services described above. We may
-          also disclose information if required by law, legal process, or to protect users, the
-          app, or our rights.
+          On both platforms, VocaMingo can schedule local Leitner reminders when saved words
+          are due for review. Reminder preferences and reminder time are stored locally.
+          Notifications are optional and can be controlled from the app and device settings.
+        </p>
+        <p>
+          The Android app also uses Firebase Cloud Messaging to receive general VocaMingo game
+          updates, challenges, or reward reminders. It may obtain a Firebase Cloud Messaging
+          registration token and subscribe the installation to broad Android and game-reminder
+          topics. Google processes the token and related device or app information to deliver
+          these messages. VocaMingo does not intentionally save the raw token in its Firestore
+          profile records. Android notification permission and device settings control whether
+          messages can be displayed.
+        </p>
+        <p>
+          The iOS app currently uses local Leitner reminders and does not register for remote
+          push notifications.
         </p>
       </section>
 
       <section>
-        <h2>8. Data retention</h2>
+        <h2>8. Contact Us and store reviews</h2>
         <p>
-          Local app information remains on your device until you reset your progress or delete
-          the app. Some settings, such as haptics, diagnostics, and reminder preferences, may remain
-          after resetting progress so the app can preserve your choices. Online profile, progress,
-          and leaderboard information may remain in Firebase until it is deleted by us or until you
-          request deletion as described below. Analytics, crash diagnostics, advertising, app integrity,
-          and consent information processed by Google is retained according to Google’s own policies
-          and the privacy choices available to you. iOS local data retention in backups depends on
-          your Apple and device backup settings.
+          The <strong>Contact Us</strong> option opens your device’s email app with VocaMingo’s
+          support address. If you choose to send a message, we receive the email address,
+          message, attachments, and other information you voluntarily include. Your email
+          provider processes the message under its own terms. Please do not include sensitive
+          personal information unless it is necessary for your request.
+        </p>
+        <p>
+          VocaMingo may show an operating-system rating prompt or open its Google Play or Apple
+          App Store page. Google or Apple processes ratings, reviews, store identifiers, and
+          related interactions under its own policies. VocaMingo records only general prompt
+          events in analytics when diagnostics are enabled; it does not receive your private
+          store account credentials or the review text through the app.
         </p>
       </section>
 
       <section>
-        <h2>9. Notifications</h2>
+        <h2>9. How information is disclosed</h2>
         <p>
-          VocaMingo can send local Leitner reminder notifications when review words are due.
-          Notifications are optional and can be controlled from the app’s Settings screen and your
-          device notification settings. Reminder preferences and reminder time are stored locally
-          on your device.
-        </p>
-        <p>
-          VocaMingo uses Apple’s local notification permission flow for Leitner reminders. The
-          app does not use remote push notifications.
+          We do not sell personal information or disclose it to third parties for BPZone’s own
+          direct marketing. Profile and leaderboard information you choose to use, such as a
+          profile name and built-in avatar, may be visible to other VocaMingo users as part of
+          app functionality. Information may be processed by Google and Firebase for
+          authentication, Firestore sync, app integrity, cloud messaging, advertising,
+          analytics, crash diagnostics, and consent services described above. Apple may process
+          iOS backups, notification permissions, and App Store interactions, while Google may
+          process Google Play interactions. We may also disclose information if required by law,
+          legal process, or to protect users, the app, or our rights.
         </p>
       </section>
 
       <section>
-        <h2>10. Children’s privacy</h2>
+        <h2>10. Data retention</h2>
         <p>
-          VocaMingo is a general-audience word puzzle game. We do not knowingly ask children
-          to provide personal information directly to us. Parents and guardians should supervise
-          children’s use of the app and review the device privacy controls available in their region.
+          Local information remains on your device until it is reset, removed by the operating
+          system, or the app is deleted. Some preferences, including haptics, diagnostics, and
+          reminders, may remain after <strong>Reset Progress</strong> so the app can preserve
+          your choices. Online profile, progress, and leaderboard information may remain in
+          Firebase until we delete it or fulfill a verified deletion request. Deleting the app
+          alone does not automatically delete those online records.
+        </p>
+        <p>
+          Google retains analytics, crash, advertising, cloud messaging, app integrity, and
+          consent information according to its service settings and policies. Support messages
+          are retained only as reasonably necessary to respond, maintain support records,
+          protect against abuse, and meet legal obligations. iOS backup retention depends on
+          your Apple and device backup settings; VocaMingo’s Android local data is excluded from
+          Android backup and device transfer.
+        </p>
+      </section>
+
+      <section>
+        <h2>11. Children’s privacy</h2>
+        <p>
+          VocaMingo is a general-audience vocabulary and word-game app and is not directed
+          specifically to children under 13. We do not knowingly ask children to provide
+          personal information directly to us. Parents and guardians should supervise
+          children’s use and review the privacy, advertising, notification, and store controls
+          available on the device and in their region.
         </p>
         <p>
           If you believe a child has provided personal information in connection with the app,
-          please contact us using the method described below.
+          contact us so we can review and, where appropriate, delete it.
         </p>
       </section>
 
       <section>
-        <h2>11. International processing</h2>
+        <h2>12. International processing</h2>
         <p>
-          Google, Firebase, Apple, and their service providers may process app functionality,
-          profile, leaderboard, advertising, analytics, crash diagnostics, app integrity, and
-          consent information in countries other than the country where you live. Data protection
-          laws in those countries may differ from those in your jurisdiction.
+          BPZone is based in Canada. Google, Firebase, Apple, email providers, and their service
+          providers may process information in Canada, the United States, and other countries
+          where they operate. Those countries may have data-protection laws different from the
+          laws where you live.
         </p>
       </section>
 
       <section>
-        <h2>12. Security</h2>
+        <h2>13. Security</h2>
         <p>
-          We use reasonable measures to protect the information handled by the app, including
-          encryption in transit for data sent to supported backend services. However, no storage
-          or transmission method can be guaranteed to be completely secure.
+          We use reasonable administrative and technical measures to protect information handled
+          by the app, including encrypted network connections to supported backend services and
+          app-integrity checks. No storage or transmission method can be guaranteed completely
+          secure.
+        </p>
+      </section>
+
+      <section id="data-deletion">
+        <h2>14. Your rights and data deletion</h2>
+        <p>
+          Depending on where you live, you may have rights relating to access, correction,
+          deletion, restriction, objection, or withdrawal of consent. You can remove most local
+          progress using <strong>Reset Progress</strong> or delete local app information by
+          deleting the app. These steps do not automatically delete online profile data.
+        </p>
+        <p>
+          You can request deletion of your anonymous VocaMingo profile and associated online
+          progress and leaderboard records at any time, even if you no longer have the app, by
+          emailing
+          <a href="mailto:vocamingo@gmail.com?subject=VocaMingo%20Data%20Deletion">vocamingo@gmail.com</a>
+          with the subject <strong>VocaMingo Data Deletion</strong>. Include your platform
+          (Android or iOS), profile name, approximate date you last used the app, and any other
+          non-sensitive details visible in the app that can help us locate the correct anonymous
+          record. We may ask for additional information when reasonably necessary to verify and
+          identify the record. Once verified, we will delete the applicable Firebase
+          Authentication identity and associated private and public profile records within a
+          reasonable period, unless retention is required for security, fraud prevention, or
+          legal compliance.
+        </p>
+        <p>
+          Requests concerning data controlled directly by Google, Apple, an email provider, or
+          another independent service can be submitted through that provider’s privacy controls.
         </p>
       </section>
 
       <section>
-        <h2>13. Your rights and deletion requests</h2>
+        <h2>15. External services and links</h2>
         <p>
-          Depending on where you live, you may have privacy rights relating to access,
-          correction, deletion, restriction, objection, or withdrawal of consent. You can delete
-          most local progress information using <strong>Reset Progress</strong> or by deleting
-          the app.
-        </p>
-        <p>
-          You may request deletion of online VocaMingo profile, progress, and leaderboard data
-          by contacting us using the method below. To help us find the correct record, include
-          your profile name, approximate date of use, platform, and any other details visible in
-          the app that can help identify your anonymous profile. We may ask for additional
-          information to verify and locate the record before deleting it.
-        </p>
-        <p>
-          Requests concerning information processed directly by Google can be submitted through
-          Google’s privacy controls and policies linked above. Requests concerning Apple device
-          or iCloud-related information can be managed through Apple’s privacy controls and
-          policies.
+          The app may open external services such as this policy, BPZone Support, Google Play,
+          the Apple App Store, a developer website, or your email app. Their privacy practices
+          are governed by their own policies.
         </p>
       </section>
 
       <section>
-        <h2>14. External links</h2>
+        <h2>16. Changes to this policy</h2>
         <p>
-          The app may open external services such as this privacy policy, the Apple App Store,
-          the developer’s website, or support pages. Their privacy practices are governed by
-          their own policies.
+          We may update this Privacy Policy when VocaMingo, its services, or legal requirements
+          change. The updated policy will be published at this location with a revised effective
+          date.
         </p>
       </section>
 
       <section>
-        <h2>15. Changes to this policy</h2>
+        <h2>17. Contact</h2>
         <p>
-          We may update this Privacy Policy when the app, its services, or legal
-          requirements change. The updated policy will be published at this location with a
-          revised effective date.
-        </p>
-      </section>
-
-      <section>
-        <h2>16. Contact</h2>
-        <p>
-          For privacy questions or requests, visit
+          For questions, feedback, or privacy requests, visit
           <a href="https://bpzone.info/support/" rel="noopener noreferrer">BPZone Support</a>
-          or email <a href="mailto:bpzone.ca@gmail.com">bpzone.ca@gmail.com</a>.
-          For deletion requests, please include “VocaMingo Data Deletion” in your message.
-          For other privacy questions, please include “VocaMingo Privacy” in your message.
+          or email <a href="mailto:vocamingo@gmail.com">vocamingo@gmail.com</a>.
+          Use the subject <strong>VocaMingo Privacy</strong> for privacy questions or
+          <strong>VocaMingo Data Deletion</strong> for deletion requests.
         </p>
       </section>
     </article>
