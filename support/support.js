@@ -1,6 +1,18 @@
 const SUPPORT_EMAIL = "bpzone.ca@gmail.com";
 
 const apps = {
+  "vocamingo": {
+    name: "VocaMingo",
+    icon: "/assets/apps/tools/vocamingo/icon-512.png",
+    page: "/apps/tools/vocamingo/",
+    privacy: "/apps/tools/vocamingo/privacy-policy.html",
+    platforms: "Android and iOS",
+    accent: "#168aad",
+    accentDark: "#0d6886",
+    accentSoft: "#e8f7fb",
+    faqQuestion: "Vocabulary, review, speaking, or game progress does not look right",
+    faqAnswer: "Close and reopen the app first. Include the learning tool or game mode, category or level, and a screenshot when you contact support."
+  },
   "lexiarcade": {
     name: "LexiArcade",
     icon: "/assets/apps/tools/lexiarcade/icon-512.png",
