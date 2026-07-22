@@ -149,7 +149,7 @@
     <header>
       <p class="eyebrow">LexiArcade</p>
       <h1>Privacy Policy</h1>
-      <p class="effective-date">Effective date: July 10, 2026</p>
+      <p class="effective-date">Effective date: July 22, 2026</p>
     </header>
 
     <article>
@@ -157,122 +157,134 @@
         <h2>1. Overview</h2>
         <p>
           This Privacy Policy explains how LexiArcade handles information when you use the
-          LexiArcade mobile app on Android and iOS. LexiArcade is provided by BPZone
+          LexiArcade word-game app on Android or iOS. LexiArcade is provided by BPZone
           (“we,” “us,” or “our”).
         </p>
         <p>
-          LexiArcade does not require you to create a traditional account with an email
-          address, password, phone number, or social login. Depending on the app version
-          and platform, LexiArcade may use anonymous app authentication to support profile,
-          progress sync, and ranking features. We do not request access to your contacts,
-          photos, microphone recordings, precise location, or payment information.
+          LexiArcade does not require a traditional account, email address, password, phone
+          number, or social login. The app automatically creates an anonymous Firebase account
+          to support player profiles, gameplay progress, and leaderboards. This anonymous account
+          is still an app-level user identifier, even though it is not directly connected to your
+          email address or phone number.
+        </p>
+        <p>
+          Current LexiArcade releases contain six game modes and do not include vocabulary lessons,
+          Leitner review, speaking practice, or reminder notifications. We do not request access to
+          your contacts, camera, photo library, microphone recordings, precise location, or payment
+          information. The app does not offer in-app purchases or subscriptions.
         </p>
       </section>
 
       <section>
-        <h2>2. Information stored on your device</h2>
+        <h2>2. Categories of information</h2>
         <p>
-          The Android app uses Android app storage, and the iOS app uses iOS app storage
-          such as UserDefaults, to store the following app information locally on your device:
+          Depending on the platform, region, privacy choices, and features you use, LexiArcade and
+          its service providers may process the following categories of information:
         </p>
         <ul>
-          <li>Completed game levels, stars, hints, coins, and unlocked progress;</li>
-          <li>Vocabulary words saved to the Leitner review box, their review box, and due dates;</li>
-          <li>Speaking practice topics or parts completed today and related daily coin rewards;</li>
-          <li>Leitner reminder preferences, reminder time, and whether notification permission was requested;</li>
-          <li>Haptic feedback, diagnostics, and help-tip preferences;</li>
-          <li>Ad frequency and cooldown counters used to avoid showing interstitial ads too often; and</li>
-          <li>Unfinished Knot Logic puzzle drafts.</li>
+          <li><strong>Identifiers:</strong> an anonymous Firebase user ID, app-instance ID, device ID, and advertising identifiers where available and permitted;</li>
+          <li><strong>Gameplay content:</strong> saved game progress, completed levels, scores, stars, coins, hints, timing statistics, and puzzle drafts;</li>
+          <li><strong>Profile content:</strong> the public display name you choose and your selection from the app’s built-in avatars;</li>
+          <li><strong>Usage data:</strong> product interactions, app launches, screen or game-mode activity, ad interactions, and other app activity;</li>
+          <li><strong>Advertising data:</strong> information about ads requested, displayed, viewed, dismissed, or rewarded;</li>
+          <li><strong>Diagnostics:</strong> crash data, performance data, logs, device and operating-system information, and other diagnostic data; and</li>
+          <li><strong>Approximate location:</strong> a general location that Google services may derive from an IP address. LexiArcade does not request GPS-based precise location.</li>
         </ul>
         <p>
-          This information is used to operate the app, remember your progress, schedule
-          reminders, manage rewards, and keep advertising frequency reasonable. Some
-          profile and gameplay progress information may also be synced online as described
-          in the next section when those features are available in your version of the app.
-        </p>
-        <p>
-          On Android, LexiArcade is configured to exclude app data from Android cloud backup
-          and device-transfer extraction. On iOS, local app data may be included in device
-          backups depending on your Apple and device backup settings. You can remove most
-          local progress information by using <strong>Reset Progress</strong> in the app, or
-          remove local app information by deleting the app.
+          We use this information for app functionality, profile synchronization, leaderboards,
+          analytics, diagnostics, fraud and abuse prevention, third-party advertising, and our
+          advertising operations. Some advertising identifiers may be used for tracking as
+          described in the Advertising section below.
         </p>
       </section>
 
       <section>
-        <h2>3. Online profile, progress sync, and leaderboard</h2>
+        <h2>3. Information stored on your device</h2>
         <p>
-          Depending on your app version and platform, LexiArcade may use Firebase
-          Authentication and Cloud Firestore to create an anonymous app identifier and sync
-          profile and progress information. This helps show your profile, preserve gameplay
-          progress for app features, calculate your rank, and display a global leaderboard.
-          This anonymous identifier is created automatically by the app and is not an email
-          address, phone number, or social login.
-        </p>
-        <p>
-          Synced information may include:
+          LexiArcade stores app information locally using Android app storage or iOS storage such
+          as UserDefaults. Local information may include:
         </p>
         <ul>
-          <li>Your anonymous Firebase user ID;</li>
-          <li>Your chosen profile name and built-in avatar selection;</li>
-          <li>Your operating system, such as Android or iOS;</li>
-          <li>Coins, lifetime coins earned, stars, score, speed bonus, and completed levels;</li>
-          <li>Highest level reached and average completion time for each game mode;</li>
+          <li>Progress across Hidden Trails, Wonder Words, Knot Logic, Word Guess, Word Bomb, and Rush Match;</li>
+          <li>Completed levels, stars, coins, hints, rewards, daily-gift status, and gameplay timing statistics;</li>
+          <li>Your profile display name, built-in avatar selection, and profile start date;</li>
+          <li>Unfinished Knot Logic puzzle drafts and game-help status;</li>
+          <li>Haptic feedback and diagnostics preferences; and</li>
+          <li>Ad frequency, session-limit, reward-limit, and cooldown information used to avoid showing ads too often.</li>
+        </ul>
+        <p>
+          On Android, LexiArcade disables Android cloud backup and excludes app data from device
+          transfer. On iOS, local app information may be included in an Apple device or iCloud
+          backup according to your Apple and device settings.
+        </p>
+        <p>
+          <strong>Reset Progress</strong> removes completed levels, stars, coins, and saved puzzle
+          drafts from the device, but preserves certain preferences and profile details, including
+          your profile name, avatar, profile start date, haptics choice, and diagnostics choice.
+          Reset Progress may synchronize the reset gameplay values to your existing anonymous
+          online profile; it does not delete the Firebase anonymous account or all online records.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Anonymous profile, progress sync, and leaderboard</h2>
+        <p>
+          LexiArcade uses Firebase Authentication to create an anonymous user ID and Cloud
+          Firestore to store profile and gameplay information. These services allow the app to
+          display your profile, synchronize gameplay statistics used by app features, calculate
+          rankings, and show the global leaderboard. Cloud Firestore also provides general app
+          configuration such as advertising, reward, and gameplay settings.
+        </p>
+        <p>Information stored under the anonymous user ID may include:</p>
+        <ul>
+          <li>Your chosen profile name and built-in avatar ID;</li>
+          <li>Your platform, such as Android or iOS;</li>
+          <li>Coin balance, lifetime coins earned, speed bonuses, stars, score, and completed-level totals;</li>
+          <li>Highest level, completion count, total play time, timed completions, and average time for each game;</li>
           <li>Overall average completion time and gameplay statistics used for ranking; and</li>
           <li>Profile creation, update, and last-seen timestamps.</li>
         </ul>
         <p>
-          Your profile name, built-in avatar, score, total completed levels, total stars,
-          average time, and rank may be visible to other LexiArcade users in leaderboard
-          features. Your private coin balance, detailed per-game statistics, anonymous
-          Firebase user ID, and last-seen timestamp are not intentionally displayed to other
-          users.
+          Your profile name, built-in avatar, platform, score, completed-level total, star total,
+          average time, and rank may be visible to other LexiArcade users. Your coin balance,
+          detailed per-game statistics, last-seen timestamp, and anonymous Firebase user ID are
+          not intentionally displayed to other users.
         </p>
         <p>
-          Profile names are optional and should not include sensitive personal information.
-          LexiArcade only offers built-in avatars; it does not ask you to upload photos or
-          grant photo library access for profile pictures.
-        </p>
-        <p>
-          LexiArcade may also use Firebase App Check or platform integrity services, such
-          as Google Play Integrity on Android and Apple integrity services where supported
-          on iOS, to help protect backend services from abuse.
+          Do not use sensitive personal information as your profile name. LexiArcade provides only
+          built-in avatars and does not ask you to upload a profile image.
         </p>
       </section>
 
       <section>
-        <h2>4. Usage analytics and crash diagnostics</h2>
+        <h2>5. Analytics and crash diagnostics</h2>
         <p>
-          The Android and iOS versions of LexiArcade may use Google Analytics for Firebase to
-          understand how the app is used and Firebase Crashlytics to understand crashes,
-          ANRs on Android, and stability issues. These services help improve future versions. They may
-          process information such as:
+          LexiArcade uses Google Analytics for Firebase to understand app usage and Firebase
+          Crashlytics to diagnose crashes, Android ANRs, non-fatal errors, and stability problems.
+          Diagnostics sharing is on by default and may process:
         </p>
         <ul>
-          <li>App launches, screen views, and time spent in general app sections or modes;</li>
-          <li>Vocabulary category opens, vocabulary search result counts, and selected word IDs;</li>
-          <li>Leitner additions and review outcomes;</li>
-          <li>Speaking practice screen engagement and completion/reward events;</li>
-          <li>Game level starts, completions, difficulty, stars, coins, and the number of hints used;</li>
-          <li>Rewarded ad prompts, rewards earned, and unavailable rewarded ads;</li>
-          <li>Crash reports, stack traces, app version, and device state at the time of a crash;</li>
-          <li>App instance and device information; and</li>
-          <li>General performance and diagnostic information.</li>
+          <li>App launches, sessions, screen views, and general game-mode activity;</li>
+          <li>Level starts and completions, difficulty, stars, coins, hint usage, and completion time;</li>
+          <li>Daily gifts, reward events, settings changes, review-prompt events, and ad events;</li>
+          <li>Crash reports, stack traces, error details, app version, device state, and recent in-app actions;</li>
+          <li>App-instance, device, operating-system, performance, and general diagnostic information; and</li>
+          <li>Approximate location derived by Google Analytics from network information such as a masked IP address.</li>
         </ul>
         <p>
-          We do not send spoken answers, typed search text, puzzle board contents, selected letters,
-          discussion prompt answers, your email address, precise location, or a custom analytics
-          user ID to Firebase Analytics or Crashlytics. Profile and leaderboard data, such as
-          your chosen profile name and anonymous Firebase user ID, may be processed separately
-          through Firebase Authentication and Cloud Firestore as described above.
+          LexiArcade does not set your chosen profile name or anonymous Firebase Authentication ID
+          as a custom Analytics user ID. We do not intentionally send puzzle-board contents,
+          selected letters, or user-created audio to Firebase Analytics or Crashlytics. Profile
+          and leaderboard data is processed separately through Firebase Authentication and Cloud
+          Firestore as described above.
         </p>
         <p>
-          Where available, you can turn analytics and crash diagnostics collection on or off at
-          any time using <strong>Share Diagnostics</strong> in the app’s Settings screen. Turning
-          it off stops future analytics and Crashlytics collection from the app on that device.
+          You can turn future Analytics and Crashlytics collection on or off using
+          <strong>Share Diagnostics</strong> in Settings. Turning it off applies to future
+          collection on that device and does not automatically delete information already processed.
         </p>
         <p>
-          Firebase Analytics and Crashlytics are provided by Google. Learn more in
+          Learn more at
           <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer">
             Firebase Privacy and Security
           </a>.
@@ -280,161 +292,191 @@
       </section>
 
       <section>
-        <h2>5. Advertising</h2>
+        <h2>6. Advertising and tracking</h2>
         <p>
-          LexiArcade may display advertising provided by Google AdMob. Ads may include banner,
-          interstitial, and rewarded ad formats. Rewarded ads are optional and are shown only
-          when you choose to watch an ad to earn in-app coins.
+          LexiArcade uses Google AdMob and may display banner, interstitial, and rewarded ads.
+          Rewarded ads are optional and are shown when you choose an available option to watch an
+          ad in exchange for in-app coins or another stated in-app benefit. Ad availability and
+          frequency may vary.
         </p>
         <p>
-          Advertising providers may process device and advertising information, such as
-          advertising identifiers where available and permitted, app interactions, approximate
-          device information, IP address, and ad performance information, to deliver, measure,
-          limit, and improve ads. LexiArcade configures Google Mobile Ads with a general
-          audience maximum ad content rating, and the iOS version disables publisher ad
-          personalization signals where supported. Debug builds use Google test ad units,
-          while production builds use LexiArcade’s AdMob ad units.
+          Google Mobile Ads may process IP address and coarse location, device and app identifiers,
+          advertising data, product interactions, crash and performance data, and other diagnostic
+          information. Google may use this information to deliver ads, measure ad performance,
+          prevent fraud, limit ad frequency, perform analytics, and support third-party and
+          developer advertising. Depending on consent, platform settings, and SDK behavior, a
+          device identifier may be used to track activity across apps or websites owned by other
+          companies.
         </p>
-      </section>
-
-      <section>
-        <h2>6. Consent and advertising choices</h2>
         <p>
-          Where required, LexiArcade uses Google’s User Messaging Platform to request and manage
-          advertising consent before requesting ads on Android and iOS. If advertising privacy
-          choices are required in your region, they may be available from the app’s Settings
-          screen under <strong>Ad Privacy Choices</strong>. You may also be able to manage
-          advertising choices through your device settings, Apple settings, Google settings,
-          or Google account settings.
+          LexiArcade does not request Apple App Tracking Transparency permission. Without ATT
+          authorization, Google Mobile Ads does not receive the Apple IDFA from the app. The iOS
+          version also requests non-personalized ad treatment. Other app- or developer-bounded
+          identifiers, contextual information, consent information, and privacy-preserving
+          attribution mechanisms may still be processed. Android advertising behavior depends on
+          your consent choices, device settings, Google settings, and applicable law.
         </p>
-      </section>
-
-      <section>
-        <h2>7. How information is shared</h2>
         <p>
-          We do not sell personal information or share personal information with third parties
-          for BPZone’s own direct marketing. Profile and leaderboard information that you choose
-          to use in the app, such as your profile name and built-in avatar, may be shown to other
-          LexiArcade users as part of app functionality. Information may also be processed by
-          Google and Firebase in connection with authentication, Firestore sync, app integrity,
-          advertising, analytics, crash diagnostics, and consent services described above. We may
-          also disclose information if required by law, legal process, or to protect users, the app,
-          or our rights.
+          LexiArcade sets Google Mobile Ads’ maximum ad content rating to the general-audience
+          level. Google’s advertising practices are described in
+          <a href="https://policies.google.com/technologies/ads" rel="noopener noreferrer">
+            Google’s Advertising Policies and Technologies
+          </a>.
         </p>
       </section>
 
       <section>
-        <h2>8. Data retention</h2>
+        <h2>7. Consent and privacy choices</h2>
         <p>
-          Local app information remains on your device until you reset your progress or delete
-          the app. Some settings, such as haptics, diagnostics, and reminder preferences, may remain
-          after resetting progress so the app can preserve your choices. Online profile, progress,
-          and leaderboard information may remain in Firebase until it is deleted by us or until you
-          request deletion as described below. Analytics, crash diagnostics, advertising, app integrity,
-          and consent information processed by Google is retained according to Google’s own policies
-          and the privacy choices available to you. Android app data is excluded from Android cloud
-          backup and device transfer by app configuration; iOS local data retention in backups depends
-          on your Apple and device backup settings.
+          Where required, LexiArcade uses Google’s User Messaging Platform to request or manage
+          advertising consent before requesting ads. When required in your region, Settings shows
+          <strong>Ad Privacy Choices</strong>, which opens Google’s privacy-options form. You may
+          also manage advertising and identifier choices through your Android, Apple, Google, or
+          Google-account settings.
+        </p>
+        <p>
+          The availability of a consent form or privacy-options entry point is determined by Google
+          based on factors such as region and consent status. Withdrawing consent may affect future
+          ad requests but does not automatically delete information previously processed by Google.
         </p>
       </section>
 
       <section>
-        <h2>9. Notifications</h2>
+        <h2>8. App integrity and abuse prevention</h2>
         <p>
-          LexiArcade can send local Leitner reminder notifications when review words are due.
-          Notifications are optional and can be controlled from the app’s Settings screen and your
-          device notification settings. Reminder preferences and reminder time are stored locally
-          on your device.
-        </p>
-        <p>
-          On Android, LexiArcade requests notification permission when needed and uses boot or
-          app-update events only to re-schedule local Leitner reminders after the device restarts
-          or the app is updated. On iOS, LexiArcade uses Apple’s local notification permission
-          flow for Leitner reminders.
+          LexiArcade uses Firebase App Check with Google Play Integrity on production Android
+          builds and Apple App Attest on production iOS builds. These services may process app,
+          device, integrity, attestation, and request information to confirm that requests come
+          from a genuine app installation and to protect Firebase services, profiles, and
+          leaderboards from abuse.
         </p>
       </section>
 
       <section>
-        <h2>10. Children’s privacy</h2>
+        <h2>9. How information is shared</h2>
         <p>
-          LexiArcade is a general-audience word puzzle game. We do not knowingly ask children
-          to provide personal information directly to us. Parents and guardians should supervise
-          children’s use of the app and review the device privacy controls available in their region.
+          We do not sell personal information for money. Information may be processed by Google,
+          Firebase, Apple, and their service providers for authentication, Firestore storage,
+          leaderboard functionality, app configuration, app integrity, analytics, diagnostics,
+          consent management, advertising, attribution, and fraud prevention.
         </p>
         <p>
-          If you believe a child has provided personal information in connection with the app,
-          please contact us using the method described below.
-        </p>
-      </section>
-
-      <section>
-        <h2>11. International processing</h2>
-        <p>
-          Google, Firebase, Apple, and their service providers may process app functionality,
-          profile, leaderboard, advertising, analytics, crash diagnostics, app integrity, and
-          consent information in countries other than the country where you live. Data protection
-          laws in those countries may differ from those in your jurisdiction.
+          Public leaderboard fields, including your chosen profile name and built-in avatar, may
+          be shown to other LexiArcade users. We may also disclose information when required by
+          law or legal process, or when reasonably necessary to protect users, the app, our
+          services, or our legal rights.
         </p>
       </section>
 
       <section>
-        <h2>12. Security</h2>
+        <h2>10. Data retention</h2>
         <p>
-          We use reasonable measures to protect the information handled by the app, including
-          encryption in transit for data sent to supported backend services. However, no storage
-          or transmission method can be guaranteed to be completely secure.
+          Local information remains on your device until it is reset, overwritten, or the app is
+          deleted, subject to device backups. Online profile, gameplay, and leaderboard records may
+          remain in Firebase until deleted by us following a valid deletion request or as part of
+          our maintenance practices. Deleting LexiArcade removes the app’s local access to its
+          anonymous account but does not by itself guarantee deletion of Firebase records.
+        </p>
+        <p>
+          Analytics, diagnostics, advertising, consent, attribution, and app-integrity information
+          is retained by Google or Apple according to their applicable settings, retention periods,
+          and policies.
         </p>
       </section>
 
       <section>
-        <h2>13. Your rights and deletion requests</h2>
+        <h2>11. Your choices, rights, and deletion requests</h2>
         <p>
-          Depending on where you live, you may have privacy rights relating to access,
-          correction, deletion, restriction, objection, or withdrawal of consent. You can delete
-          most local progress information using <strong>Reset Progress</strong> or by deleting
-          the app.
+          Depending on where you live, you may have rights to request access, correction, deletion,
+          restriction, objection, or withdrawal of consent. You can manage diagnostics and available
+          advertising choices in Settings, reset local gameplay progress with
+          <strong>Reset Progress</strong>, or remove local app data by deleting the app.
         </p>
         <p>
-          You may request deletion of online LexiArcade profile, progress, and leaderboard data
-          by contacting us using the method below. To help us find the correct record, include
-          your profile name, approximate date of use, platform, and any other details visible in
-          the app that can help identify your anonymous profile. We may ask for additional
-          information to verify and locate the record before deleting it.
+          To request deletion of an online LexiArcade profile, gameplay progress, and leaderboard
+          record, email us using the contact information below. Because LexiArcade uses anonymous
+          accounts, include the profile name, platform, approximate last-use date, current rank and
+          score if visible, and a screenshot of the Profile screen if available. We may request
+          additional information to verify and locate the correct anonymous record.
         </p>
         <p>
-          Requests concerning information processed directly by Google can be submitted through
-          Google’s privacy controls and policies linked above. Requests concerning Apple device
-          or iCloud-related information can be managed through Apple’s privacy controls and
-          policies.
-        </p>
-      </section>
-
-      <section>
-        <h2>14. External links</h2>
-        <p>
-          The app may open external services such as the privacy policy, app stores, Google Play,
-          the Apple App Store, the developer’s website, or support pages.
-          Their privacy practices are governed by their own policies.
+          For information controlled directly by Google or Apple, use the privacy controls and
+          request mechanisms offered by those companies. See
+          <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google’s Privacy Policy</a>
+          and <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple’s Privacy Policy</a>.
         </p>
       </section>
 
       <section>
-        <h2>15. Changes to this policy</h2>
+        <h2>12. Communications and support</h2>
         <p>
-          We may update this Privacy Policy when the app, its services, or legal
-          requirements change. The updated policy will be published at this location with a
-          revised effective date.
+          If you contact us by email or through a support link, we receive the information you
+          choose to send, which may include your email address, message, attachments, profile
+          details, and technical information. We use this information to respond, investigate
+          problems, process privacy requests, prevent abuse, and maintain appropriate business
+          records. Your email provider processes your communication according to its own policy.
         </p>
       </section>
 
       <section>
-        <h2>16. Contact</h2>
+        <h2>13. Children’s privacy</h2>
+        <p>
+          LexiArcade is a general-audience word puzzle game and is not directed specifically to
+          children. We do not knowingly ask children to provide an email address, phone number,
+          photo, or other direct contact information in the app. Parents and guardians should
+          supervise children’s use of the app and review applicable device and advertising controls.
+        </p>
+        <p>
+          If you believe a child has submitted personal information through a profile name or
+          support request, contact us so we can review and address the request.
+        </p>
+      </section>
+
+      <section>
+        <h2>14. International processing</h2>
+        <p>
+          Google, Firebase, Apple, and their service providers may process information in countries
+          other than the country where you live. Data-protection laws in those countries may differ
+          from the laws in your jurisdiction.
+        </p>
+      </section>
+
+      <section>
+        <h2>15. Security</h2>
+        <p>
+          We use reasonable administrative and technical measures intended to protect information
+          handled by LexiArcade, including authenticated Firestore access, platform integrity
+          checks, and encryption in transit for supported backend services. No method of storage or
+          transmission can be guaranteed to be completely secure.
+        </p>
+      </section>
+
+      <section>
+        <h2>16. External services and links</h2>
+        <p>
+          LexiArcade may open Google Play, the Apple App Store, the system review interface, the
+          BPZone website, this Privacy Policy, or your email app. External services operate under
+          their own terms and privacy policies.
+        </p>
+      </section>
+
+      <section>
+        <h2>17. Changes to this policy</h2>
+        <p>
+          We may update this Privacy Policy when LexiArcade, its service providers, or legal
+          requirements change. The revised policy will be published at this location with an
+          updated effective date.
+        </p>
+      </section>
+
+      <section>
+        <h2>18. Contact</h2>
         <p>
           For privacy questions or requests, visit
           <a href="https://bpzone.info/support/" rel="noopener noreferrer">BPZone Support</a>
           or email <a href="mailto:bpzone.ca@gmail.com">bpzone.ca@gmail.com</a>.
-          For deletion requests, please include “LexiArcade Data Deletion” in your message.
-          For other privacy questions, please include “LexiArcade Privacy” in your message.
+          For deletion requests, use the subject “LexiArcade Data Deletion.” For other privacy
+          questions, use the subject “LexiArcade Privacy.”
         </p>
       </section>
     </article>
