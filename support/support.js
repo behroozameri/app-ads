@@ -10,7 +10,7 @@ const apps = {
     accent: "#168aad",
     accentDark: "#0d6886",
     accentSoft: "#e8f7fb",
-    faqQuestion: "Vocabulary, review, speaking, or game progress does not look right",
+    faqQuestion: "Vocabulary, review, or game progress does not look right",
     faqAnswer: "Close and reopen the app first. Include the learning tool or game mode, category or level, and a screenshot when you contact support."
   },
   "lexiarcade": {

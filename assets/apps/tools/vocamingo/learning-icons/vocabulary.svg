@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="vocabulary-bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3788a1" />
+      <stop offset="1" stop-color="#234d66" />
+    </linearGradient>
+    <clipPath id="vocabulary-clip"><rect width="64" height="64" rx="17" /></clipPath>
+  </defs>
+  <g clip-path="url(#vocabulary-clip)">
+    <rect width="64" height="64" rx="17" fill="url(#vocabulary-bg)" />
+    <circle cx="58" cy="5" r="22.5" fill="#fff" opacity=".13" />
+    <rect x="10" y="16" width="39" height="36" rx="7" fill="#fff" opacity=".37" />
+    <rect x="16" y="11" width="39" height="36" rx="8" fill="#fff" />
+    <text x="34" y="30" fill="#56ccf2" font-family="ui-rounded, 'Arial Rounded MT Bold', sans-serif" font-size="17" font-weight="800" text-anchor="middle">Aa</text>
+    <path d="M24 37h21M24 44h13" fill="none" stroke="#56ccf2" stroke-opacity=".72" stroke-width="2.6" stroke-linecap="round" />
+    <circle cx="14" cy="51" r="3.5" fill="#56ccf2" />
+    <circle cx="23" cy="51" r="3.5" fill="#56ccf2" />
+  </g>
+</svg>

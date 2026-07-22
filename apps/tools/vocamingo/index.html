@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VocaMingo | English Vocabulary Games, Speaking and Review</title>
+  <title>VocaMingo | English Vocabulary Games and Smart Review</title>
   <link rel="canonical" href="https://bpzone.info/apps/tools/vocamingo/" />
   <link rel="icon" type="image/png" href="/assets/apps/tools/vocamingo/icon-512.png?v=20260722" />
   <link rel="apple-touch-icon" href="/assets/apps/tools/vocamingo/icon-512.png?v=20260722" />
-  <meta name="description" content="Build practical English vocabulary with six word games, illustrated word collections, Leitner review, speaking practice, rewards, and leaderboards in VocaMingo." />
-  <meta name="keywords" content="VocaMingo, English vocabulary app, vocabulary games, word games, speaking practice, Leitner box, Hidden Trails, Wonder Words, Knot Logic, Word Guess, Word Bomb, Mingo Match, Android, iOS, BPZone" />
+  <meta name="description" content="Build practical English vocabulary with six word games, illustrated word collections, Leitner review, rewards, and leaderboards in VocaMingo." />
+  <meta name="keywords" content="VocaMingo, English vocabulary app, vocabulary games, word games, Leitner box, Hidden Trails, Wonder Words, Knot Logic, Word Guess, Word Bomb, Mingo Match, Android, iOS, BPZone" />
 
   <meta property="og:title" content="VocaMingo" />
-  <meta property="og:description" content="Learn English vocabulary, review what you save, practice speaking, and play six colorful word games." />
+  <meta property="og:description" content="Learn English vocabulary, review what you save, and play six colorful word games." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bpzone.info/apps/tools/vocamingo/" />
   <meta property="og:site_name" content="BPZone" />
-  <meta property="og:image" content="https://bpzone.info/assets/apps/tools/vocamingo/feature.png?v=20260722" />
-  <meta property="og:image:secure_url" content="https://bpzone.info/assets/apps/tools/vocamingo/feature.png?v=20260722" />
+  <meta property="og:image" content="https://bpzone.info/assets/apps/tools/vocamingo/icon-512.png?v=20260722" />
+  <meta property="og:image:secure_url" content="https://bpzone.info/assets/apps/tools/vocamingo/icon-512.png?v=20260722" />
   <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1024" />
-  <meta property="og:image:height" content="500" />
-  <meta property="og:image:alt" content="VocaMingo English vocabulary games" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:image:alt" content="VocaMingo app icon" />
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="VocaMingo" />
-  <meta name="twitter:description" content="Vocabulary, speaking, smart review, and six word games in one English-learning app." />
-  <meta name="twitter:image" content="https://bpzone.info/assets/apps/tools/vocamingo/feature.png?v=20260722" />
+  <meta name="twitter:description" content="Vocabulary, smart review, and six word games in one English-learning app." />
+  <meta name="twitter:image" content="https://bpzone.info/assets/apps/tools/vocamingo/icon-512.png?v=20260722" />
 
   <script type="application/ld+json">
     {
@@ -37,13 +37,12 @@
       ],
       "applicationCategory": "EducationalApplication",
       "applicationSubCategory": "English vocabulary and word games",
-      "description": "Build practical English vocabulary with illustrated word collections, Leitner review, speaking practice, and six word-game modes.",
+      "description": "Build practical English vocabulary with illustrated word collections, Leitner review, and six word-game modes.",
       "image": "https://bpzone.info/assets/apps/tools/vocamingo/icon-512.png?v=20260722",
       "featureList": [
         "Six English word-game modes",
         "Illustrated vocabulary organized by category",
         "Leitner spaced-review box",
-        "Speaking topics and discussion prompts",
         "Player progress, coins, stars, profiles, and leaderboards"
       ],
       "downloadUrl": [
@@ -324,30 +323,98 @@
     }
 
     .hero-art {
-      position: relative;
-      padding-bottom: 38px;
+      display: grid;
+      gap: 12px;
     }
 
-    .feature-graphic {
+    .hero-dashboard {
       overflow: hidden;
-      aspect-ratio: 1024 / 500;
+      padding: 25px;
       border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 18px;
-      background: #082747;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 95% 0%, rgba(79, 200, 237, 0.22), transparent 18rem),
+        linear-gradient(145deg, rgba(22, 73, 102, 0.98), rgba(31, 48, 91, 0.98));
       box-shadow: 0 30px 80px rgba(0, 0, 0, 0.36);
     }
 
-    .feature-graphic img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .dashboard-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .dashboard-app-icon {
+      width: 80px;
+      height: 80px;
+      flex: 0 0 auto;
+      border-radius: 20px;
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
+    }
+
+    .dashboard-kicker {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 950;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .dashboard-title {
+      display: block;
+      font-size: clamp(1.45rem, 3vw, 2.05rem);
+      line-height: 1.06;
+    }
+
+    .dashboard-tools {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .dashboard-tool {
+      min-width: 0;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .dashboard-tool img {
+      width: 54px;
+      height: 54px;
+      flex: 0 0 auto;
+      border-radius: 14px;
+      box-shadow: 0 9px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .dashboard-tool-copy {
+      min-width: 0;
+    }
+
+    .dashboard-tool-copy strong,
+    .dashboard-tool-copy span {
+      display: block;
+    }
+
+    .dashboard-tool-copy strong {
+      margin-bottom: 2px;
+      color: #ffffff;
+      line-height: 1.15;
+    }
+
+    .dashboard-tool-copy span {
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.78rem;
     }
 
     .hero-game-icons {
-      position: absolute;
-      right: 22px;
-      bottom: 0;
-      left: 22px;
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 9px;
@@ -407,7 +474,7 @@
 
     .path-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
     }
 
@@ -420,23 +487,12 @@
       box-shadow: 0 14px 36px rgba(13, 41, 72, 0.08);
     }
 
-    .path-icon {
-      width: 58px;
-      height: 58px;
+    .learning-tool-icon {
+      width: 64px;
+      height: 64px;
       margin-bottom: 20px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: color-mix(in srgb, var(--card-color) 17%, #ffffff);
-      color: var(--card-color);
-      font-size: 1.42rem;
-      font-weight: 950;
-      letter-spacing: -0.04em;
-    }
-
-    .path-icon svg {
-      width: 30px;
-      height: 30px;
+      border-radius: 17px;
+      box-shadow: 0 12px 25px rgba(13, 41, 72, 0.18);
     }
 
     .path-card h3 {
@@ -742,16 +798,29 @@
       }
 
       .hero-art {
-        padding-bottom: 31px;
+        gap: 9px;
       }
 
-      .feature-graphic {
-        border-radius: 13px;
+      .hero-dashboard {
+        padding: 18px;
+        border-radius: 18px;
+      }
+
+      .dashboard-brand {
+        margin-bottom: 16px;
+      }
+
+      .dashboard-app-icon {
+        width: 66px;
+        height: 66px;
+        border-radius: 17px;
+      }
+
+      .dashboard-tools {
+        grid-template-columns: 1fr;
       }
 
       .hero-game-icons {
-        right: 8px;
-        left: 8px;
         gap: 5px;
         padding: 7px;
         border-radius: 13px;
@@ -825,7 +894,7 @@
           <p class="eyebrow">English vocabulary games</p>
           <h1>Your word journey starts here.</h1>
           <p class="hero-copy">
-            Learn practical English words, hear pronunciation, review what you save, practice speaking,
+            Learn practical English words, hear pronunciation, review what you save,
             and turn new vocabulary into progress through six colorful games.
           </p>
           <div class="store-row">
@@ -840,8 +909,30 @@
         </div>
 
         <div class="hero-art">
-          <div class="feature-graphic">
-            <img src="/assets/apps/tools/vocamingo/feature.png?v=20260722" alt="VocaMingo English vocabulary games, speaking, and review" width="1024" height="500" />
+          <div class="hero-dashboard">
+            <div class="dashboard-brand">
+              <img class="dashboard-app-icon" src="/assets/apps/tools/vocamingo/icon-512.png?v=20260722" alt="" width="512" height="512" />
+              <div>
+                <span class="dashboard-kicker">Vocabulary &middot; Review &middot; Games</span>
+                <strong class="dashboard-title">Build words that stick.</strong>
+              </div>
+            </div>
+            <div class="dashboard-tools">
+              <div class="dashboard-tool">
+                <img src="/assets/apps/tools/vocamingo/learning-icons/vocabulary.svg" alt="" width="64" height="64" />
+                <div class="dashboard-tool-copy">
+                  <strong>Vocabulary</strong>
+                  <span>Learn by category</span>
+                </div>
+              </div>
+              <div class="dashboard-tool">
+                <img src="/assets/apps/tools/vocamingo/learning-icons/leitner-box.svg" alt="" width="64" height="64" />
+                <div class="dashboard-tool-copy">
+                  <strong>Leitner Box</strong>
+                  <span>Review when due</span>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="hero-game-icons" aria-hidden="true">
             <img src="/assets/apps/tools/vocamingo/game-icons/hidden-trails.svg" alt="" width="64" height="64" />
@@ -858,33 +949,22 @@
     <section id="learning" class="section-soft">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Learn &middot; Review &middot; Speak</p>
+          <p class="section-kicker">Learn &middot; Review</p>
           <h2>Build vocabulary that stays with you</h2>
-          <p class="lead">Move from discovering a word to remembering and using it, all inside one focused learning space.</p>
+          <p class="lead">Move from discovering a word to remembering it, all inside one focused learning space.</p>
         </div>
 
         <div class="path-grid">
-          <article class="path-card" style="--card-color: #2fa8d4;">
-            <div class="path-icon" aria-hidden="true">Aa</div>
+          <article class="path-card" style="--card-color: #56ccf2;">
+            <img class="learning-tool-icon" src="/assets/apps/tools/vocamingo/learning-icons/vocabulary.svg" alt="" width="64" height="64" />
             <h3>Vocabulary Learning</h3>
             <p>Explore illustrated English words by everyday category, with simple definitions and pronunciation support.</p>
           </article>
 
-          <article class="path-card" style="--card-color: #8e64c7;">
-            <div class="path-icon" aria-hidden="true">1–5</div>
+          <article class="path-card" style="--card-color: #a881d6;">
+            <img class="learning-tool-icon" src="/assets/apps/tools/vocamingo/learning-icons/leitner-box.svg" alt="" width="64" height="64" />
             <h3>Leitner Box</h3>
             <p>Save useful words and review them with active recall when they are due, using a clear five-box system.</p>
-          </article>
-
-          <article class="path-card" style="--card-color: #28ad84;">
-            <div class="path-icon" aria-hidden="true">
-              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 7h13a5 5 0 0 1 5 5v4a5 5 0 0 1-5 5h-6l-6 5v-5H7a5 5 0 0 1-5-5v-4a5 5 0 0 1 5-5Z" />
-                <path d="M9 14h.1M14 14h.1M19 14h.1" />
-              </svg>
-            </div>
-            <h3>Speaking Practice</h3>
-            <p>Pick from 100 discussion topics and answer guided prompts aloud to build confidence with everyday English.</p>
           </article>
         </div>
       </div>

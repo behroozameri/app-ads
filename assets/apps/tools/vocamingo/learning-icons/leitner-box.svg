@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="leitner-bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7663a2" />
+      <stop offset="1" stop-color="#463f6d" />
+    </linearGradient>
+    <clipPath id="leitner-clip"><rect width="64" height="64" rx="17" /></clipPath>
+  </defs>
+  <g clip-path="url(#leitner-clip)">
+    <rect width="64" height="64" rx="17" fill="url(#leitner-bg)" />
+    <circle cx="58" cy="5" r="22.5" fill="#fff" opacity=".13" />
+    <rect x="6" y="44" width="52" height="9" rx="4.5" fill="#fff" opacity=".32" />
+    <rect x="9" y="36" width="7.7" height="13" rx="2.5" fill="#fff" opacity=".64" />
+    <rect x="19.4" y="31" width="7.7" height="18" rx="2.5" fill="#fff" opacity=".64" />
+    <rect x="29.8" y="26" width="7.7" height="23" rx="2.5" fill="#fff" opacity=".64" />
+    <rect x="40.2" y="21" width="7.7" height="28" rx="2.5" fill="#fff" opacity=".64" />
+    <rect x="50.6" y="16" width="7.7" height="33" rx="2.5" fill="#fff" />
+    <rect x="28" y="8" width="21" height="16" rx="5" fill="#a881d6" />
+    <path d="m34 16 4 4 7-9" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <g fill="#a881d6" font-family="ui-rounded, 'Arial Rounded MT Bold', sans-serif" font-size="8.5" font-weight="800" text-anchor="middle">
+      <text x="12.8" y="47.5">1</text>
+      <text x="33.7" y="47.5">3</text>
+      <text x="54.5" y="47.5">5</text>
+    </g>
+  </g>
+</svg>
