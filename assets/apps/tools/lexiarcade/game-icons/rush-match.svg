@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <clipPath id="clip"><rect width="64" height="64" rx="17" /></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="64" height="64" rx="17" fill="#8f4e72" />
+    <circle cx="56.3" cy="5.1" r="24" fill="#fff" opacity=".2" />
+    <path d="M26 24h12" fill="none" stroke="#fff" stroke-opacity=".71" stroke-width="3" stroke-linecap="round" />
+    <rect x="11" y="12" width="24" height="20" rx="6" fill="#fff" />
+    <polygon points="18,28 22,15 25,15 29,28 26,28 25,24 21,24 20,28" fill="#ff7191" />
+    <polygon points="22,21 24,21 23,18" fill="#fff" />
+    <rect x="29" y="12" width="24" height="20" rx="6" fill="#fff" opacity=".9" />
+    <circle cx="41" cy="22" r="4" fill="#ff7191" />
+    <rect x="8" y="52" width="48" height="5" rx="2.5" fill="#ff745c" />
+    <g fill="#fff" opacity=".82"><path d="m14 52 4-7 4 7z" /><path d="m26 52 4-7 4 7z" /><path d="m38 52 4-7 4 7z" /><path d="m50 52 4-7 4 7z" /></g>
+    <g fill="#fff" opacity=".53"><circle cx="12" cy="36" r="2" /><circle cx="34" cy="33" r="2" /><circle cx="54" cy="37" r="2" /></g>
+  </g>
+</svg>

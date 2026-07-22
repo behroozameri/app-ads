@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bomb" x1="14" y1="25" x2="46" y2="54" gradientUnits="userSpaceOnUse"><stop stop-color="#5b3957" /><stop offset="1" stop-color="#1b2131" /></linearGradient>
+    <clipPath id="clip"><rect width="64" height="64" rx="17" /></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="64" height="64" rx="17" fill="#986f43" />
+    <circle cx="56.3" cy="5.1" r="24" fill="#fff" opacity=".2" />
+    <g fill="none" stroke="#fff" stroke-opacity=".41" stroke-width="2.2" stroke-linecap="round"><path d="M7 25h7M5 33h7M8 42h5" /></g>
+    <circle cx="53" cy="11" r="9" fill="#ffbe60" opacity=".16" />
+    <path d="M40 19C43 11 49 8 53 11" fill="none" stroke="#141824" stroke-opacity=".48" stroke-width="5.2" stroke-linecap="round" />
+    <path d="M40 19C43 11 49 8 53 11" fill="none" stroke="#fff" stroke-width="2.7" stroke-linecap="round" />
+    <g stroke="#ff745c" stroke-width="2.2" stroke-linecap="round"><path d="M53 7V3M57 11h4M56 8l3-3M50 8l-3-3" /></g>
+    <path d="m53 6.4 2.1 2.8 2.5 1.8-2.8 2.1-1.8 2.5-2.1-2.8-2.5-1.8 2.8-2.1z" fill="#fff" />
+    <circle cx="28" cy="40" r="19.5" fill="#fff" opacity=".25" /><circle cx="28" cy="39" r="18" fill="#fff" /><circle cx="28" cy="39" r="15.8" fill="url(#bomb)" />
+    <g transform="rotate(31 38 23)"><rect x="32.5" y="17.5" width="12" height="7.5" rx="3" fill="#fff" /><rect x="34" y="19" width="9" height="4.5" rx="2" fill="#f4be5b" /></g>
+    <polygon points="19,34 23,46 28,39 33,46 37,34 33,34 31,41 28,35 25,41 23,34" fill="#fff" />
+    <path d="M18.6 33.5a11 11 0 0 1 4.9-4.7" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="2.2" stroke-linecap="round" />
+  </g>
+</svg>

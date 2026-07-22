@@ -297,23 +297,6 @@
       font-weight: 850;
     }
 
-    .version-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin: -6px 0 24px;
-    }
-
-    .version-badge {
-      padding: 7px 11px;
-      border: 1px solid color-mix(in srgb, var(--blue) 22%, var(--line));
-      border-radius: 999px;
-      background: color-mix(in srgb, var(--blue) 7%, var(--surface));
-      color: var(--body);
-      font-size: 0.84rem;
-      font-weight: 850;
-    }
-
     .hero-art {
       display: grid;
       gap: 18px;
@@ -387,6 +370,14 @@
       font-weight: 950;
     }
 
+    .game-mode-icon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 18px;
+      border-radius: 17px;
+      box-shadow: 0 10px 24px rgba(20, 36, 58, 0.14);
+    }
+
     .mode-card strong {
       display: block;
       margin-bottom: 10px;
@@ -396,34 +387,6 @@
     .mode-card p {
       margin-bottom: 0;
       color: var(--body);
-    }
-
-    .screenshot-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .screenshot-card {
-      margin: 0;
-    }
-
-    .screenshot-card img {
-      width: 100%;
-      aspect-ratio: 9 / 20;
-      object-fit: cover;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: #102847;
-      box-shadow: 0 16px 36px rgba(20, 36, 58, 0.14);
-    }
-
-    .screenshot-card figcaption {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 800;
-      text-align: center;
     }
 
     .privacy-panel,
@@ -515,9 +478,6 @@
         justify-content: flex-start;
       }
 
-      .screenshot-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
     }
 
     @media (max-width: 620px) {
@@ -576,19 +536,6 @@
         grid-template-columns: 1fr;
       }
 
-      .screenshot-grid {
-        display: flex;
-        margin-right: -14px;
-        padding-right: 14px;
-        gap: 14px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-      }
-
-      .screenshot-card {
-        min-width: min(78vw, 300px);
-        scroll-snap-align: start;
-      }
     }
   </style>
 </head>
@@ -611,7 +558,6 @@
       <nav class="nav-links" aria-label="Page navigation">
         <a href="#modes">Games</a>
         <a href="#latest">What&rsquo;s New</a>
-        <a href="#screenshots">Screenshots</a>
         <a href="#download">Download</a>
         <a href="/support/?app=lexiarcade">Support</a>
       </nav>
@@ -629,10 +575,6 @@
             Search, connect, arrange, guess, race the fuse, and match words with clues.
             Every mode offers quick sessions, growing difficulty, and endless replay.
           </p>
-          <div class="version-row" aria-label="Current app versions">
-            <span class="version-badge">Android 2.0 &middot; build 15</span>
-            <span class="version-badge">iOS 2.0 &middot; build 5</span>
-          </div>
           <div class="store-row">
             <a class="store-link google-play" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.wordvoyage" target="_blank" rel="noopener noreferrer" aria-label="Get LexiArcade on Google Play">
               <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" />
@@ -661,32 +603,32 @@
         </div>
         <div class="mode-grid">
           <article class="mode-card" style="--mode-color: var(--blue);">
-            <span class="mode-number">01</span>
+            <img class="game-mode-icon" src="/assets/apps/tools/lexiarcade/game-icons/hidden-trails.svg" alt="" width="64" height="64" />
             <strong>Hidden Trails</strong>
             <p>Find every hidden word across the letter grid with clean, straight-line swipes.</p>
           </article>
           <article class="mode-card" style="--mode-color: var(--coral);">
-            <span class="mode-number">02</span>
+            <img class="game-mode-icon" src="/assets/apps/tools/lexiarcade/game-icons/wonder-words.svg" alt="" width="64" height="64" />
             <strong>Wonder Words</strong>
             <p>Connect letters, complete each crossword, and discover bonus words along the way.</p>
           </article>
           <article class="mode-card" style="--mode-color: var(--violet);">
-            <span class="mode-number">03</span>
+            <img class="game-mode-icon" src="/assets/apps/tools/lexiarcade/game-icons/knot-logic.svg" alt="" width="64" height="64" />
             <strong>Knot Logic</strong>
             <p>Arrange shuffled row letters until every row forms a valid word.</p>
           </article>
           <article class="mode-card" style="--mode-color: #28ad84;">
-            <span class="mode-number">04</span>
+            <img class="game-mode-icon" src="/assets/apps/tools/lexiarcade/game-icons/word-guess.svg" alt="" width="64" height="64" />
             <strong>Word Guess</strong>
             <p>Solve the hidden word before every colorful balloon pops.</p>
           </article>
           <article class="mode-card" style="--mode-color: var(--gold);">
-            <span class="mode-number">05</span>
+            <img class="game-mode-icon" src="/assets/apps/tools/lexiarcade/game-icons/word-bomb.svg" alt="" width="64" height="64" />
             <strong>Word Bomb</strong>
             <p>Choose the correct word before the fuse runs out in fast timed rounds.</p>
           </article>
           <article class="mode-card" style="--mode-color: #ef5b8d;">
-            <span class="mode-number">06</span>
+            <img class="game-mode-icon" src="/assets/apps/tools/lexiarcade/game-icons/rush-match.svg" alt="" width="64" height="64" />
             <strong>Rush Match</strong>
             <p>Pair rushing words with pictures, definitions, sentences, and sounds.</p>
           </article>
@@ -717,34 +659,6 @@
             <strong>Profiles and leaderboards</strong>
             <p>Choose a built-in avatar, track all six games, and compare scores on the global leaderboard.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="screenshots">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-kicker">Latest Android and iOS screens</p>
-          <h2>One arcade, beautifully in sync</h2>
-          <p class="lead">The current Android, iPhone, and iPad releases share the same game-first structure, rewards, profiles, and visual language.</p>
-        </div>
-        <div class="screenshot-grid">
-          <figure class="screenshot-card">
-            <img src="/assets/apps/tools/lexiarcade/screenshots/android-home.webp?v=20260722" alt="LexiArcade home screen on Android showing all six games" width="1080" height="2400" loading="lazy" />
-            <figcaption>Six-game home</figcaption>
-          </figure>
-          <figure class="screenshot-card">
-            <img src="/assets/apps/tools/lexiarcade/screenshots/ios-profile.webp?v=20260722" alt="LexiArcade player profile and global leaderboard on iOS" width="1242" height="2688" loading="lazy" />
-            <figcaption>Profile and leaderboard</figcaption>
-          </figure>
-          <figure class="screenshot-card">
-            <img src="/assets/apps/tools/lexiarcade/screenshots/android-word-bomb.webp?v=20260722" alt="Word Bomb timed word challenge on Android" width="1080" height="2400" loading="lazy" />
-            <figcaption>Word Bomb</figcaption>
-          </figure>
-          <figure class="screenshot-card">
-            <img src="/assets/apps/tools/lexiarcade/screenshots/ios-rush-match.webp?v=20260722" alt="Rush Match picture matching game on iOS" width="1242" height="2688" loading="lazy" />
-            <figcaption>Rush Match</figcaption>
-          </figure>
         </div>
       </div>
     </section>
