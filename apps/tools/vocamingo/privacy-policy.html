@@ -149,7 +149,7 @@
     <header>
       <p class="eyebrow">VocaMingo</p>
       <h1>Privacy Policy</h1>
-      <p class="effective-date">Effective date: July 20, 2026</p>
+      <p class="effective-date">Effective date: July 28, 2026</p>
     </header>
 
     <article>
@@ -191,6 +191,7 @@
           <li>Completed levels, stars, hints, coins, speed bonuses, unlocked progress, and best completion times;</li>
           <li>Vocabulary words saved to the Leitner review box, review boxes, and due dates;</li>
           <li>Speaking practice parts completed and related daily coin rewards;</li>
+          <li>Real-Life English lesson completion, best practice scores, and aggregate usage counters;</li>
           <li>Your chosen profile name, built-in avatar selection, and profile start date;</li>
           <li>Reminder preferences, reminder time, and notification permission state;</li>
           <li>Haptic feedback, diagnostics, help-tip, review-prompt, and gameplay preferences;</li>
@@ -203,6 +204,21 @@
           and gameplay progress information is also synced online as described below.
         </p>
         <p>
+          Real-Life English search queries and custom mission responses are used to provide the
+          current on-screen experience. VocaMingo does not save the text of those searches or
+          custom responses in your Real-Life English progress, online profile, Firestore
+          learning records, Firebase Analytics, or Crashlytics. If you use a keyboard’s
+          dictation feature to enter a response, that feature is provided and processed by your
+          operating-system or keyboard provider under its own settings and privacy terms.
+        </p>
+        <p>
+          Real-Life English audio uses the text-to-speech service available on your device to
+          read lesson content and provide distinct dialogue voices. VocaMingo does not record
+          your voice, listen through the microphone, or upload spoken answers. The availability
+          and processing of device voices may depend on your operating-system or text-to-speech
+          provider and its settings.
+        </p>
+        <p>
           VocaMingo disables Android cloud backup and device transfer for its local app data.
           On iOS, local app data may be included in iCloud or device backups depending on your
           Apple and device backup settings. You can remove most local progress using
@@ -213,7 +229,7 @@
       </section>
 
       <section>
-        <h2>3. Online profile, progress sync, and leaderboard</h2>
+        <h2>3. Online profile, progress sync, leaderboard, and app configuration</h2>
         <p>
           VocaMingo uses Firebase Authentication and Cloud Firestore to create an anonymous
           app identifier and sync profile and progress information. This supports your profile,
@@ -227,7 +243,11 @@
           <li>Your operating system, recorded as Android or iOS;</li>
           <li>Coins, lifetime coins earned, stars, score, speed bonus, and completed levels;</li>
           <li>Highest level reached and average completion time for each game mode;</li>
-          <li>Overall average completion time and gameplay statistics used for ranking; and</li>
+          <li>Overall average completion time and gameplay statistics used for ranking;</li>
+          <li>
+            When Share Diagnostics is enabled, aggregate Real-Life English topic progress,
+            practice totals, and feature-use counters used to improve future versions; and
+          </li>
           <li>Profile creation, update, and last-seen timestamps.</li>
         </ul>
         <p>
@@ -247,6 +267,14 @@
           DeviceCheck on iOS production builds to help verify app requests and protect backend
           services from abuse. These services may process app, device, and integrity signals.
         </p>
+        <p>
+          The app also retrieves general and platform-specific configuration documents from
+          Cloud Firestore. These documents control items such as feature availability, ad
+          formats, reward amounts, frequency limits, and cooldowns. They do not contain your
+          lesson answers, search text, profile name, or other user-created content. App Check
+          and normal network-service information may be processed when the app requests these
+          documents.
+        </p>
       </section>
 
       <section>
@@ -261,8 +289,15 @@
           <li>Vocabulary category opens, search-result counts, and selected word IDs;</li>
           <li>Leitner additions and review outcomes;</li>
           <li>Speaking-practice engagement, completion, and reward events;</li>
+          <li>
+            Real-Life English topic, situation, lesson, section, audio, exercise, mission,
+            completion, exit, search-result count, and time-spent events;
+          </li>
           <li>Game mode, level, difficulty, completion time, stars, coins, and hints used;</li>
-          <li>Ad prompts, ad format, rewards earned, and unavailable ads;</li>
+          <li>
+            Ad prompts, format, placement, impressions, estimated ad revenue and currency,
+            ad-unit identifier, rewards earned, and unavailable ads;
+          </li>
           <li>Rating-prompt eligibility and request events, but not the rating or review text you submit to a store;</li>
           <li>Crash reports, stack traces, app version, device state, and diagnostic logs;</li>
           <li>Firebase installation, app instance, and device information; and</li>
@@ -270,17 +305,21 @@
         </ul>
         <p>
           We do not intentionally send spoken answers, typed vocabulary search text, puzzle
-          board contents, selected letters, discussion-prompt answers, your support email
-          address, precise location, profile name, or anonymous Firebase Authentication user
-          ID to Firebase Analytics or Crashlytics. Profile and leaderboard information is
-          processed separately through Firebase Authentication and Cloud Firestore as described
-          above.
+          board contents, selected letters, Real-Life English search text or learner responses,
+          discussion-prompt answers, your support email address, precise location, profile
+          name, or anonymous Firebase Authentication user ID to Firebase Analytics or
+          Crashlytics. When Share Diagnostics is enabled, Cloud Firestore receives aggregate
+          Real-Life English progress, practice totals, topic-open counts, and feature-use
+          counters linked to the anonymous Firebase user ID on Android and iOS. It does not
+          receive search text, custom responses, selected answer text, lesson dialogue, spoken
+          content, or raw event history. Profile and leaderboard information is processed
+          separately through Firebase Authentication and Cloud Firestore as described above.
         </p>
         <p>
-          You can turn future Analytics and Crashlytics collection from the app on that device
-          on or off at any time using <strong>Share Diagnostics</strong> in Settings. Google may
-          retain information sent before the setting was turned off according to its retention
-          policies.
+          You can turn future Analytics, Crashlytics, and Real-Life English aggregate
+          diagnostics sync from the app on that device on or off at any time using
+          <strong>Share Diagnostics</strong> in Settings. Google may retain information sent
+          before the setting was turned off according to its retention policies.
         </p>
         <p>
           Learn more in
