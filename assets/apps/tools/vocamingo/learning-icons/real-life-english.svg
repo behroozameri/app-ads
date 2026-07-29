@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="real-life-bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#347e98" />
+      <stop offset="1" stop-color="#304d70" />
+    </linearGradient>
+    <clipPath id="real-life-clip"><rect width="64" height="64" rx="17" /></clipPath>
+  </defs>
+  <g clip-path="url(#real-life-clip)">
+    <rect width="64" height="64" rx="17" fill="url(#real-life-bg)" />
+    <circle cx="58" cy="5" r="22.5" fill="#fff" opacity=".13" />
+    <rect x="9" y="14" width="35" height="25" rx="8" fill="#fff" opacity=".2" />
+    <rect x="9" y="14" width="35" height="25" rx="8" fill="none" stroke="#fff" stroke-opacity=".72" stroke-width="3" />
+    <path d="m18 38-6 7 1-9" fill="#fff" opacity=".72" />
+    <rect x="23" y="26" width="34" height="24" rx="8" fill="#4fc8ed" />
+    <path d="m44 49 8 7-2-10" fill="#4fc8ed" />
+    <circle cx="33" cy="38" r="2.3" fill="#fff" />
+    <circle cx="40" cy="38" r="2.3" fill="#fff" />
+    <circle cx="47" cy="38" r="2.3" fill="#fff" />
+  </g>
+</svg>
