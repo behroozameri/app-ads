@@ -149,7 +149,7 @@
     <header>
       <p class="eyebrow">VocaMingo</p>
       <h1>Privacy Policy</h1>
-      <p class="effective-date">Effective date: July 28, 2026</p>
+      <p class="effective-date">Effective date: July 31, 2026</p>
     </header>
 
     <article>
@@ -165,8 +165,10 @@
           VocaMingo does not require a traditional account with an email address, password,
           phone number, or social login. The app automatically creates an anonymous Firebase
           user identifier to support profile sync, progress sync, and leaderboard features.
-          We do not ask for access to your contacts, photos, camera, microphone, precise
-          location, or payment information.
+          We do not ask for access to your contacts, photos, camera, precise location, or
+          payment information. On Android and iOS, microphone access is optional and requested
+          only when you choose to record an answer in Speaking Practice. On iOS,
+          speech-recognition authorization is also requested when you use transcription.
         </p>
         <p>
           The main categories handled by the app and its service providers are gameplay and
@@ -191,6 +193,7 @@
           <li>Completed levels, stars, hints, coins, speed bonuses, unlocked progress, and best completion times;</li>
           <li>Vocabulary words saved to the Leitner review box, review boxes, and due dates;</li>
           <li>Speaking practice parts completed and related daily coin rewards;</li>
+          <li>Speaking Practice recordings, speech-recognition transcripts, recording duration, and the related question ID on Android and iOS;</li>
           <li>Real-Life English lesson completion, best practice scores, and aggregate usage counters;</li>
           <li>Your chosen profile name, built-in avatar selection, and profile start date;</li>
           <li>Reminder preferences, reminder time, and notification permission state;</li>
@@ -213,10 +216,26 @@
         </p>
         <p>
           Real-Life English audio uses the text-to-speech service available on your device to
-          read lesson content and provide distinct dialogue voices. VocaMingo does not record
-          your voice, listen through the microphone, or upload spoken answers. The availability
-          and processing of device voices may depend on your operating-system or text-to-speech
-          provider and its settings.
+          read lesson content and provide distinct dialogue voices. That feature does not
+          record your voice or listen through the microphone. The availability and processing
+          of device voices may depend on your operating-system or text-to-speech provider and
+          its settings.
+        </p>
+        <p>
+          On Android and iOS, Speaking Practice can record an answer after you grant microphone
+          permission. The WAV audio file, transcript, duration, and related question ID are kept
+          in the app’s private local storage so you can review what you said and play the
+          recording again. VocaMingo does not upload the saved audio or transcript to BPZone,
+          Firebase, Analytics, Crashlytics, advertising providers, or the leaderboard. To create
+          a transcript, the recording audio is provided to the speech-recognition service made
+          available by Android, iOS, or the device provider. VocaMingo requests on-device
+          recognition when the platform reports that it is supported, but recognition may be
+          unavailable or may use online processing under the operating-system or recognition
+          provider’s settings and privacy terms. Speaking transcription on Android requires
+          Android 13 or later; recording and playback remain available on supported earlier
+          Android versions. Recording again replaces the previous locally saved answer for that
+          question. <strong>Reset Progress</strong> or deleting the app removes these private
+          local recordings and transcripts from the device.
         </p>
         <p>
           VocaMingo disables Android cloud backup and device transfer for its local app data.
@@ -263,9 +282,9 @@
           Firebase so those features can operate.
         </p>
         <p>
-          VocaMingo uses Firebase App Check with Play Integrity on Android and Apple
-          DeviceCheck on iOS production builds to help verify app requests and protect backend
-          services from abuse. These services may process app, device, and integrity signals.
+          VocaMingo uses Firebase App Check with Play Integrity on Android and Apple App Attest
+          on iOS production builds to help verify app requests and protect backend services from
+          abuse. These services may process app, device, and integrity signals.
         </p>
         <p>
           The app also retrieves general and platform-specific configuration documents from
@@ -281,8 +300,9 @@
         <h2>4. Usage analytics and crash diagnostics</h2>
         <p>
           VocaMingo uses Google Analytics for Firebase to understand app usage and Firebase
-          Crashlytics to diagnose crashes and stability problems. Depending on your diagnostics
-          setting, these services may process:
+          Crashlytics to diagnose crashes and stability problems. Share Diagnostics is enabled
+          by default and can be changed in Settings. While it is enabled, these services may
+          process:
         </p>
         <ul>
           <li>App launches, screen views, time spent, and general feature interactions;</li>
@@ -349,10 +369,10 @@
         </p>
         <p>
           Both apps configure Google Mobile Ads with a general-audience maximum ad content
-          rating. The iOS app does not request App Tracking Transparency permission and disables
-          Google Mobile Ads publisher first-party identification and publisher personalization
-          signals where supported. The Android app uses the consent choices available through
-          Google’s consent platform when determining whether ads can be requested.
+          rating and use the consent choices available through Google’s consent platform when
+          determining whether ads can be requested. The iOS app does not request App Tracking
+          Transparency permission and disables Google Mobile Ads publisher first-party
+          identification and publisher personalization signals where supported.
         </p>
         <p>
           Learn more about how Google processes information in its
@@ -401,11 +421,15 @@
       <section>
         <h2>8. Contact Us and store reviews</h2>
         <p>
-          The <strong>Contact Us</strong> option opens your device’s email app with VocaMingo’s
-          support address. If you choose to send a message, we receive the email address,
-          message, attachments, and other information you voluntarily include. Your email
-          provider processes the message under its own terms. Please do not include sensitive
-          personal information unless it is necessary for your request.
+          The <strong>Contact Us</strong> or <strong>Send feedback</strong> option opens your
+          device’s email app with VocaMingo’s support address. The draft includes app-support
+          details such as your platform, app version and build, a masked form of the anonymous
+          Firebase user ID when available, device model, and operating-system version. You can
+          review or remove this information before sending. If you choose to send the message,
+          we receive your email address, message, attachments, the support details left in the
+          draft, and other information you voluntarily include. Your email provider processes
+          the message under its own terms. Please do not include sensitive personal information
+          unless it is necessary for your request.
         </p>
         <p>
           VocaMingo may show an operating-system rating prompt or open its Google Play or Apple
@@ -424,7 +448,9 @@
           profile name and built-in avatar, may be visible to other VocaMingo users as part of
           app functionality. Information may be processed by Google and Firebase for
           authentication, Firestore sync, app integrity, cloud messaging, advertising,
-          analytics, crash diagnostics, and consent services described above. Apple may process
+          analytics, crash diagnostics, and consent services described above. Apple, Google, or
+          another operating-system or device speech provider may process recording audio when
+          its speech-recognition service is used to create a transcript. Apple may also process
           iOS backups, notification permissions, and App Store interactions, while Google may
           process Google Play interactions. We may also disclose information if required by law,
           legal process, or to protect users, the app, or our rights.
@@ -443,11 +469,12 @@
         </p>
         <p>
           Google retains analytics, crash, advertising, cloud messaging, app integrity, and
-          consent information according to its service settings and policies. Support messages
-          are retained only as reasonably necessary to respond, maintain support records,
-          protect against abuse, and meet legal obligations. iOS backup retention depends on
-          your Apple and device backup settings; VocaMingo’s Android local data is excluded from
-          Android backup and device transfer.
+          consent information according to its service settings and policies. A speech provider
+          may retain or otherwise process audio submitted for transcription according to its
+          settings and privacy terms. Support messages are retained only as reasonably necessary
+          to respond, maintain support records, protect against abuse, and meet legal
+          obligations. iOS backup retention depends on your Apple and device backup settings;
+          VocaMingo’s Android local data is excluded from Android backup and device transfer.
         </p>
       </section>
 
@@ -495,18 +522,22 @@
           deleting the app. These steps do not automatically delete online profile data.
         </p>
         <p>
-          You can request deletion of your anonymous VocaMingo profile and associated online
-          progress and leaderboard records at any time, even if you no longer have the app, by
-          emailing
+          You can request deletion of your anonymous VocaMingo profile, Firebase Authentication
+          identity, and associated online progress and leaderboard records at any time, even if
+          you no longer have the app. The current request method is to email
           <a href="mailto:vocamingo@gmail.com?subject=VocaMingo%20Data%20Deletion">vocamingo@gmail.com</a>
           with the subject <strong>VocaMingo Data Deletion</strong>. Include your platform
           (Android or iOS), profile name, approximate date you last used the app, and any other
           non-sensitive details visible in the app that can help us locate the correct anonymous
-          record. We may ask for additional information when reasonably necessary to verify and
-          identify the record. Once verified, we will delete the applicable Firebase
-          Authentication identity and associated private and public profile records within a
-          reasonable period, unless retention is required for security, fraud prevention, or
-          legal compliance.
+          record. If the app is still installed, using its feedback email draft can also provide
+          a masked user identifier and app-support details that may help identify the record. We
+          may ask for additional information when reasonably necessary to verify and identify
+          the correct record. Once verified, we will delete the applicable Firebase
+          Authentication identity and associated private profile, public leaderboard profile,
+          and online learning-progress records within a reasonable period, unless retention is
+          required for security, fraud prevention, dispute resolution, or legal compliance. We
+          may retain the deletion request and related correspondence as reasonably necessary to
+          document and complete the request.
         </p>
         <p>
           Requests concerning data controlled directly by Google, Apple, an email provider, or
