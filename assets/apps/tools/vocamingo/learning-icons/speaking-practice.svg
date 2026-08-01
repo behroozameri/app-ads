@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="speaking-bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2f887c" />
+      <stop offset="1" stop-color="#24566a" />
+    </linearGradient>
+    <clipPath id="speaking-clip"><rect width="64" height="64" rx="17" /></clipPath>
+  </defs>
+  <g clip-path="url(#speaking-clip)">
+    <rect width="64" height="64" rx="17" fill="url(#speaking-bg)" />
+    <circle cx="58" cy="5" r="22.5" fill="#fff" opacity=".13" />
+    <rect x="8" y="14" width="39" height="27" rx="9" fill="none" stroke="#51cfa8" stroke-width="4" />
+    <path d="m18 40-7 8 2-11" fill="#51cfa8" />
+    <rect x="17" y="23" width="39" height="27" rx="9" fill="#51cfa8" fill-opacity=".22" stroke="#51cfa8" stroke-width="4" />
+    <path d="m46 49 6 7-1-10" fill="#51cfa8" />
+    <circle cx="27" cy="36" r="2.4" fill="#fff" />
+    <circle cx="36.5" cy="36" r="2.4" fill="#fff" />
+    <circle cx="46" cy="36" r="2.4" fill="#fff" />
+  </g>
+</svg>

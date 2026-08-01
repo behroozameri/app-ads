@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VocaMingo | Real-Life English, Vocabulary and Word Games</title>
+  <title>VocaMingo | Learn English Through Speaking and Word Games</title>
   <link rel="canonical" href="https://bpzone.info/apps/tools/vocamingo/" />
   <link rel="icon" type="image/png" href="/assets/apps/tools/vocamingo/icon-512.png?v=20260722" />
   <link rel="apple-touch-icon" href="/assets/apps/tools/vocamingo/icon-512.png?v=20260722" />
-  <meta name="description" content="Learn practical English with 30 Real-Life lessons, vocabulary, speaking practice, Leitner review, and six colorful word games in VocaMingo." />
-  <meta name="keywords" content="VocaMingo, English learning app, Real-Life English, English lessons, conversation practice, vocabulary games, word games, Leitner box, speaking practice, Android, iOS, BPZone" />
+  <meta name="description" content="Build confident English with 95-topic Speaking Practice, real-life lessons, visual vocabulary, smart review, and six word games in VocaMingo." />
+  <meta name="keywords" content="VocaMingo, English learning app, speaking practice, English conversation, game-based learning, English lessons, vocabulary games, word games, Leitner box, Android, iOS, BPZone" />
 
   <meta property="og:title" content="VocaMingo" />
-  <meta property="og:description" content="Learn English for everyday life with practical lessons, smart review, speaking practice, and six colorful word games." />
+  <meta property="og:description" content="Learn useful English, prepare with guided support, speak aloud, play six word games, and remember more." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bpzone.info/apps/tools/vocamingo/" />
   <meta property="og:site_name" content="BPZone" />
@@ -23,7 +23,7 @@
   <meta property="og:image:alt" content="VocaMingo app icon" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="VocaMingo" />
-  <meta name="twitter:description" content="Real-life English lessons, vocabulary, smart review, speaking practice, and six word games in one learning app." />
+  <meta name="twitter:description" content="95 speaking topics, real-life lessons, visual vocabulary, smart review, and six word games in one English learning app." />
   <meta name="twitter:image" content="https://bpzone.info/assets/apps/tools/vocamingo/icon-512.png?v=20260724" />
   <meta name="twitter:image:alt" content="VocaMingo app icon" />
 
@@ -38,11 +38,14 @@
       ],
       "applicationCategory": "EducationalApplication",
       "applicationSubCategory": "English learning and word games",
-      "description": "Learn practical English through 30 Real-Life lessons, illustrated vocabulary, speaking practice, Leitner review, and six word-game modes.",
+      "description": "Learn practical English through guided speaking practice, 30 Real-Life lessons, illustrated vocabulary, Leitner review, and six word-game modes.",
       "image": "https://bpzone.info/assets/apps/tools/vocamingo/icon-512.png?v=20260722",
       "featureList": [
         "Real-Life English with 10 everyday topics and 30 practical lessons",
         "Useful phrases, two-speaker dialogues, exercises, and guided missions",
+        "Speaking Practice with 95 topics and 1,900 guided questions",
+        "Useful vocabulary, contextual examples, and three model answers for each speaking question",
+        "Vocabulary and sample-answer audio, recording, replay, and transcript",
         "Six English word-game modes",
         "Illustrated vocabulary organized by category",
         "Leitner spaced-review box",
@@ -374,7 +377,7 @@
 
     .dashboard-tools {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
     }
 
@@ -477,7 +480,7 @@
 
     .path-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 16px;
     }
 
@@ -639,6 +642,306 @@
       text-align: center;
     }
 
+    .speaking-section {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 7% 16%, rgba(168, 129, 214, 0.16), transparent 25rem),
+        radial-gradient(circle at 94% 88%, rgba(79, 200, 237, 0.14), transparent 27rem),
+        #fbfaff;
+    }
+
+    .speaking-section::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 430px;
+      height: 430px;
+      top: -310px;
+      left: -120px;
+      border: 1px solid rgba(168, 129, 214, 0.2);
+      border-radius: 50%;
+    }
+
+    .speaking-layout {
+      display: grid;
+      grid-template-columns: minmax(390px, 0.92fr) minmax(0, 1.08fr);
+      align-items: center;
+      gap: 70px;
+    }
+
+    .speaking-preview {
+      position: relative;
+      width: min(100%, 500px);
+      justify-self: center;
+      padding: 25px;
+      border: 1px solid rgba(168, 129, 214, 0.28);
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(79, 200, 237, 0.18), transparent 18rem),
+        linear-gradient(145deg, #112d50, #1e4262 58%, #285c70);
+      color: #ffffff;
+      box-shadow: 0 32px 82px rgba(13, 41, 72, 0.25);
+      transform: rotate(-1deg);
+    }
+
+    .speaking-preview::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      z-index: -1;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 22px;
+      pointer-events: none;
+    }
+
+    .speaking-preview-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .speaking-preview-top strong,
+    .speaking-preview-top span {
+      display: block;
+    }
+
+    .speaking-preview-top strong {
+      font-size: 1.22rem;
+    }
+
+    .speaking-preview-top span {
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.76rem;
+      font-weight: 850;
+      text-align: right;
+    }
+
+    .speaking-prompt {
+      padding: 24px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      text-align: center;
+      backdrop-filter: blur(12px);
+    }
+
+    .prompt-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .speaking-prompt strong {
+      display: block;
+      font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+      line-height: 1.25;
+    }
+
+    .practice-tools {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+      margin: 12px 0;
+    }
+
+    .practice-tool {
+      padding: 12px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+
+    .practice-tool b,
+    .practice-tool span {
+      display: block;
+    }
+
+    .practice-tool b {
+      margin-bottom: 2px;
+      color: var(--mint);
+      font-size: 1.18rem;
+    }
+
+    .practice-tool span {
+      color: rgba(255, 255, 255, 0.67);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .record-strip {
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 17px;
+      border-radius: 18px;
+      background: rgba(7, 26, 44, 0.44);
+    }
+
+    .wave {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 38px;
+    }
+
+    .wave i {
+      width: 3px;
+      height: var(--wave-height, 18px);
+      border-radius: 999px;
+      background: var(--cyan);
+      opacity: 0.68;
+    }
+
+    .mic-orb {
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 5px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      background: linear-gradient(145deg, #ff8b77, #ef5b56);
+      box-shadow: 0 14px 32px rgba(239, 91, 86, 0.35);
+    }
+
+    .mic-orb svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .transcript-preview {
+      margin-top: 12px;
+      padding: 13px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .transcript-preview strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--cyan);
+      font-size: 0.67rem;
+      letter-spacing: 0.11em;
+    }
+
+    .transcript-preview span {
+      color: rgba(255, 255, 255, 0.61);
+      font-size: 0.8rem;
+    }
+
+    .speaking-copy .section-kicker {
+      color: #7652a9;
+    }
+
+    .speaking-copy h2 {
+      max-width: 650px;
+      font-size: clamp(2.35rem, 5vw, 3.7rem);
+    }
+
+    .speaking-copy .lead {
+      max-width: 650px;
+    }
+
+    .speaking-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 27px 0;
+    }
+
+    .speaking-fact {
+      padding: 15px;
+      border: 1px solid color-mix(in srgb, var(--violet) 25%, var(--line));
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .speaking-fact b,
+    .speaking-fact span {
+      display: block;
+    }
+
+    .speaking-fact b {
+      margin-bottom: 2px;
+      color: #6d4ba4;
+      font-size: 1.42rem;
+    }
+
+    .speaking-fact span {
+      color: var(--body);
+      font-size: 0.78rem;
+      font-weight: 850;
+    }
+
+    .speaking-checks {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 23px;
+    }
+
+    .speaking-check {
+      display: grid;
+      grid-template-columns: 31px minmax(0, 1fr);
+      align-items: start;
+      gap: 11px;
+      color: var(--body);
+    }
+
+    .speaking-check span:first-child {
+      width: 31px;
+      height: 31px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--mint) 18%, #ffffff);
+      color: #188365;
+      font-weight: 950;
+    }
+
+    .speaking-check strong {
+      color: var(--ink);
+    }
+
+    .section-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 19px;
+      border-radius: 13px;
+      background: var(--navy);
+      color: #ffffff;
+      font-weight: 900;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .section-cta:hover {
+      transform: translateY(-2px);
+      background: var(--navy-2);
+    }
+
+    .section-cta:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--violet) 42%, transparent);
+      outline-offset: 3px;
+    }
+
+    .speaking-note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
     .mode-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -678,6 +981,96 @@
     .mode-card p {
       margin-bottom: 0;
       color: var(--body);
+    }
+
+    .audience-section {
+      background:
+        radial-gradient(circle at 96% 0%, rgba(255, 195, 78, 0.12), transparent 24rem),
+        var(--soft);
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .audience-card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #ffffff;
+      box-shadow: 0 14px 36px rgba(13, 41, 72, 0.08);
+    }
+
+    .audience-label {
+      display: inline-flex;
+      margin-bottom: 15px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--audience-color) 14%, #ffffff);
+      color: color-mix(in srgb, var(--audience-color) 82%, #102b48);
+      font-size: 0.73rem;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .audience-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.35rem;
+    }
+
+    .audience-card p {
+      margin-bottom: 0;
+      color: var(--body);
+    }
+
+    .learning-loop {
+      margin-top: 18px;
+      padding: 23px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #ffffff;
+      box-shadow: 0 14px 36px rgba(13, 41, 72, 0.07);
+    }
+
+    .learning-loop > strong {
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .loop-steps {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 8px;
+      counter-reset: loop-step;
+    }
+
+    .loop-step {
+      position: relative;
+      min-width: 0;
+      padding: 12px 8px;
+      border-radius: 13px;
+      background: color-mix(in srgb, var(--loop-color) 11%, #ffffff);
+      color: var(--ink);
+      font-size: 0.79rem;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .loop-step::before {
+      counter-increment: loop-step;
+      content: counter(loop-step);
+      width: 21px;
+      height: 21px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 6px;
+      border-radius: 50%;
+      background: var(--loop-color);
+      color: #ffffff;
+      font-size: 0.68rem;
     }
 
     .progress-layout {
@@ -856,6 +1249,7 @@
     @media (max-width: 960px) {
       .hero-layout,
       .real-life-layout,
+      .speaking-layout,
       .progress-layout,
       .download-panel {
         grid-template-columns: 1fr;
@@ -878,13 +1272,29 @@
         width: min(100%, 360px);
       }
 
+      .speaking-preview {
+        width: min(100%, 610px);
+        order: 2;
+        transform: none;
+      }
+
       .path-grid,
       .mode-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .loop-steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
       .download-actions {
         justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
       }
     }
 
@@ -895,10 +1305,6 @@
 
       .nav {
         min-height: 64px;
-      }
-
-      .nav-links {
-        display: none;
       }
 
       .hero {
@@ -1016,6 +1422,43 @@
         min-height: 0;
       }
 
+      .speaking-layout {
+        gap: 38px;
+      }
+
+      .speaking-preview {
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      .speaking-preview-top {
+        align-items: flex-start;
+      }
+
+      .speaking-preview-top span {
+        max-width: 110px;
+      }
+
+      .speaking-facts {
+        gap: 7px;
+      }
+
+      .speaking-fact {
+        padding: 11px 8px;
+      }
+
+      .speaking-fact b {
+        font-size: 1.16rem;
+      }
+
+      .audience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .loop-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .real-life-preview {
         width: min(88vw, 320px);
       }
@@ -1064,9 +1507,10 @@
       </div>
       <nav class="nav-links" aria-label="Page navigation">
         <a href="#learning">Learning</a>
+        <a href="#speaking">Speaking</a>
         <a href="#real-life">Real-Life</a>
         <a href="#games">Games</a>
-        <a href="#progress">Progress</a>
+        <a href="#for-you">For You</a>
         <a href="#download">Download</a>
         <a href="/support/?app=vocamingo">Support</a>
       </nav>
@@ -1078,11 +1522,11 @@
       <div class="container hero-layout">
         <div>
           <img class="app-icon" src="/assets/apps/tools/vocamingo/icon-512.png?v=20260722" alt="VocaMingo app icon" width="512" height="512" />
-          <p class="eyebrow">English learning &middot; Real-life practice &middot; Word games</p>
-          <h1>Learn it. Use it. Play it.</h1>
+          <p class="eyebrow">Learn &middot; Speak &middot; Play &middot; Remember</p>
+          <h1>Learn English. Speak with confidence.</h1>
           <p class="hero-copy">
-            VocaMingo brings practical English lessons, useful vocabulary, speaking practice,
-            smart review, and six colorful word games into one rewarding learning journey.
+            VocaMingo turns practical English into a rewarding daily loop: learn useful words,
+            prepare an answer, speak aloud, play six word games, and review what matters.
           </p>
           <div class="store-row">
             <a class="store-link google-play" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.vocamingo" target="_blank" rel="noopener noreferrer" aria-label="Find VocaMingo on Google Play">
@@ -1100,8 +1544,8 @@
             <div class="dashboard-brand">
               <img class="dashboard-app-icon" src="/assets/apps/tools/vocamingo/icon-512.png?v=20260722" alt="" width="512" height="512" />
               <div>
-                <span class="dashboard-kicker">Learn &middot; Practice &middot; Play</span>
-                <strong class="dashboard-title">English for real moments.</strong>
+                <span class="dashboard-kicker">One connected learning journey</span>
+                <strong class="dashboard-title">Use English, don&rsquo;t just study it.</strong>
               </div>
             </div>
             <div class="dashboard-tools">
@@ -1126,6 +1570,13 @@
                   <span>Review when due</span>
                 </div>
               </div>
+              <div class="dashboard-tool">
+                <img src="/assets/apps/tools/vocamingo/learning-icons/speaking-practice.svg?v=20260731" alt="" width="64" height="64" />
+                <div class="dashboard-tool-copy">
+                  <strong>Speaking</strong>
+                  <span>95 guided topics</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="hero-game-icons" aria-hidden="true">
@@ -1143,12 +1594,18 @@
     <section id="learning" class="section-soft">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Learn &middot; Practice &middot; Remember</p>
-          <h2>A complete English learning space</h2>
-          <p class="lead">Move from practical situations to useful words, confident speaking, and long-term recall.</p>
+          <p class="section-kicker">One connected learning loop</p>
+          <h2>Learn English by using it</h2>
+          <p class="lead">Build useful knowledge, turn it into speech, reinforce it through play, and review it for long-term recall.</p>
         </div>
 
         <div class="path-grid">
+          <article class="path-card" style="--card-color: #51cfa8;">
+            <img class="learning-tool-icon" src="/assets/apps/tools/vocamingo/learning-icons/speaking-practice.svg?v=20260731" alt="" width="64" height="64" />
+            <h3>Speaking Practice</h3>
+            <p>Prepare with useful words and model answers, then record, replay, and reflect on your own response.</p>
+          </article>
+
           <article class="path-card" style="--card-color: #4fc8ed;">
             <img class="learning-tool-icon" src="/assets/apps/tools/vocamingo/learning-icons/real-life-english.svg" alt="" width="64" height="64" />
             <h3>Real-Life English</h3>
@@ -1166,6 +1623,77 @@
             <h3>Leitner Box</h3>
             <p>Save useful words and review them with active recall when they are due, using a clear five-box system.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="speaking" class="speaking-section">
+      <div class="container speaking-layout">
+        <div class="speaking-preview" aria-label="Preview of the VocaMingo Speaking Practice flow">
+          <div class="speaking-preview-top">
+            <strong>Speaking Practice</strong>
+            <span>95 topics &middot; 1,900 questions</span>
+          </div>
+          <div class="speaking-prompt">
+            <span class="prompt-label">Practice prompt</span>
+            <strong>What makes learning enjoyable?</strong>
+          </div>
+          <div class="practice-tools" aria-label="Speaking preparation tools">
+            <div class="practice-tool"><b>5</b><span>useful words</span></div>
+            <div class="practice-tool"><b>3</b><span>model answers</span></div>
+            <div class="practice-tool"><b>45–60s</b><span>focused response</span></div>
+          </div>
+          <div class="record-strip" aria-hidden="true">
+            <span class="wave">
+              <i style="--wave-height: 12px;"></i><i style="--wave-height: 24px;"></i><i style="--wave-height: 34px;"></i><i style="--wave-height: 20px;"></i><i style="--wave-height: 29px;"></i>
+            </span>
+            <span class="mic-orb">
+              <svg viewBox="0 0 32 32" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="11" y="4" width="10" height="17" rx="5" />
+                <path d="M7 15a9 9 0 0 0 18 0M16 24v4M11 28h10" />
+              </svg>
+            </span>
+            <span class="wave">
+              <i style="--wave-height: 29px;"></i><i style="--wave-height: 18px;"></i><i style="--wave-height: 35px;"></i><i style="--wave-height: 24px;"></i><i style="--wave-height: 12px;"></i>
+            </span>
+          </div>
+          <div class="transcript-preview">
+            <strong>TRANSCRIPT</strong>
+            <span>Your recognized words appear here as you practise.</span>
+          </div>
+        </div>
+
+        <div class="speaking-copy">
+          <p class="section-kicker">Speaking Practice &middot; New in the latest release</p>
+          <h2>Go from &ldquo;I know this&rdquo; to &ldquo;I can say this.&rdquo;</h2>
+          <p class="lead">
+            Choose a topic, build a plan with useful vocabulary and reviewed model answers,
+            hear natural examples, then record a focused response in your own words.
+          </p>
+
+          <div class="speaking-facts" aria-label="Speaking Practice content">
+            <div class="speaking-fact"><b>95</b><span>discussion topics</span></div>
+            <div class="speaking-fact"><b>1,900</b><span>guided questions</span></div>
+            <div class="speaking-fact"><b>3</b><span>answers per prompt</span></div>
+          </div>
+
+          <div class="speaking-checks">
+            <div class="speaking-check">
+              <span aria-hidden="true">✓</span>
+              <div><strong>Prepare before you speak.</strong> Five suggested words include meaning, context, and audio for every question.</div>
+            </div>
+            <div class="speaking-check">
+              <span aria-hidden="true">✓</span>
+              <div><strong>Learn from complete examples.</strong> Expand and hear three reviewed model answers, then make the structure your own.</div>
+            </div>
+            <div class="speaking-check">
+              <span aria-hidden="true">✓</span>
+              <div><strong>Notice your progress.</strong> Record for 45–60 seconds, replay your answer, and review the transcript when available.</div>
+            </div>
+          </div>
+
+          <a class="section-cta" href="#download">Start speaking with VocaMingo&nbsp; &rarr;</a>
+          <p class="speaking-note">Available on iOS and Android. Microphone access is requested only when you record; recordings and transcripts remain in the app&rsquo;s private local storage.</p>
         </div>
       </div>
     </section>
@@ -1232,9 +1760,9 @@
     <section id="games">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">Learn through play &middot; Six game modes</p>
-          <h2>Turn English practice into a game</h2>
-          <p class="lead">Search, connect, arrange, guess, race the fuse, and match words with pictures, clues, and sounds.</p>
+          <p class="section-kicker">Game-based repetition &middot; Six modes</p>
+          <h2>Turn practice into play&mdash;and play into progress</h2>
+          <p class="lead">Search, connect, arrange, guess, race the fuse, and match words with pictures, clues, and sounds while strengthening recognition and recall.</p>
         </div>
 
         <div class="mode-grid">
@@ -1277,15 +1805,50 @@
       </div>
     </section>
 
+    <section id="for-you" class="audience-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Flexible by design</p>
+          <h2>Useful for learners. Ready for teachers.</h2>
+          <p class="lead">Use VocaMingo for independent daily practice, lesson warm-ups, pair work, homework, or conversation clubs.</p>
+        </div>
+
+        <div class="audience-grid">
+          <article class="audience-card" style="--audience-color: #2fa8d4;">
+            <span class="audience-label">For English learners</span>
+            <h3>A clear routine you can actually repeat</h3>
+            <p>Choose a practical topic, prepare with support, speak in your own words, then switch to games and spaced review. Short, purposeful activities make it easier to keep going.</p>
+          </article>
+          <article class="audience-card" style="--audience-color: #8e64c7;">
+            <span class="audience-label">For language teachers</span>
+            <h3>Ready-made prompts with built-in support</h3>
+            <p>Bring 95 discussion topics and 1,900 questions into class. Suggested vocabulary, contextual examples, and model answers help learners start speaking without starting from zero.</p>
+          </article>
+        </div>
+
+        <div class="learning-loop">
+          <strong>The VocaMingo learning loop</strong>
+          <div class="loop-steps" aria-label="Learn, prepare, speak, play, review, and remember">
+            <span class="loop-step" style="--loop-color: #2fa8d4;">Learn</span>
+            <span class="loop-step" style="--loop-color: #8e64c7;">Prepare</span>
+            <span class="loop-step" style="--loop-color: #28ad84;">Speak</span>
+            <span class="loop-step" style="--loop-color: #ef5b56;">Play</span>
+            <span class="loop-step" style="--loop-color: #d89527;">Review</span>
+            <span class="loop-step" style="--loop-color: #536fc2;">Remember</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="progress" class="section-soft">
       <div class="container progress-layout">
         <div class="progress-card">
-          <p class="section-kicker">One connected journey</p>
-          <h2>Learn, play, and keep moving forward.</h2>
+          <p class="section-kicker">Visible progress, small wins</p>
+          <h2>Keep moving across learning and games.</h2>
           <div class="stat-grid" aria-label="VocaMingo progress features">
-            <div class="stat" style="--stat-color: var(--mint);"><b>30</b><span>real-life lessons</span></div>
-            <div class="stat" style="--stat-color: var(--cyan);"><b>6</b><span>game modes</span></div>
-            <div class="stat" style="--stat-color: var(--gold);"><b>★</b><span>rewards &amp; progress</span></div>
+            <div class="stat" style="--stat-color: var(--mint);"><b>95</b><span>speaking topics</span></div>
+            <div class="stat" style="--stat-color: var(--cyan);"><b>1,900</b><span>guided prompts</span></div>
+            <div class="stat" style="--stat-color: var(--gold);"><b>6</b><span>word games</span></div>
           </div>
         </div>
 
@@ -1293,8 +1856,8 @@
           <div class="feature-item" style="--item-color: #2fa8d4;">
             <span class="feature-check" aria-hidden="true">✓</span>
             <div>
-              <strong>Progress across every mode</strong>
-              <p>Clear levels, collect stars, earn coins, and see your results come together in one profile.</p>
+              <strong>Progress that rewards practice</strong>
+              <p>Clear game levels, collect stars, earn coins, and keep your newest speaking take for each question.</p>
             </div>
           </div>
 
@@ -1326,7 +1889,7 @@
             <p>
               VocaMingo does not require an email address, password, phone number, or social login.
               An anonymous app profile supports progress sync and leaderboards, and settings provide controls for reminders,
-              diagnostics, ad privacy, and progress reset.
+              diagnostics, ad privacy, and progress reset. Speaking recordings and transcripts stay in private local app storage.
             </p>
             <a class="text-link" href="/apps/tools/vocamingo/privacy-policy.html">Read the Privacy Policy</a>
           </div>
@@ -1338,9 +1901,9 @@
       <div class="container">
         <div class="download-panel">
           <div>
-            <p class="section-kicker">Start your word journey</p>
-            <h2>Learn it. Use it. Play it. Remember it.</h2>
-            <p>Download VocaMingo free and make practical English part of your day.</p>
+            <p class="section-kicker">Learn &middot; Speak &middot; Play &middot; Remember</p>
+            <h2>Ready to make English something you use?</h2>
+            <p>Download VocaMingo free&mdash;for your own practice, your learners, or your next English lesson.</p>
           </div>
           <div class="download-actions">
             <a class="store-link google-play" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.vocamingo" target="_blank" rel="noopener noreferrer" aria-label="Find VocaMingo on Google Play">
