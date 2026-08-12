@@ -149,7 +149,7 @@
     <header>
       <p class="eyebrow">VocaMingo</p>
       <h1>Privacy Policy</h1>
-      <p class="effective-date">Effective date: July 31, 2026</p>
+      <p class="effective-date">Effective date: August 12, 2026</p>
     </header>
 
     <article>
@@ -160,6 +160,13 @@
           VocaMingo app on Android or iOS. VocaMingo is provided by BPZone (“we,” “us,” or
           “our”). References to “the app” in this policy include both platform versions unless
           a platform-specific difference is stated.
+        </p>
+        <p>
+          This revision reflects Android version 1.10 (version code 11) and iOS version 1.8
+          (build 9). These releases include nine word-game modes, including Mingo Grid, and the
+          iOS release adds local controls for choosing installed English speech voices and
+          speaking speed. These features do not change the main categories of information
+          described in this policy.
         </p>
         <p>
           VocaMingo does not require a traditional account with an email address, password,
@@ -197,6 +204,10 @@
           <li>Real-Life English lesson completion, best practice scores, and aggregate usage counters;</li>
           <li>Your chosen profile name, built-in avatar selection, and profile start date;</li>
           <li>Reminder preferences, reminder time, and notification permission state;</li>
+          <li>
+            On iOS, selected system-voice identifiers, the optional second-dialogue-voice
+            setting, and speaking-speed preference;
+          </li>
           <li>Haptic feedback, diagnostics, help-tip, review-prompt, and gameplay preferences;</li>
           <li>Ad reward, frequency, and cooldown counters used to manage ad limits; and</li>
           <li>Unfinished puzzle drafts and other in-progress gameplay state.</li>
@@ -215,11 +226,17 @@
           operating-system or keyboard provider under its own settings and privacy terms.
         </p>
         <p>
-          Real-Life English audio uses the text-to-speech service available on your device to
-          read lesson content and provide distinct dialogue voices. That feature does not
-          record your voice or listen through the microphone. The availability and processing
-          of device voices may depend on your operating-system or text-to-speech provider and
-          its settings.
+          Real-Life English, Visual Vocabulary, and Speaking Practice use text-to-speech
+          services available on your device to read learning content and sample answers. These
+          features do not record your voice or listen through the microphone. On iOS, you can
+          choose and preview installed U.S. English system voices, optionally use a second
+          installed voice for dialogues, and adjust speaking speed. VocaMingo stores only the
+          selected system-voice identifiers and speech preferences, not the generated speech.
+          The iOS app uses Apple system speech synthesis and does not send text to a BPZone or
+          third-party cloud text-to-speech API. On Android, speech is handled by the
+          text-to-speech service configured on your device. Voice availability, downloads, and
+          any provider processing depend on your operating-system or text-to-speech provider
+          and its settings and privacy terms.
         </p>
         <p>
           On Android and iOS, Speaking Practice can record an answer after you grant microphone
@@ -261,7 +278,10 @@
           <li>Your chosen profile name and built-in avatar selection;</li>
           <li>Your operating system, recorded as Android or iOS;</li>
           <li>Coins, lifetime coins earned, stars, score, speed bonus, and completed levels;</li>
-          <li>Highest level reached and average completion time for each game mode;</li>
+          <li>
+            Highest level reached, completion totals, and timing statistics for each of the
+            nine game modes, including Mingo Grid;
+          </li>
           <li>Overall average completion time and gameplay statistics used for ranking;</li>
           <li>
             When Share Diagnostics is enabled, aggregate Real-Life English topic progress,
@@ -280,6 +300,14 @@
           VocaMingo offers only built-in avatars and does not ask you to upload a profile photo.
           The anonymous user ID is linked to the profile and gameplay information stored in
           Firebase so those features can operate.
+        </p>
+        <p>
+          The nine synced game modes are Hidden Trails, Wonder Words, Knot Logic, Word Guess,
+          Word Bomb, Mingo Match, Mingo Grid, Mingo Fix, and Picture Pairs. For Mingo Grid, the
+          app syncs the same aggregate progress and timing fields used by the other games. It
+          does not intentionally sync your typed guesses, individual tile results, hint text,
+          definitions, examples, or hidden puzzle answers to your Firebase profile or the
+          public leaderboard.
         </p>
         <p>
           VocaMingo uses Firebase App Check with Play Integrity on Android and Apple App Attest
@@ -313,7 +341,10 @@
             Real-Life English topic, situation, lesson, section, audio, exercise, mission,
             completion, exit, search-result count, and time-spent events;
           </li>
-          <li>Game mode, level, difficulty, completion time, stars, coins, and hints used;</li>
+          <li>
+            Game mode, including Mingo Grid, level, difficulty, completion time, stars, coins,
+            and hints used;
+          </li>
           <li>
             Ad prompts, format, placement, impressions, estimated ad revenue and currency,
             ad-unit identifier, rewards earned, and unavailable ads;
@@ -325,15 +356,16 @@
         </ul>
         <p>
           We do not intentionally send spoken answers, typed vocabulary search text, puzzle
-          board contents, selected letters, Real-Life English search text or learner responses,
-          discussion-prompt answers, your support email address, precise location, profile
-          name, or anonymous Firebase Authentication user ID to Firebase Analytics or
-          Crashlytics. When Share Diagnostics is enabled, Cloud Firestore receives aggregate
-          Real-Life English progress, practice totals, topic-open counts, and feature-use
-          counters linked to the anonymous Firebase user ID on Android and iOS. It does not
-          receive search text, custom responses, selected answer text, lesson dialogue, spoken
-          content, or raw event history. Profile and leaderboard information is processed
-          separately through Firebase Authentication and Cloud Firestore as described above.
+          board contents, selected letters, Mingo Grid guesses or hidden answers, Real-Life
+          English search text or learner responses, discussion-prompt answers, your support
+          email address, precise location, profile name, or anonymous Firebase Authentication
+          user ID to Firebase Analytics or Crashlytics. When Share Diagnostics is enabled,
+          Cloud Firestore receives aggregate Real-Life English progress, practice totals,
+          topic-open counts, and feature-use counters linked to the anonymous Firebase user ID
+          on Android and iOS. It does not receive search text, custom responses, selected answer
+          text, lesson dialogue, spoken content, or raw event history. Profile and leaderboard
+          information is processed separately through Firebase Authentication and Cloud
+          Firestore as described above.
         </p>
         <p>
           You can turn future Analytics, Crashlytics, and Real-Life English aggregate
@@ -380,7 +412,11 @@
           and its explanation of
           <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer">
             information from apps that use Google services
-          </a>.
+          </a>. Google also publishes a
+          <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure" rel="noopener noreferrer">
+            Google Mobile Ads SDK data-disclosure guide
+          </a>
+          describing information automatically collected and shared by the Android SDK.
         </p>
       </section>
 
