@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><clipPath id="clip"><rect width="64" height="64" rx="17" /></clipPath></defs>
+  <g clip-path="url(#clip)">
+    <rect width="64" height="64" rx="17" fill="#655bbd" />
+    <circle cx="56.3" cy="5.1" r="24" fill="#fff" opacity=".2" />
+    <g transform="rotate(-8 23 34)">
+      <rect x="8" y="16" width="28" height="36" rx="7" fill="#302a6e" opacity=".35" />
+      <rect x="9.5" y="14.5" width="25" height="34" rx="6" fill="#fff" stroke="#b8b1ff" stroke-width="2" />
+      <circle cx="22" cy="30" r="5.5" fill="#f7bd2e" />
+      <g stroke="#f7bd2e" stroke-width="2.1" stroke-linecap="round"><path d="M22 20v3M22 37v3M12 30h3M29 30h3M15 23l2 2M27 35l2 2M29 23l-2 2M17 35l-2 2" /></g>
+    </g>
+    <g transform="rotate(7 42 34)">
+      <rect x="28" y="16" width="28" height="36" rx="7" fill="#302a6e" opacity=".35" />
+      <rect x="29.5" y="14.5" width="25" height="34" rx="6" fill="#fff" stroke="#b8b1ff" stroke-width="2" />
+      <circle cx="42" cy="30" r="5.5" fill="#f7bd2e" />
+      <g stroke="#f7bd2e" stroke-width="2.1" stroke-linecap="round"><path d="M42 20v3M42 37v3M32 30h3M49 30h3M35 23l2 2M47 35l2 2M49 23l-2 2M37 35l-2 2" /></g>
+    </g>
+    <path d="M25 12c5-5 11-5 16 0" fill="none" stroke="#fff" stroke-opacity=".76" stroke-width="2.5" stroke-linecap="round" />
+    <path d="m38 9 4 3-4 3" fill="none" stroke="#fff" stroke-opacity=".76" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

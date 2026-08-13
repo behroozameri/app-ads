@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LexiArcade | Six Endless Word Games on Android and iOS</title>
+  <title>LexiArcade | Eight Endless Word Games on Android and iOS</title>
   <link rel="canonical" href="https://bpzone.info/apps/tools/lexiarcade/" />
   <link rel="icon" type="image/png" href="/assets/apps/tools/lexiarcade/icon-512.png?v=20260722" />
   <link rel="apple-touch-icon" href="/assets/apps/tools/lexiarcade/icon-512.png?v=20260722" />
-  <meta name="description" content="Play six endless word games in LexiArcade: Hidden Trails, Wonder Words, Knot Logic, Word Guess, Word Bomb, and Rush Match. Free on Android and iOS." />
-  <meta name="keywords" content="LexiArcade, endless word games, word search game, crossword game, word guess game, vocabulary puzzle, Hidden Trails, Wonder Words, Knot Logic, Word Bomb, Rush Match, Android word game, iOS word game, BPZone" />
+  <meta name="description" content="Play eight endless word games in LexiArcade, including Hidden Trails, Wonder Words, Picture Pairs, and Wordle. Free on Android and iOS." />
+  <meta name="keywords" content="LexiArcade, endless word games, word search game, crossword game, word guess game, vocabulary puzzle, Wordle, memory matching game, Picture Pairs, Hidden Trails, Wonder Words, Knot Logic, Word Bomb, Rush Match, Android word game, iOS word game, BPZone" />
   <meta property="og:title" content="LexiArcade" />
-  <meta property="og:description" content="Six endless word games, daily rewards, profiles, and global leaderboards in one colorful arcade." />
+  <meta property="og:description" content="Eight endless word games, daily rewards, profiles, and global leaderboards in one colorful arcade." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bpzone.info/apps/tools/lexiarcade/" />
   <meta property="og:site_name" content="BPZone" />
@@ -22,7 +22,7 @@
   <meta property="og:image:alt" content="LexiArcade app icon" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="LexiArcade" />
-  <meta name="twitter:description" content="Play six endless word games with profiles, rewards, and global leaderboards on Android, iPhone, and iPad." />
+  <meta name="twitter:description" content="Play eight endless word games with profiles, rewards, and global leaderboards on Android, iPhone, and iPad." />
   <meta name="twitter:image" content="https://bpzone.info/assets/apps/tools/lexiarcade/icon-512.png?v=20260724" />
   <meta name="twitter:image:alt" content="LexiArcade app icon" />
 
@@ -37,13 +37,15 @@
       ],
       "applicationCategory": "GameApplication",
       "applicationSubCategory": "Word and puzzle games",
-      "softwareVersion": "2.0",
-      "description": "Play six endless word games: Hidden Trails, Wonder Words, Knot Logic, Word Guess, Word Bomb, and Rush Match. Earn coins and stars, customize a profile, and climb the global leaderboard.",
+      "softwareVersion": "2.2",
+      "dateModified": "2026-08-13",
+      "description": "Play eight endless word games: Hidden Trails, Wonder Words, Knot Logic, Word Guess, Word Bomb, Rush Match, Picture Pairs, and Wordle. Earn coins and stars, customize a profile, and climb the global leaderboard.",
       "image": "https://bpzone.info/assets/apps/tools/lexiarcade/icon-512.png?v=20260722",
       "featureList": [
-        "Six endless word-game modes",
+        "Eight endless word-game modes, including Picture Pairs and Wordle",
         "Coins, stars, hints, and daily gifts",
-        "Player profiles and global leaderboards",
+        "Player profiles, progress tracking, and global leaderboards",
+        "Core games and bundled word content available offline",
         "Native Android, iPhone, and iPad experience"
       ],
       "downloadUrl": [
@@ -350,13 +352,33 @@
       gap: 16px;
     }
 
+    .games-grid,
+    .updates-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
     .mode-card {
+      position: relative;
       min-height: 188px;
       padding: 24px;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--surface);
       box-shadow: 0 12px 30px rgba(20, 36, 58, 0.07);
+    }
+
+    .new-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--mode-color, var(--blue)) 14%, var(--surface));
+      color: var(--mode-color, var(--blue));
+      font-size: 0.68rem;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .mode-number {
@@ -461,6 +483,11 @@
         grid-template-columns: 1fr;
       }
 
+      .games-grid,
+      .updates-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       h1 {
         font-size: 2.9rem;
       }
@@ -537,6 +564,11 @@
         grid-template-columns: 1fr;
       }
 
+      .games-grid,
+      .updates-grid {
+        grid-template-columns: 1fr;
+      }
+
     }
   </style>
 </head>
@@ -570,11 +602,11 @@
       <div class="container hero-layout">
         <div>
           <img class="app-icon" src="/assets/apps/tools/lexiarcade/icon-512.png?v=20260722" alt="LexiArcade app icon" width="512" height="512" />
-          <p class="eyebrow">Version 2.0 &middot; Word-game collection</p>
-          <h1>Six games. Endless words.</h1>
+          <p class="eyebrow">Version 2.2 &middot; Word-game collection</p>
+          <h1>Eight games. Endless words.</h1>
           <p class="hero-copy">
-            Search, connect, arrange, guess, race the fuse, and match words with clues.
-            Every mode offers quick sessions, growing difficulty, and endless replay.
+            Search, connect, arrange, guess, react, and match words with pictures, clues, and sounds.
+            Every mode offers quick sessions, growing difficulty, and endless replay, with core gameplay available offline.
           </p>
           <div class="store-row">
             <a class="store-link google-play" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.wordvoyage" target="_blank" rel="noopener noreferrer" aria-label="Get LexiArcade on Google Play">
@@ -589,7 +621,7 @@
 
         <div class="hero-art">
           <div class="feature-graphic">
-            <img src="/assets/apps/tools/lexiarcade/feature.png?v=20260722" alt="LexiArcade: six games, endless words" width="1024" height="500" />
+            <img src="/assets/apps/tools/lexiarcade/feature.png?v=20260813" alt="LexiArcade: eight games, endless words" width="1024" height="500" />
           </div>
         </div>
       </div>
@@ -599,10 +631,10 @@
       <div class="container">
         <div class="section-heading">
           <p class="section-kicker">Game modes</p>
-          <h2>Six distinct ways to play with words</h2>
+          <h2>Eight distinct ways to play with words</h2>
           <p class="lead">Choose a relaxed puzzle or a faster challenge, then keep going through endless levels with progressively richer word pools.</p>
         </div>
-        <div class="mode-grid">
+        <div class="mode-grid games-grid">
           <article class="mode-card" style="--mode-color: var(--blue);">
             <img class="game-mode-icon" src="/assets/apps/tools/lexiarcade/game-icons/hidden-trails.svg" alt="" width="64" height="64" />
             <strong>Hidden Trails</strong>
@@ -633,6 +665,18 @@
             <strong>Rush Match</strong>
             <p>Pair rushing words with pictures, definitions, sentences, and sounds.</p>
           </article>
+          <article class="mode-card" style="--mode-color: #7b70f6;">
+            <span class="new-badge">New</span>
+            <img class="game-mode-icon" src="/assets/apps/tools/lexiarcade/game-icons/picture-pairs.svg" alt="" width="64" height="64" />
+            <strong>Picture Pairs</strong>
+            <p>Flip cards and match English words with their pictures.</p>
+          </article>
+          <article class="mode-card" style="--mode-color: #4fae75;">
+            <span class="new-badge">New</span>
+            <img class="game-mode-icon" src="/assets/apps/tools/lexiarcade/game-icons/wordle.svg" alt="" width="64" height="64" />
+            <strong>Wordle</strong>
+            <p>Solve a vocabulary word in six color-coded guesses.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -640,25 +684,30 @@
     <section id="latest" class="section-muted">
       <div class="container">
         <div class="section-heading">
-          <p class="section-kicker">What&rsquo;s new in version 2.0</p>
-          <h2>A complete game-first redesign</h2>
-          <p class="lead">Android and iOS now share the same six-game experience, progression system, and player-focused features.</p>
+          <p class="section-kicker">What&rsquo;s new in version 2.2</p>
+          <h2>More games, faster access, smarter progress</h2>
+          <p class="lead">The latest Android and iOS release expands the arcade and refreshes the experience across all eight games.</p>
         </div>
-        <div class="mode-grid">
+        <div class="mode-grid updates-grid">
           <article class="mode-card" style="--mode-color: var(--blue);">
-            <span class="mode-number">6</span>
-            <strong>Twice as many games</strong>
-            <p>Word Guess, Word Bomb, and Rush Match join the original three puzzle modes.</p>
+            <span class="mode-number">+2</span>
+            <strong>Two new games</strong>
+            <p>Picture Pairs and Wordle bring visual memory matching and six-guess word puzzles to the arcade.</p>
           </article>
           <article class="mode-card" style="--mode-color: var(--gold);">
-            <span class="mode-number">★</span>
-            <strong>Progress and rewards</strong>
-            <p>Earn stars and coins, claim daily gifts, use hints, and build a record across every game.</p>
+            <span class="mode-number">&#9654;</span>
+            <strong>Refreshed home screen</strong>
+            <p>Continue your next level sooner and browse the complete eight-game collection more easily.</p>
           </article>
           <article class="mode-card" style="--mode-color: var(--cyan);">
-            <span class="mode-number">#</span>
-            <strong>Profiles and leaderboards</strong>
-            <p>Choose a built-in avatar, track all six games, and compare scores on the global leaderboard.</p>
+            <span class="mode-number">8</span>
+            <strong>Progress everywhere</strong>
+            <p>Profiles, progress tracking, leaderboards, and cloud syncing now cover every game.</p>
+          </article>
+          <article class="mode-card" style="--mode-color: #28ad84;">
+            <span class="mode-number">&#10003;</span>
+            <strong>Smoother play</strong>
+            <p>Clearer Wordle controls join general stability, syncing, and performance improvements.</p>
           </article>
         </div>
       </div>
@@ -686,7 +735,7 @@
         <div class="download-panel">
           <div>
             <h2>Pick a game and start playing</h2>
-            <p>Download LexiArcade 2.0 free on Google Play or the App Store.</p>
+            <p>Download LexiArcade 2.2 free on Google Play or the App Store.</p>
           </div>
           <div class="download-actions">
             <a class="store-link google-play" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.wordvoyage" target="_blank" rel="noopener noreferrer" aria-label="Get LexiArcade on Google Play">
