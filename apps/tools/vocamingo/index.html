@@ -1358,16 +1358,26 @@
 
     .download-panel {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: minmax(0, 1fr) 453px;
       align-items: center;
-      gap: 30px;
+      gap: 48px;
       background:
         radial-gradient(circle at 95% 0%, rgba(79, 200, 237, 0.15), transparent 19rem),
         #ffffff;
     }
 
+    .download-actions {
+      display: grid;
+      grid-template-columns: repeat(2, 220px);
+      align-items: center;
+      justify-self: end;
+      gap: 12px 13px;
+    }
+
     .download-panel .text-link {
       margin-top: 0;
+      align-self: center;
+      justify-self: start;
     }
 
     footer {
@@ -1427,6 +1437,11 @@
 
       .download-actions {
         justify-content: flex-start;
+        justify-self: start;
+      }
+
+      .download-panel {
+        gap: 30px;
       }
     }
 
