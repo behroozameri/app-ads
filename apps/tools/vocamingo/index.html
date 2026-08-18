@@ -321,26 +321,29 @@
       filter: brightness(1.06);
     }
 
-    .store-link.google-play {
-      width: 202px;
-    }
-
+    .store-link.google-play,
     .store-link.app-store {
-      width: 172px;
+      width: 220px;
     }
 
     .store-link img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
     }
 
     .store-link.google-play img {
       transform: scale(1.2);
     }
 
+    .store-link.app-store img {
+      transform: scale(1.08);
+    }
+
     .youtube-link {
-      min-height: 46px;
+      width: 220px;
+      height: 56px;
+      min-height: 56px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -1642,16 +1645,6 @@
         width: 100%;
         height: 56px;
         min-height: 56px;
-      }
-
-      .store-row .store-link img,
-      .download-actions .store-link img {
-        object-fit: cover;
-      }
-
-      .store-row .store-link.app-store img,
-      .download-actions .store-link.app-store img {
-        transform: scale(1.08);
       }
 
       .store-row .availability,
