@@ -618,6 +618,10 @@ textarea:focus {
   stroke-width: 2;
 }
 
+.faq-intro > a + a {
+  margin-top: 12px;
+}
+
 .faq-list {
   border-top: 1px solid var(--line);
 }

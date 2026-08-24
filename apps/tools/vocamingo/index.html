@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VocaMingo 2.0 | Real-Life English, Speaking and Word Games</title>
+  <title>VocaMingo 2.2 | Real-Life English, Speaking and Word Games</title>
   <link rel="canonical" href="https://bpzone.info/apps/tools/vocamingo/" />
   <link rel="icon" type="image/png" href="/assets/apps/tools/vocamingo/icon-512.png?v=20260818" />
   <link rel="apple-touch-icon" href="/assets/apps/tools/vocamingo/icon-512.png?v=20260818" />
@@ -11,7 +11,7 @@
   <meta name="keywords" content="VocaMingo, English learning app, speaking practice, English conversation, game-based learning, English lessons, vocabulary games, word games, Leitner box, Android, iOS, BPZone" />
 
   <meta property="og:title" content="VocaMingo" />
-  <meta property="og:description" content="VocaMingo 2.0 combines real-life lessons, Situation Challenges, optional videos, speaking practice, visual vocabulary, smart review, and nine word games." />
+  <meta property="og:description" content="VocaMingo 2.2 combines real-life lessons, Situation Challenges, optional videos, speaking practice, visual vocabulary, smart review, and nine word games." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bpzone.info/apps/tools/vocamingo/" />
   <meta property="og:site_name" content="BPZone" />
@@ -39,8 +39,8 @@
       "applicationCategory": "EducationalApplication",
       "applicationSubCategory": "English learning and word games",
       "description": "Learn practical English through 8 real-life areas, 69 situations, 83 guided lessons, Situation Challenges, optional lesson videos, speaking practice, illustrated vocabulary, Leitner review, and nine word-game modes.",
-      "softwareVersion": "Android 2.0 (12); iOS 2.0 (10)",
-      "dateModified": "2026-08-18",
+      "softwareVersion": "Android 2.2 (14); iOS 2.0 (10)",
+      "dateModified": "2026-08-24",
       "image": "https://bpzone.info/assets/apps/tools/vocamingo/icon-512.png?v=20260818",
       "featureList": [
         "Real-Life English with 8 essential areas, 69 practical situations, and 83 guided lessons",
@@ -53,7 +53,8 @@
         "Nine English word-game modes, including Mingo Grid, Mingo Fix, and Picture Pairs",
         "Illustrated vocabulary organized by category",
         "Leitner spaced-review box",
-        "Player progress, coins, stars, profiles, and leaderboards"
+        "Player progress, coins, stars, profiles, and leaderboards",
+        "Optional passwordless email protection, multi-device progress restore, and account deletion on Android"
       ],
       "downloadUrl": [
         "https://play.google.com/store/apps/details?id=com.bpzone.ca.vocamingo",
@@ -1356,6 +1357,12 @@
       text-underline-offset: 4px;
     }
 
+    .privacy-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 22px;
+    }
+
     .download-panel {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 453px;
@@ -1709,7 +1716,7 @@
           <p class="eyebrow">Learn &middot; Speak &middot; Play &middot; Remember</p>
           <h1>Learn English. Speak with confidence.</h1>
           <p class="hero-copy">
-            VocaMingo 2.0 combines 83 guided lessons across 69 practical situations, optional
+            VocaMingo 2.2 combines 83 guided lessons across 69 practical situations, optional
             lesson videos and Situation Challenges, speaking practice, smart review, and nine word games.
           </p>
           <div class="store-row">
@@ -1723,7 +1730,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z" /></svg>
               <span>Watch on YouTube</span>
             </a>
-            <span class="availability">Free &middot; Version 2.0 &middot; Android + iOS</span>
+            <span class="availability">Free &middot; Android 2.2 &middot; iOS 2.0</span>
           </div>
         </div>
 
@@ -1917,7 +1924,7 @@
     <section id="real-life" class="real-life-section">
       <div class="container real-life-layout">
         <div class="real-life-copy">
-          <p class="section-kicker">VocaMingo 2.0 &middot; Real-Life English</p>
+          <p class="section-kicker">VocaMingo 2.2 &middot; Real-Life English</p>
           <h2>English for the moments that matter</h2>
           <p class="lead">
             Prepare for everyday conversations with useful words and phrases, two-speaker dialogues,
@@ -1983,7 +1990,7 @@
               <div class="curriculum-topic"><strong>Transportation &amp; Mobility</strong><span>13 lessons</span></div>
             </div>
           </div>
-          <figcaption class="preview-caption">VocaMingo 2.0 curriculum on Android and iOS</figcaption>
+          <figcaption class="preview-caption">VocaMingo curriculum on Android and iOS</figcaption>
         </figure>
       </div>
     </section>
@@ -2161,12 +2168,16 @@
           <div>
             <h2>Simple access, clear controls</h2>
             <p>
-              VocaMingo does not require an email address, password, phone number, or social login.
-              An anonymous app profile supports progress sync and leaderboards, and settings provide controls for reminders,
-              diagnostics, ad privacy, and progress reset. Speaking recordings and transcripts stay in private local app storage.
-              The last complete downloaded app configuration is retained for more reliable launches when a new fetch is unavailable.
+              VocaMingo starts with an anonymous app profile, so an email is not required to begin.
+              On Android, you can optionally protect your progress with a passwordless email link,
+              restore and safely merge progress across devices, and permanently delete your account and associated cloud data.
+              Settings also provide controls for reminders, diagnostics, ad privacy, and progress reset.
+              Speaking recordings and transcripts stay in private local app storage.
             </p>
-            <a class="text-link" href="/apps/tools/vocamingo/privacy-policy.html">Read the Privacy Policy</a>
+            <div class="privacy-actions">
+              <a class="text-link" href="/apps/tools/vocamingo/privacy-policy.html">Read the Privacy Policy</a>
+              <a class="text-link" href="/apps/tools/vocamingo/delete-account/">Delete your account</a>
+            </div>
           </div>
         </div>
       </div>
@@ -2178,7 +2189,7 @@
           <div>
             <p class="section-kicker">Learn &middot; Speak &middot; Play &middot; Remember</p>
             <h2>Ready to make English something you use?</h2>
-            <p>Download VocaMingo 2.0 free&mdash;for your own practice, your learners, or your next English lesson.</p>
+            <p>Download VocaMingo free&mdash;for your own practice, your learners, or your next English lesson.</p>
           </div>
           <div class="download-actions">
             <a class="store-link google-play" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.vocamingo" target="_blank" rel="noopener noreferrer" aria-label="Find VocaMingo on Google Play">
@@ -2199,7 +2210,7 @@
   </main>
 
   <footer>
-    VocaMingo by BPZone &nbsp;|&nbsp; <a href="https://www.youtube.com/@vocamingo" target="_blank" rel="noopener noreferrer">YouTube</a> &nbsp;|&nbsp; <a href="/support/?app=vocamingo">Support</a> &nbsp;|&nbsp; <a href="/apps/tools/vocamingo/privacy-policy.html">Privacy Policy</a>
+    VocaMingo by BPZone &nbsp;|&nbsp; <a href="https://www.youtube.com/@vocamingo" target="_blank" rel="noopener noreferrer">YouTube</a> &nbsp;|&nbsp; <a href="/support/?app=vocamingo">Support</a> &nbsp;|&nbsp; <a href="/apps/tools/vocamingo/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="/apps/tools/vocamingo/delete-account/">Delete Account</a>
   </footer>
 </body>
 </html>

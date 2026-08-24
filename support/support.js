@@ -6,6 +6,7 @@ const apps = {
     icon: "/assets/apps/tools/vocamingo/icon-512.png",
     page: "/apps/tools/vocamingo/",
     privacy: "/apps/tools/vocamingo/privacy-policy.html",
+    deletion: "/apps/tools/vocamingo/delete-account/",
     platforms: "Android and iOS",
     accent: "#168aad",
     accentDark: "#0d6886",
@@ -206,6 +207,7 @@ const elements = {
   appPageLink: document.getElementById("app-page-link"),
   navAppLink: document.getElementById("nav-app-link"),
   privacyLink: document.getElementById("privacy-link"),
+  deletionLink: document.getElementById("deletion-link"),
   navPrivacyLink: document.getElementById("nav-privacy-link"),
   emailSupportLink: document.getElementById("email-support-link"),
   specificQuestion: document.getElementById("app-specific-question"),
@@ -246,6 +248,12 @@ function updateSupportPage(appKey, updateUrl = false) {
     elements.navAppLink.hidden = false;
     elements.privacyLink.href = app.privacy;
     elements.navPrivacyLink.href = app.privacy;
+    if (app.deletion) {
+      elements.deletionLink.href = app.deletion;
+      elements.deletionLink.hidden = false;
+    } else {
+      elements.deletionLink.hidden = true;
+    }
     elements.specificQuestion.textContent = app.faqQuestion;
     elements.specificAnswer.textContent = app.faqAnswer;
 
@@ -268,6 +276,7 @@ function updateSupportPage(appKey, updateUrl = false) {
     elements.navAppLink.hidden = true;
     elements.privacyLink.href = "/site-privacy-policy.html";
     elements.navPrivacyLink.href = "/site-privacy-policy.html";
+    elements.deletionLink.hidden = true;
     elements.specificQuestion.textContent = "I need help with a feature in the app";
     elements.specificAnswer.textContent = "Tell us which app and feature you were using, what you expected to happen, and what happened instead.";
     elements.emailSupportLink.href = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent("BPZone App Support")}`;

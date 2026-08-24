@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Delete Your VocaMingo Account | BPZone</title>
+  <meta name="description" content="Request deletion of your VocaMingo account and associated cloud data, with or without access to the app." />
+  <link rel="canonical" href="https://bpzone.info/apps/tools/vocamingo/delete-account/" />
+  <link rel="icon" type="image/png" href="/assets/apps/tools/vocamingo/icon-512.png?v=20260824" />
+  <link rel="apple-touch-icon" href="/assets/apps/tools/vocamingo/icon-512.png?v=20260824" />
+  <meta property="og:title" content="Delete Your VocaMingo Account" />
+  <meta property="og:description" content="Instructions for deleting a VocaMingo account and its associated data." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bpzone.info/apps/tools/vocamingo/delete-account/" />
+  <meta property="og:site_name" content="BPZone" />
+  <meta property="og:image" content="https://bpzone.info/assets/apps/tools/vocamingo/icon-512.png?v=20260824" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Delete Your VocaMingo Account" />
+  <meta name="twitter:description" content="Instructions for deleting a VocaMingo account and its associated data." />
+  <meta name="twitter:image" content="https://bpzone.info/assets/apps/tools/vocamingo/icon-512.png?v=20260824" />
+
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #0d2948;
+      --navy-light: #173f62;
+      --ink: #102b48;
+      --body: #4f6479;
+      --muted: #6b7d8e;
+      --surface: #ffffff;
+      --soft: #f2f8fb;
+      --line: #d9e7ee;
+      --cyan: #4fc8ed;
+      --blue: #2563d9;
+      --mint: #51cfa8;
+      --coral: #e4514a;
+      --gold: #b87400;
+      --shadow: 0 24px 68px rgba(13, 41, 72, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--soft);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      border-bottom: 1px solid rgba(217, 231, 238, 0.9);
+      background: rgba(255, 255, 255, 0.94);
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--ink);
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      box-shadow: 0 8px 22px rgba(13, 41, 72, 0.18);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .text-link:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 70px 0 64px;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 90% 0%, rgba(79, 200, 237, 0.3), transparent 28rem),
+        radial-gradient(circle at 5% 100%, rgba(81, 207, 168, 0.2), transparent 24rem),
+        linear-gradient(135deg, #092442, #0d3456 58%, #15546a);
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--cyan);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 660px;
+      margin-bottom: 18px;
+      font-size: clamp(2.45rem, 7vw, 4.35rem);
+      line-height: 1.06;
+      letter-spacing: -0.045em;
+    }
+
+    .hero p:last-child {
+      max-width: 660px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 1.08rem;
+    }
+
+    main > .container {
+      padding: 48px 0 76px;
+    }
+
+    .notice {
+      display: grid;
+      grid-template-columns: 50px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 24px;
+      padding: 22px;
+      border: 1px solid #b9e5d7;
+      border-radius: 20px;
+      background: #effbf6;
+    }
+
+    .notice-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: #d8f5e9;
+      color: #147c5f;
+      font-size: 1.35rem;
+      font-weight: 950;
+    }
+
+    .notice h2 {
+      margin-bottom: 5px;
+      font-size: 1.25rem;
+    }
+
+    .notice p {
+      margin-bottom: 0;
+      color: var(--body);
+    }
+
+    .card {
+      margin-top: 24px;
+      padding: clamp(24px, 5vw, 38px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .step-label {
+      display: inline-flex;
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #eaf4ff;
+      color: #1e62b4;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      font-size: clamp(1.55rem, 4vw, 2rem);
+      line-height: 1.2;
+    }
+
+    .card p,
+    .card li {
+      color: var(--body);
+    }
+
+    .steps,
+    .data-list {
+      margin: 16px 0 0;
+      padding-left: 23px;
+    }
+
+    li + li {
+      margin-top: 9px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      margin-top: 18px;
+      padding: 12px 22px;
+      border-radius: 15px;
+      background: var(--blue);
+      color: #ffffff;
+      font-weight: 900;
+      text-decoration: none;
+      box-shadow: 0 12px 28px rgba(37, 99, 217, 0.24);
+    }
+
+    .button:hover {
+      background: #174fb9;
+    }
+
+    .helper {
+      margin: 13px 0 0;
+      color: var(--muted) !important;
+      font-size: 0.9rem;
+    }
+
+    .warning {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 4px solid #d79825;
+      border-radius: 12px;
+      background: #fff8e8;
+      color: #6f4b0c;
+    }
+
+    .warning strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .two-column .card {
+      height: 100%;
+      margin-top: 0;
+      box-shadow: 0 14px 38px rgba(13, 41, 72, 0.08);
+    }
+
+    .text-link {
+      color: #106d99;
+      font-weight: 850;
+      text-underline-offset: 3px;
+    }
+
+    footer {
+      padding: 32px 20px;
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.72);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    a:focus-visible {
+      outline: 3px solid rgba(79, 200, 237, 0.55);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 700px) {
+      .nav-links a:first-child {
+        display: none;
+      }
+
+      .hero {
+        padding: 56px 0 52px;
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .notice {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .container,
+      .nav {
+        width: min(100% - 28px, 920px);
+      }
+
+      .brand span {
+        display: none;
+      }
+
+      .card {
+        border-radius: 20px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Account deletion navigation">
+      <a class="brand" href="/apps/tools/vocamingo/">
+        <img src="/assets/apps/tools/vocamingo/icon-512.png?v=20260824" alt="" width="512" height="512" />
+        <span>VocaMingo</span>
+      </a>
+      <div class="nav-links">
+        <a href="/apps/tools/vocamingo/">App page</a>
+        <a href="/apps/tools/vocamingo/privacy-policy.html">Privacy</a>
+        <a href="/support/?app=vocamingo">Support</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <p class="eyebrow">Account and data controls</p>
+      <h1>Delete your VocaMingo account</h1>
+      <p>
+        You can permanently delete your VocaMingo account and associated cloud data from
+        inside the Android app or request deletion here if you no longer have access to it.
+      </p>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="notice" aria-labelledby="secure-notice-title">
+      <div class="notice-icon" aria-hidden="true">✓</div>
+      <div>
+        <h2 id="secure-notice-title">Your account will not be deleted without verification</h2>
+        <p>
+          We verify account ownership before completing an external request. Never send us a
+          password, sign-in link, verification code, or other sensitive credential.
+        </p>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="delete-in-app-title">
+      <span class="step-label">Fastest option</span>
+      <h2 id="delete-in-app-title">Delete from the Android app</h2>
+      <p>If VocaMingo is still installed and you can access the account:</p>
+      <ol class="steps">
+        <li>Open VocaMingo and go to <strong>Settings</strong>.</li>
+        <li>Select <strong>Delete Account &amp; Data</strong>.</li>
+        <li>Review the information shown by the app.</li>
+        <li>
+          For an email-protected account, select <strong>Send link</strong>, open the verification
+          email on that device, and tap the secure link.
+        </li>
+        <li>Return to VocaMingo and confirm <strong>Delete permanently</strong>.</li>
+      </ol>
+      <p class="helper">
+        An anonymous profile without a connected email can be deleted directly after the app's
+        confirmation step and does not require an email link.
+      </p>
+      <div class="warning">
+        <strong>Check Spam or Junk</strong>
+        The verification email may take a minute to arrive. Check your Spam or Junk folder if
+        you do not see it in your inbox.
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="delete-without-app-title">
+      <span class="step-label">No access to the app</span>
+      <h2 id="delete-without-app-title">Request deletion by email</h2>
+      <p>
+        Send the request from the email address connected to your VocaMingo account whenever
+        possible. This helps us verify ownership and locate the correct account. If the profile
+        was anonymous, include your platform, profile name, approximate last-use date, and any
+        non-sensitive support details you still have.
+      </p>
+      <a
+        class="button"
+        href="mailto:vocamingo@gmail.com?subject=VocaMingo%20Account%20Deletion%20Request&amp;body=I%20request%20permanent%20deletion%20of%20my%20VocaMingo%20account%20and%20associated%20data.%0A%0APlatform%20(Android%20or%20iOS)%3A%20%0AProfile%20name%20(if%20available)%3A%20%0AApproximate%20last-use%20date%3A%20%0AAdditional%20non-sensitive%20details%3A%20"
+      >Request account deletion</a>
+      <p class="helper">
+        This button opens your email app. You can also email
+        <a class="text-link" href="mailto:vocamingo@gmail.com">vocamingo@gmail.com</a>
+        with the subject “VocaMingo Account Deletion Request.” You do not need to reinstall the app.
+      </p>
+      <p class="helper">
+        We may ask for additional non-sensitive information when reasonably necessary to verify
+        ownership. We aim to complete verified requests within 30 days.
+      </p>
+    </section>
+
+    <div class="two-column">
+      <section class="card" aria-labelledby="deleted-data-title">
+        <h2 id="deleted-data-title">Data we delete</h2>
+        <ul class="data-list">
+          <li>Your Firebase Authentication identity and connected email, if any;</li>
+          <li>Your private profile, built-in avatar selection, and cloud progress;</li>
+          <li>Coins, stars, scores, completed game levels, and synced game statistics;</li>
+          <li>Synced learning and lesson progress; and</li>
+          <li>Your public leaderboard profile and associated ranking data.</li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="other-data-title">
+        <h2 id="other-data-title">Local and retained information</h2>
+        <p>
+          Data stored only on your device cannot be removed remotely. Use <strong>Reset Progress</strong>
+          or uninstall VocaMingo to remove local app data from that device.
+        </p>
+        <p>
+          We may retain deletion-request correspondence when reasonably necessary to document
+          the request, prevent abuse, resolve disputes, or meet legal obligations. Independent
+          providers may retain data under their own policies.
+        </p>
+      </section>
+    </div>
+
+    <section class="card" aria-labelledby="help-title">
+      <h2 id="help-title">Need help?</h2>
+      <p>
+        Read the <a class="text-link" href="/apps/tools/vocamingo/privacy-policy.html">VocaMingo Privacy Policy</a>
+        or visit <a class="text-link" href="/support/?app=vocamingo">VocaMingo Support</a>.
+        For privacy questions, email
+        <a class="text-link" href="mailto:vocamingo@gmail.com?subject=VocaMingo%20Privacy">vocamingo@gmail.com</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    VocaMingo by BPZone &nbsp;|&nbsp;
+    <a href="/apps/tools/vocamingo/">App page</a> &nbsp;|&nbsp;
+    <a href="/support/?app=vocamingo">Support</a> &nbsp;|&nbsp;
+    <a href="/apps/tools/vocamingo/privacy-policy.html">Privacy Policy</a>
+  </footer>
+</body>
+</html>

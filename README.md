@@ -26,3 +26,13 @@ https://bpzone.info/support/?app=sweet-kiss
 ```
 
 App names, icons, colors, page links, privacy links, platforms, and app-specific FAQ text are configured in `support/support.js`.
+
+## VocaMingo account deletion
+
+Use this public account-deletion URL in Google Play Console:
+
+```text
+https://bpzone.info/apps/tools/vocamingo/delete-account/
+```
+
+The page explains both the verified in-app deletion flow and the external email-request path for users who no longer have access to the app.
