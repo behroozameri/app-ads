@@ -35,4 +35,4 @@ Use this public account-deletion URL in Google Play Console:
 https://bpzone.info/apps/tools/vocamingo/delete-account/
 ```
 
-The page explains both the verified in-app deletion flow and the external email-request path for users who no longer have access to the app.
+The page explains the verified Android and iOS in-app deletion flow and the external email-request path for users who no longer have access to the app.

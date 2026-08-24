@@ -163,15 +163,15 @@
           a platform-specific difference is stated.
         </p>
         <p>
-          This revision reflects Android version 2.2 (version code 14) and iOS version 2.0
-          (build 10). The Android release adds optional passwordless email account protection,
-          multi-device progress restore and merge, and in-app account deletion. Platform-specific
-          features are identified below.
+          This revision reflects Android version 2.2.1 (version code 15) and iOS version 2.2.1
+          (build 13). Both versions provide optional passwordless email account protection,
+          conflict-safe multi-device progress restore and merge, and verified in-app account
+          deletion for protected accounts. Platform-specific differences are identified below.
         </p>
         <p>
           VocaMingo automatically creates an anonymous Firebase user identifier, so you do not
           need to provide an email address, password, phone number, or social login to begin.
-          On Android, you may optionally connect your current profile to an email address using
+          On Android or iOS, you may optionally connect your current profile to an email address using
           a secure passwordless email link. Firebase Authentication then processes the connected
           email address and verification state so you can restore the same account and cloud
           progress on another device. VocaMingo does not collect an account password.
@@ -182,7 +182,7 @@
         </p>
         <p>
           The main categories handled by the app and its service providers are an optional
-          connected email address on Android, gameplay and profile content, product interactions,
+          connected email address, gameplay and profile content, product interactions,
           device or app identifiers, advertising data, approximate location inferred from an IP
           address, and crash, performance, and other diagnostic information. The sections below
           explain when and why these categories are processed.
@@ -274,15 +274,15 @@
           VocaMingo uses Firebase Authentication and Cloud Firestore to create a Firebase user
           identifier and sync profile and progress information. The identifier begins as
           anonymous and supports your profile, gameplay features, rankings, and the global
-          leaderboard. On Android, you can choose to protect the existing profile by linking it
+          leaderboard. On Android or iOS, you can choose to protect the existing profile by linking it
           to an email address with a passwordless sign-in link. This preserves the Firebase user
           identifier and lets the app restore and safely merge associated cloud progress when
-          you sign in on another device.
+          you sign in on another device, including when moving between Android and iOS.
         </p>
         <p>Synced information may include:</p>
         <ul>
           <li>Your Firebase user ID;</li>
-          <li>Your email address and email verification state if you connect an account on Android;</li>
+          <li>Your email address and email verification state if you connect an account;</li>
           <li>Your chosen profile name and built-in avatar selection;</li>
           <li>Your operating system, recorded as Android or iOS;</li>
           <li>Coins, lifetime coins earned, stars, score, speed bonus, and completed levels;</li>
@@ -568,12 +568,19 @@
           deleting the app. These steps do not automatically delete online profile data.
         </p>
         <p>
-          On Android, if the app is still installed and accessible, you can open
-          <strong>Settings</strong>, select <strong>Delete Account &amp; Data</strong>, and follow
-          the verification and final-confirmation steps. This deletes the Firebase Authentication
+          For an email-protected account on Android or iOS, if the app is still installed and
+          accessible, you can open <strong>Settings</strong>, select <strong>Delete Account &amp; Data</strong>,
+          and follow the email-verification and final-confirmation steps. This deletes the Firebase Authentication
           identity, connected email address, associated private profile, public leaderboard
           profile, cloud game progress, and online learning-progress records. Local app data on
           that device is also cleared as part of the completed in-app flow.
+        </p>
+        <p>
+          On Android, the in-app flow can also delete the current anonymous account directly.
+          On iOS, the in-app deletion control is shown after you optionally protect the profile
+          with an email. An anonymous user can remove local data with <strong>Reset Progress</strong>
+          or by deleting the app, and can use the deletion-request page below to request removal
+          of an identifiable online anonymous record.
         </p>
         <p>
           You can also request account and data deletion at any time without reinstalling the

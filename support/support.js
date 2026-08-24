@@ -11,8 +11,8 @@ const apps = {
     accent: "#168aad",
     accentDark: "#0d6886",
     accentSoft: "#e8f7fb",
-    faqQuestion: "Vocabulary, review, or game progress does not look right",
-    faqAnswer: "Close and reopen the app first. Include the learning tool or game mode, category or level, and a screenshot when you contact support."
+    faqQuestion: "Protected account or progress does not look right",
+    faqAnswer: "Close and reopen the app first. If the account card shows Restore required, use Retry cloud restore. On a new device, choose Sign in to existing account and open the secure email link on that same device. If the issue continues, include the platform, learning tool or game mode, category or level, and a screenshot when you contact support."
   },
   "lexiarcade": {
     name: "LexiArcade",
