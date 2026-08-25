@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/assets/apps/tools/vocamingo/fonts/Vazirmatn.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
   --navy: #0d2948;
@@ -37,7 +45,32 @@ body {
 }
 
 html[dir="rtl"] body {
-  font-family: Tahoma, Arial, ui-sans-serif, system-ui, sans-serif;
+  font-family: "Vazirmatn", "Noto Sans Arabic", "SF Arabic", Tahoma, Arial, sans-serif;
+  line-height: 1.75;
+  text-rendering: optimizeLegibility;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3 {
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2 {
+  font-weight: 800;
+}
+
+html[dir="rtl"] h3,
+html[dir="rtl"] strong,
+html[dir="rtl"] b {
+  font-weight: 700;
+}
+
+html[dir="rtl"] [lang="en"],
+html[dir="rtl"] [dir="ltr"] {
+  unicode-bidi: isolate;
 }
 
 a {
@@ -222,7 +255,34 @@ h1 {
 }
 
 html[dir="rtl"] h1 {
+  line-height: 1.24;
   letter-spacing: 0;
+}
+
+html[dir="rtl"] .brand,
+html[dir="rtl"] .nav-links,
+html[dir="rtl"] .language-switch,
+html[dir="rtl"] .button {
+  font-weight: 700;
+}
+
+html[dir="rtl"] .eyebrow,
+html[dir="rtl"] .section-kicker,
+html[dir="rtl"] .mini-window-bar,
+html[dir="rtl"] .role-label,
+html[dir="rtl"] .notice-label {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+html[dir="rtl"] .hero-copy,
+html[dir="rtl"] .lead,
+html[dir="rtl"] .card p,
+html[dir="rtl"] .legal-card p,
+html[dir="rtl"] .legal-card li,
+html[dir="rtl"] .notice p,
+html[dir="rtl"] .faq-list p {
+  line-height: 1.9;
 }
 
 .hero-copy {
@@ -439,6 +499,7 @@ section {
 }
 
 html[dir="rtl"] .section-heading h2 {
+  line-height: 1.32;
   letter-spacing: 0;
 }
 
