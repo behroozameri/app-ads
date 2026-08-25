@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Privacy Policy for the VocaMingo Android and iOS apps.">
   <title>VocaMingo Privacy Policy</title>
-  <link rel="canonical" href="https://bpzone.info/apps/tools/vocamingo/privacy-policy.html">
   <style>
     :root {
       color-scheme: light dark;
@@ -163,34 +162,35 @@
           a platform-specific difference is stated.
         </p>
         <p>
-          This revision reflects Android version 2.2.1 (version code 15) and iOS version 2.2.1
-          (build 13). Both versions provide optional passwordless email account protection,
-          conflict-safe multi-device progress restore and merge, and verified in-app account
-          deletion for protected accounts. Platform-specific differences are identified below.
+          This revision reflects VocaMingo's optional passwordless email account protection,
+          cross-device progress restore, Teacher Access requests, and Classroom features on
+          Android and iOS. The app can continue to be used with an anonymous Firebase identity,
+          or you can choose to connect an email address so the same account and progress can be
+          opened on another device.
         </p>
         <p>
-          VocaMingo automatically creates an anonymous Firebase user identifier, so you do not
-          need to provide an email address, password, phone number, or social login to begin.
-          On Android or iOS, you may optionally connect your current profile to an email address using
-          a secure passwordless email link. Firebase Authentication then processes the connected
-          email address and verification state so you can restore the same account and cloud
-          progress on another device. VocaMingo does not collect an account password.
-          We do not ask for access to your contacts, photos, camera, precise location, or
-          payment information. On Android and iOS, microphone access is optional and requested
-          only when you choose to record an answer in Speaking Practice. On iOS,
-          speech-recognition authorization is also requested when you use transcription.
+          VocaMingo does not require an email address, password, phone number, or social login
+          to begin using the app. The app automatically creates an anonymous Firebase user
+          identifier to support profile sync, progress sync, and leaderboard features. On
+          Android and iOS, you may optionally enter an email address and use a one-time
+          passwordless sign-in link to protect that profile or sign in to an existing VocaMingo
+          account. A linked and verified email account is required only if you choose to request
+          Teacher Access, create a class, or request to join a class. We do not ask for access to
+          your contacts, photos, camera, precise location, or payment information. On Android
+          and iOS, microphone access is optional and requested only
+          when you choose to record an answer in Speaking Practice. On iOS, speech-recognition
+          authorization is also requested when you use transcription.
         </p>
         <p>
-          The main categories handled by the app and its service providers are an optional
-          connected email address, gameplay and profile content, product interactions,
-          device or app identifiers, advertising data, approximate location inferred from an IP
-          address, and crash, performance, and other diagnostic information. The sections below
-          explain when and why these categories are processed.
+          The main categories handled by the app and its service providers are gameplay and
+          profile content, product interactions, device or app identifiers, advertising data,
+          approximate location inferred from an IP address, and crash, performance, and other
+          diagnostic information. The sections below explain when and why these categories are
+          processed.
         </p>
         <p>
-          To request deletion of your VocaMingo account and online data without reinstalling the
-          app, visit the <a href="/apps/tools/vocamingo/delete-account/">VocaMingo account deletion page</a>
-          or see <a href="#data-deletion">Your rights and data deletion</a> below.
+          To request deletion of online VocaMingo data without reinstalling the app, see
+          <a href="#data-deletion">Your rights and data deletion</a> below.
         </p>
       </section>
 
@@ -271,18 +271,19 @@
       <section>
         <h2>3. Online profile, progress sync, leaderboard, and app configuration</h2>
         <p>
-          VocaMingo uses Firebase Authentication and Cloud Firestore to create a Firebase user
-          identifier and sync profile and progress information. The identifier begins as
-          anonymous and supports your profile, gameplay features, rankings, and the global
-          leaderboard. On Android or iOS, you can choose to protect the existing profile by linking it
-          to an email address with a passwordless sign-in link. This preserves the Firebase user
-          identifier and lets the app restore and safely merge associated cloud progress when
-          you sign in on another device, including when moving between Android and iOS.
+          VocaMingo uses Firebase Authentication and Cloud Firestore to create an anonymous app
+          identifier and sync profile and progress information. This supports your profile,
+          gameplay features, rankings, the global leaderboard, and cross-device restore. The
+          anonymous identifier is created automatically. On Android and iOS, if you choose to
+          protect progress or sign in to an existing account, Firebase Authentication also processes
+          the email address you enter and sends a one-time passwordless sign-in link. The email
+          address is associated with your Firebase Authentication identity; VocaMingo does not
+          intentionally place it in your Firestore progress documents or public leaderboard.
         </p>
-        <p>Synced information may include:</p>
+        <p>Online account and synced information may include:</p>
         <ul>
           <li>Your Firebase user ID;</li>
-          <li>Your email address and email verification state if you connect an account;</li>
+          <li>Your email address, only if you choose passwordless account protection on Android or iOS;</li>
           <li>Your chosen profile name and built-in avatar selection;</li>
           <li>Your operating system, recorded as Android or iOS;</li>
           <li>Coins, lifetime coins earned, stars, score, speed bonus, and completed levels;</li>
@@ -291,6 +292,7 @@
             nine game modes, including Mingo Grid;
           </li>
           <li>Overall average completion time and gameplay statistics used for ranking;</li>
+          <li>Leitner review state, Speaking Practice completion, and Real-Life English progress;</li>
           <li>
             When Share Diagnostics is enabled, aggregate Real-Life English topic progress,
             practice totals, and feature-use counters used to improve future versions; and
@@ -300,15 +302,16 @@
         <p>
           Your profile name, built-in avatar, score, total completed levels, total stars,
           average time, and rank may be visible to other VocaMingo users through leaderboard
-          features. Your connected email address, coin balance, detailed per-game statistics,
-          Firebase user ID, and last-seen timestamp are not intentionally displayed to other users.
+          features. Your coin balance, detailed per-game statistics, anonymous Firebase user
+          ID, and last-seen timestamp are not intentionally displayed to other users.
         </p>
         <p>
-          Profile names are optional and should not include sensitive personal information.
-          VocaMingo offers only built-in avatars and does not ask you to upload a profile photo.
-          The Firebase user ID is linked to the profile and gameplay information stored in
-          Firebase so those features can operate. A connected email address is used for account
-          authentication, recovery across devices, security checks, and verified account deletion.
+          A profile name remains optional for the app's general learning and game features and
+          should not include sensitive personal information. If you choose Teacher Access or
+          Classroom features, you must provide a non-generic name that your students or teacher
+          can recognize. VocaMingo offers only built-in avatars and does not ask you to upload a
+          profile photo. The anonymous user ID is linked to the profile and gameplay information
+          stored in Firebase so those features can operate.
         </p>
         <p>
           The nine synced game modes are Hidden Trails, Wonder Words, Knot Logic, Word Guess,
@@ -334,7 +337,57 @@
       </section>
 
       <section>
-        <h2>4. Usage analytics and crash diagnostics</h2>
+        <h2>4. Teacher Access and Classroom features</h2>
+        <p>
+          Teacher Access and Classroom features are optional and may be enabled or disabled
+          through VocaMingo's remote app configuration. To use them, you must connect and verify
+          an email address and choose a non-generic display name that the other classroom
+          participant can recognize. A user may belong to more than one class, and an approved
+          teacher may manage more than one class, subject to limits retrieved from app
+          configuration.
+        </p>
+        <p>
+          When you request Teacher Access, VocaMingo stores your Firebase user ID, verified email
+          address, name, teacher type or a custom teacher type, optional organization, country,
+          description of your teaching activity, optional website, app platform, acceptance of
+          the current Teacher Access terms, application status, review information, attempt
+          number, and related timestamps. We use this information to review the request, prevent
+          abuse, communicate about it, and provision, decline, or suspend Teacher Access. A
+          server-side email notification containing the application details is sent to the
+          VocaMingo administrator through the configured email service. Applicants cannot
+          approve their own request.
+        </p>
+        <p>
+          An approved teacher can create classes and share a class code. When a learner enters a
+          valid code, VocaMingo first shows the class name and teacher name. Submitting the join
+          request stores the class and teacher identifiers and names, the learner's Firebase
+          user ID and recognizable name, membership status, and related timestamps. The teacher
+          sees the pending request and must approve it before the learner becomes an active class
+          member. Class codes are resolved by protected backend functions and are not available
+          as a public, enumerable directory.
+        </p>
+        <p>
+          While the membership and class are active, the approved teacher can view a limited
+          student progress report. It can include the student's display name, built-in avatar,
+          platform, score, completed levels, stars, average completion time, per-game highest
+          level, completion count and average time, completed Real-Life English lesson IDs and
+          totals, practiced Speaking part IDs and totals, and Leitner word and due-word counts.
+          The report does not include the learner's email address, saved Speaking audio or
+          transcripts, typed guesses, vocabulary searches, or custom Real-Life English answers.
+        </p>
+        <p>
+          Learners can cancel a pending request or leave an active class. Teachers can decline a
+          request, remove an active learner, rotate a class code, or archive an empty class.
+          Membership records may retain an inactive status and related timestamps after one of
+          these actions for operational integrity, as described under Data retention. Deleting a
+          VocaMingo account removes the account's Teacher Access, class, membership, and related
+          classroom records through the account-deletion process, subject to the limited
+          exceptions described below.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Usage analytics and crash diagnostics</h2>
         <p>
           VocaMingo uses Google Analytics for Firebase to understand app usage and Firebase
           Crashlytics to diagnose crashes and stability problems. Share Diagnostics is enabled
@@ -367,10 +420,11 @@
           We do not intentionally send spoken answers, typed vocabulary search text, puzzle
           board contents, selected letters, Mingo Grid guesses or hidden answers, Real-Life
           English search text or learner responses, discussion-prompt answers, your support or
-          connected account email address, precise location, profile name, or Firebase
-          Authentication user ID to Firebase Analytics or Crashlytics. When Share Diagnostics is enabled,
+          account email address, precise location, profile name, or anonymous Firebase
+          Authentication user ID to Firebase Analytics or Crashlytics. When Share Diagnostics
+          is enabled,
           Cloud Firestore receives aggregate Real-Life English progress, practice totals,
-          topic-open counts, and feature-use counters linked to the Firebase user ID
+          topic-open counts, and feature-use counters linked to the anonymous Firebase user ID
           on Android and iOS. It does not receive search text, custom responses, selected answer
           text, lesson dialogue, spoken content, or raw event history. Profile and leaderboard
           information is processed separately through Firebase Authentication and Cloud
@@ -391,7 +445,7 @@
       </section>
 
       <section>
-        <h2>5. Advertising</h2>
+        <h2>6. Advertising</h2>
         <p>
           VocaMingo may display banner, interstitial, and rewarded ads provided by Google
           AdMob. Rewarded ads are optional and are shown only when you choose to watch one for
@@ -430,7 +484,7 @@
       </section>
 
       <section>
-        <h2>6. Consent and advertising choices</h2>
+        <h2>7. Consent and advertising choices</h2>
         <p>
           Where required, VocaMingo uses Google’s User Messaging Platform to request and manage
           advertising consent before requesting ads. If a privacy-options form is required in
@@ -442,7 +496,7 @@
       </section>
 
       <section>
-        <h2>7. Notifications</h2>
+        <h2>8. Notifications</h2>
         <p>
           On both platforms, VocaMingo can schedule local Leitner reminders when saved words
           are due for review. Reminder preferences and reminder time are stored locally.
@@ -464,12 +518,12 @@
       </section>
 
       <section>
-        <h2>8. Contact Us and store reviews</h2>
+        <h2>9. Contact Us and store reviews</h2>
         <p>
           The <strong>Contact Us</strong> or <strong>Send feedback</strong> option opens your
           device’s email app with VocaMingo’s support address. The draft includes app-support
-          details such as your platform, app version and build, a masked form of the Firebase
-          user ID when available, device model, and operating-system version. You can
+          details such as your platform, app version and build, a masked form of the anonymous
+          Firebase user ID when available, device model, and operating-system version. You can
           review or remove this information before sending. If you choose to send the message,
           we receive your email address, message, attachments, the support details left in the
           draft, and other information you voluntarily include. Your email provider processes
@@ -486,14 +540,20 @@
       </section>
 
       <section>
-        <h2>9. How information is disclosed</h2>
+        <h2>10. How information is disclosed</h2>
         <p>
           We do not sell personal information or disclose it to third parties for BPZone’s own
           direct marketing. Profile and leaderboard information you choose to use, such as a
           profile name and built-in avatar, may be visible to other VocaMingo users as part of
-          app functionality. Information may be processed by Google and Firebase for
-          authentication, Firestore sync, app integrity, cloud messaging, advertising,
-          analytics, crash diagnostics, and consent services described above. Apple, Google, or
+          app functionality. If you use Classroom features, the names and limited classroom
+          information described above are disclosed between the learner and the applicable
+          approved teacher; the teacher receives the limited progress report only for an active
+          membership. Teacher Access application details are available to authorized VocaMingo
+          administrators and are transmitted through the configured email provider for review
+          notifications. Information may be processed by Google and Firebase for anonymous or
+          optional email-link authentication, Firestore sync, app integrity, cloud messaging,
+          advertising, analytics, crash diagnostics, and consent services described above.
+          Apple, Google, or
           another operating-system or device speech provider may process recording audio when
           its speech-recognition service is used to create a transcript. Apple may also process
           iOS backups, notification permissions, and App Store interactions, while Google may
@@ -503,15 +563,21 @@
       </section>
 
       <section>
-        <h2>10. Data retention</h2>
+        <h2>11. Data retention</h2>
         <p>
           Local information remains on your device until it is reset, removed by the operating
           system, or the app is deleted. Some preferences, including haptics, diagnostics, and
           reminders, may remain after <strong>Reset Progress</strong> so the app can preserve
-          your choices. A connected email address, authentication identity, online profile,
-          progress, and leaderboard information may remain in Firebase until you delete the
-          account in the app or we fulfill a verified external deletion request. Deleting the
-          app alone does not automatically delete those online records.
+          your choices. Online account, profile, progress, and leaderboard information may
+          remain in Firebase until we delete it or fulfill a verified deletion request. If you
+          connected an email address, the Firebase Authentication account and associated email
+          may also remain until deletion. Teacher applications, teacher-role records, class
+          records, class codes, membership records, application-notification receipts, and
+          related status and timestamp information may remain in Firebase while the applicable
+          account or feature records are retained. A declined, cancelled, left, removed, or
+          archived record may remain with that inactive status for operational integrity until
+          it is deleted under our retention process or an applicable account-deletion request.
+          Deleting the app alone does not automatically delete those online records.
         </p>
         <p>
           Google retains analytics, crash, advertising, cloud messaging, app integrity, and
@@ -525,13 +591,18 @@
       </section>
 
       <section>
-        <h2>11. Children’s privacy</h2>
+        <h2>12. Children’s privacy</h2>
         <p>
           VocaMingo is a general-audience vocabulary and word-game app and is not directed
-          specifically to children under 13. We do not knowingly ask children to provide
-          personal information directly to us. Parents and guardians should supervise
-          children’s use and review the privacy, advertising, notification, and store controls
-          available on the device and in their region.
+          specifically to children under 13. Optional passwordless account protection asks for
+          an email address only when a user chooses that feature; a linked email address and a
+          recognizable name are required to use Teacher Access or Classroom features. We do not
+          knowingly collect personal information from children under 13 without appropriate
+          parental consent. Teachers, schools, parents, and guardians should not direct a child
+          to use Classroom features or submit the child's information unless they have the
+          authorization or consent required by applicable law. Parents and guardians should
+          supervise children’s use and review the account, classroom, privacy, advertising,
+          notification, and store controls available on the device and in their region.
         </p>
         <p>
           If you believe a child has provided personal information in connection with the app,
@@ -540,7 +611,7 @@
       </section>
 
       <section>
-        <h2>12. International processing</h2>
+        <h2>13. International processing</h2>
         <p>
           BPZone is based in Canada. Google, Firebase, Apple, email providers, and their service
           providers may process information in Canada, the United States, and other countries
@@ -550,7 +621,7 @@
       </section>
 
       <section>
-        <h2>13. Security</h2>
+        <h2>14. Security</h2>
         <p>
           We use reasonable administrative and technical measures to protect information handled
           by the app, including encrypted network connections to supported backend services and
@@ -560,40 +631,48 @@
       </section>
 
       <section id="data-deletion">
-        <h2>14. Your rights and data deletion</h2>
+        <h2>15. Your rights and data deletion</h2>
         <p>
           Depending on where you live, you may have rights relating to access, correction,
           deletion, restriction, objection, or withdrawal of consent. You can remove most local
-          progress using <strong>Reset Progress</strong> or delete local app information by
-          deleting the app. These steps do not automatically delete online profile data.
+          progress using <strong>Reset Progress</strong>, cancel a pending class request, leave
+          an active class, or delete local app information by deleting the app. A teacher can
+          decline or remove a learner and archive an eligible class. These steps do not
+          automatically delete all related online profile, application, or inactive classroom
+          records.
         </p>
         <p>
-          For an email-protected account on Android or iOS, if the app is still installed and
-          accessible, you can open <strong>Settings</strong>, select <strong>Delete Account &amp; Data</strong>,
-          and follow the email-verification and final-confirmation steps. This deletes the Firebase Authentication
-          identity, connected email address, associated private profile, public leaderboard
-          profile, cloud game progress, and online learning-progress records. Local app data on
-          that device is also cleared as part of the completed in-app flow.
+          You can request deletion of your anonymous or email-linked VocaMingo profile,
+          Firebase Authentication identity, connected email address, and associated online
+          progress, leaderboard, Teacher Access, and classroom records at any time. For an
+          email-linked account on Android or iOS, open
+          <strong>Settings &gt; Delete Account &amp; Data</strong>. This option is not shown for an
+          anonymous profile. An email-linked account requires confirmation through a secure
+          email link before deletion begins. Opening the email link does not itself delete the
+          account; VocaMingo asks for one final confirmation inside the app. After the backend
+          confirms deletion, the app removes the account's local learning data from that device
+          and prepares a new anonymous profile. To request deletion of an anonymous online
+          profile, use the email process below and include the available app-support details so
+          we can identify the correct record.
         </p>
         <p>
-          On Android, the in-app flow can also delete the current anonymous account directly.
-          On iOS, the in-app deletion control is shown after you optionally protect the profile
-          with an email. An anonymous user can remove local data with <strong>Reset Progress</strong>
-          or by deleting the app, and can use the deletion-request page below to request removal
-          of an identifiable online anonymous record.
-        </p>
-        <p>
-          You can also request account and data deletion at any time without reinstalling the
-          app by visiting the
-          <a href="/apps/tools/vocamingo/delete-account/">VocaMingo account deletion page</a>.
-          Send the request from the connected account email whenever possible, or include your
+          If you no longer have the app, email
+          <a href="mailto:vocamingo@gmail.com?subject=VocaMingo%20Data%20Deletion">vocamingo@gmail.com</a>
+          with the subject <strong>VocaMingo Data Deletion</strong>. If the account is connected
+          to an email address, send the request from that address when possible. Include your
           platform (Android or iOS), profile name, approximate date you last used the app, and
-          other non-sensitive details that can help locate an anonymous record. We may ask for
-          additional information when reasonably necessary to verify ownership and identify the
-          correct record. We aim to complete verified requests within 30 days, unless retention
-          is required for security, fraud prevention, dispute resolution, or legal compliance.
-          We may retain the deletion request and related correspondence as reasonably necessary
-          to document and complete the request.
+          any other non-sensitive details visible in the app that can help us locate the correct
+          record. If the app is still installed, using its feedback email draft can also provide
+          a masked user identifier and app-support details that may help identify the record. We
+          may ask for additional information when reasonably necessary to verify and identify
+          the correct record. Once verified, we will delete the applicable Firebase
+          Authentication identity and associated private profile, public leaderboard profile,
+          online learning-progress, Teacher Access, and classroom records within a reasonable
+          period, unless retention is required for security, fraud prevention, dispute
+          resolution, or legal compliance. We
+          retain a minimal server-only deleted-account identifier to prevent still-valid tokens
+          on another device from recreating deleted data. We may also retain the deletion request
+          and related correspondence as reasonably necessary to document and complete the request.
         </p>
         <p>
           Requests concerning data controlled directly by Google, Apple, an email provider, or
@@ -602,7 +681,7 @@
       </section>
 
       <section>
-        <h2>15. External services and links</h2>
+        <h2>16. External services and links</h2>
         <p>
           The app may open external services such as this policy, BPZone Support, Google Play,
           the Apple App Store, a developer website, or your email app. Their privacy practices
@@ -611,7 +690,7 @@
       </section>
 
       <section>
-        <h2>16. Changes to this policy</h2>
+        <h2>17. Changes to this policy</h2>
         <p>
           We may update this Privacy Policy when VocaMingo, its services, or legal requirements
           change. The updated policy will be published at this location with a revised effective
@@ -620,23 +699,19 @@
       </section>
 
       <section>
-        <h2>17. Contact</h2>
+        <h2>18. Contact</h2>
         <p>
           For questions, feedback, or privacy requests, visit
-          <a href="https://bpzone.info/support/?app=vocamingo" rel="noopener noreferrer">VocaMingo Support</a>,
-          use the <a href="/apps/tools/vocamingo/delete-account/">account deletion page</a>,
+          <a href="https://bpzone.info/support/" rel="noopener noreferrer">BPZone Support</a>
           or email <a href="mailto:vocamingo@gmail.com">vocamingo@gmail.com</a>.
           Use the subject <strong>VocaMingo Privacy</strong> for privacy questions or
-          <strong>VocaMingo Account Deletion Request</strong> for deletion requests.
+          <strong>VocaMingo Data Deletion</strong> for deletion requests.
         </p>
       </section>
     </article>
 
     <footer>
-      <p>
-        © 2026 BPZone. VocaMingo. ·
-        <a href="/apps/tools/vocamingo/delete-account/">Delete Account</a>
-      </p>
+      <p>© 2026 BPZone. VocaMingo.</p>
     </footer>
   </main>
 </body>
