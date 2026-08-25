@@ -11,8 +11,8 @@ const apps = {
     accent: "#168aad",
     accentDark: "#0d6886",
     accentSoft: "#e8f7fb",
-    faqQuestion: "Protected account or progress does not look right",
-    faqAnswer: "Close and reopen the app first. If the account card shows Restore required, use Retry cloud restore. On a new device, choose Sign in to existing account and open the secure email link on that same device. If the issue continues, include the platform, learning tool or game mode, category or level, and a screenshot when you contact support."
+    faqQuestion: "Protected account, Teacher Access, or Classroom does not look right",
+    faqAnswer: "Close and reopen the app first. Confirm that the account is connected to a verified email. If the account card shows Restore required, use Retry cloud restore. A class join stays pending until the teacher approves it, and Teacher Access applications require administrator review. Classroom actions may also be paused during a staged rollout. If the issue continues, include your platform, whether you are the teacher or learner, the class or request status, and a screenshot without sharing a sign-in link, verification code, or other sensitive information."
   },
   "lexiarcade": {
     name: "LexiArcade",

@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VocaMingo 2.3 | Real-Life English, Speaking and Word Games</title>
+  <title>VocaMingo 2.3 | English Learning, Classroom and Word Games</title>
   <link rel="canonical" href="https://bpzone.info/apps/tools/vocamingo/" />
+  <link rel="alternate" hreflang="en" href="https://bpzone.info/apps/tools/vocamingo/" />
+  <link rel="alternate" hreflang="fa" href="https://bpzone.info/apps/tools/vocamingo/fa/" />
+  <link rel="alternate" hreflang="x-default" href="https://bpzone.info/apps/tools/vocamingo/" />
   <link rel="icon" type="image/png" href="/assets/apps/tools/vocamingo/icon-512.png?v=20260818" />
   <link rel="apple-touch-icon" href="/assets/apps/tools/vocamingo/icon-512.png?v=20260818" />
-  <meta name="description" content="Learn practical English with 83 guided lessons, speaking practice, smart review, nine word games, and optional passwordless progress protection across Android and iOS." />
-  <meta name="keywords" content="VocaMingo, English learning app, speaking practice, English conversation, game-based learning, English lessons, vocabulary games, word games, Leitner box, Android, iOS, BPZone" />
+  <meta name="description" content="Learn practical English with guided lessons, speaking practice, smart review, nine word games, and optional privacy-aware Classroom tools for approved teachers and learners." />
+  <meta name="keywords" content="VocaMingo, English learning app, teacher dashboard, English classroom app, student progress, speaking practice, English conversation, vocabulary games, Leitner box, Android, iOS, BPZone" />
 
   <meta property="og:title" content="VocaMingo" />
-  <meta property="og:description" content="VocaMingo 2.3 combines real-life lessons, speaking practice, smart review, nine word games, and optional cross-device progress protection on Android and iOS." />
+  <meta property="og:description" content="VocaMingo combines real-life lessons, speaking practice, smart review, word games, and optional privacy-aware Classroom tools on Android and iOS." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bpzone.info/apps/tools/vocamingo/" />
   <meta property="og:site_name" content="BPZone" />
@@ -23,7 +26,7 @@
   <meta property="og:image:alt" content="VocaMingo English learning with a book, microphone, picture cards, puzzles, game controller, and trophy" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="VocaMingo" />
-  <meta name="twitter:description" content="83 real-life lessons, speaking practice, smart review, nine word games, and optional cross-device progress protection on Android and iOS." />
+  <meta name="twitter:description" content="Real-life English, speaking practice, smart review, nine word games, and optional Classroom tools for teachers and learners." />
   <meta name="twitter:image" content="https://bpzone.info/assets/apps/tools/vocamingo/feature.png?v=20260818" />
   <meta name="twitter:image:alt" content="VocaMingo English learning with a book, microphone, picture cards, puzzles, game controller, and trophy" />
 
@@ -38,9 +41,9 @@
       ],
       "applicationCategory": "EducationalApplication",
       "applicationSubCategory": "English learning and word games",
-      "description": "Learn practical English through 8 real-life areas, 69 situations, 83 guided lessons, Situation Challenges, optional lesson videos, speaking practice, illustrated vocabulary, Leitner review, and nine word-game modes.",
+      "description": "Learn practical English through guided lessons, speaking practice, illustrated vocabulary, Leitner review, nine word-game modes, and optional privacy-aware Classroom tools.",
       "softwareVersion": "Android 2.3 (16); iOS 2.3 (14)",
-      "dateModified": "2026-08-24",
+      "dateModified": "2026-08-25",
       "image": "https://bpzone.info/assets/apps/tools/vocamingo/icon-512.png?v=20260818",
       "featureList": [
         "Real-Life English with 8 essential areas, 69 practical situations, and 83 guided lessons",
@@ -54,6 +57,7 @@
         "Illustrated vocabulary organized by category",
         "Leitner spaced-review box",
         "Player progress, coins, stars, profiles, and leaderboards",
+        "Optional Teacher Access, private class codes, join approvals, and privacy-aware student progress reports",
         "Optional passwordless email protection, conflict-safe multi-device progress restore and merge, and verified account deletion on Android and iOS"
       ],
       "downloadUrl": [
@@ -158,6 +162,7 @@
     }
 
     .nav-left,
+    .nav-actions,
     .brand,
     .nav-links {
       display: flex;
@@ -219,6 +224,29 @@
       color: var(--ink);
     }
 
+    .nav-actions {
+      min-width: 0;
+      gap: 16px;
+    }
+
+    .language-switch {
+      min-width: 58px;
+      padding: 8px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 0.82rem;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(13, 41, 72, 0.07);
+    }
+
+    .language-switch:hover {
+      border-color: var(--cyan);
+      color: #0f7898;
+    }
+
     .hero {
       position: relative;
       isolation: isolate;
@@ -261,7 +289,12 @@
       gap: 58px;
     }
 
-    .hero-layout > * {
+    .hero-layout > *,
+    .real-life-layout > *,
+    .speaking-layout > *,
+    .progress-layout > *,
+    .download-panel > *,
+    .classroom-grid > * {
       min-width: 0;
     }
 
@@ -1165,6 +1198,136 @@
       color: var(--body);
     }
 
+    .classroom-section {
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 90% 0%, rgba(79, 200, 237, 0.22), transparent 30rem),
+        radial-gradient(circle at 0% 100%, rgba(168, 129, 214, 0.2), transparent 26rem),
+        linear-gradient(135deg, #092442, #103b5f 58%, #183c64);
+    }
+
+    .classroom-section .section-kicker {
+      color: var(--cyan);
+    }
+
+    .classroom-section .lead {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .classroom-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .classroom-card {
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.13);
+      backdrop-filter: blur(12px);
+    }
+
+    .classroom-role {
+      display: inline-flex;
+      margin-bottom: 15px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--role-color) 24%, transparent);
+      color: #ffffff;
+      font-size: 0.74rem;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .classroom-card h3 {
+      margin-bottom: 9px;
+      font-size: 1.45rem;
+    }
+
+    .classroom-card > p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .classroom-steps {
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+      counter-reset: classroom-step;
+    }
+
+    .classroom-step {
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.92rem;
+    }
+
+    .classroom-step::before {
+      counter-increment: classroom-step;
+      content: counter(classroom-step);
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      background: var(--role-color);
+      color: #092442;
+      font-size: 0.76rem;
+      font-weight: 950;
+    }
+
+    .classroom-trust {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      margin-top: 18px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .classroom-trust-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(81, 207, 168, 0.18);
+      color: #8aefd0;
+      font-weight: 950;
+    }
+
+    .classroom-trust strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .classroom-trust p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.9rem;
+    }
+
+    .classroom-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 11px 16px;
+      border-radius: 13px;
+      background: var(--cyan);
+      color: #092442;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
     .learning-loop {
       margin-top: 18px;
       padding: 23px;
@@ -1405,9 +1568,10 @@
       .hero-layout,
       .real-life-layout,
       .speaking-layout,
+      .classroom-grid,
       .progress-layout,
       .download-panel {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
 
       .hero-copy {
@@ -1581,6 +1745,12 @@
         gap: 42px;
       }
 
+      .real-life-copy,
+      .real-life-highlights {
+        max-width: 100%;
+        min-width: 0;
+      }
+
       .real-life-highlights {
         grid-template-columns: 1fr;
       }
@@ -1650,6 +1820,15 @@
         grid-template-columns: 1fr;
       }
 
+      .classroom-trust {
+        grid-template-columns: 44px minmax(0, 1fr);
+      }
+
+      .classroom-link {
+        grid-column: 1 / -1;
+        width: 100%;
+      }
+
       .store-row,
       .download-actions {
         width: min(100%, 220px);
@@ -1696,16 +1875,19 @@
           <span>VocaMingo</span>
         </a>
       </div>
-      <nav class="nav-links" aria-label="Page navigation">
-        <a href="#learning">Learning</a>
-        <a href="#speaking">Speaking</a>
-        <a href="#real-life">Real-Life</a>
-        <a href="#games">Games</a>
-        <a href="#for-you">For You</a>
-        <a href="#account">Account</a>
-        <a href="#download">Download</a>
-        <a href="/support/?app=vocamingo">Support</a>
-      </nav>
+      <div class="nav-actions">
+        <nav class="nav-links" aria-label="Page navigation">
+          <a href="#learning">Learning</a>
+          <a href="#speaking">Speaking</a>
+          <a href="#real-life">Real-Life</a>
+          <a href="#games">Games</a>
+          <a href="#classroom">Classroom</a>
+          <a href="#account">Account</a>
+          <a href="#download">Download</a>
+          <a href="/support/?app=vocamingo">Support</a>
+        </nav>
+        <a class="language-switch" href="/apps/tools/vocamingo/fa/" lang="fa" dir="rtl" aria-label="نمایش صفحه به فارسی">فارسی</a>
+      </div>
     </div>
   </header>
 
@@ -1719,7 +1901,8 @@
           <p class="hero-copy">
             VocaMingo 2.3 brings the same core learning and account experience to Android and iOS: 83 guided lessons
             across 69 practical situations, speaking practice, smart review, nine word games, and
-            optional passwordless progress protection across devices.
+            optional passwordless progress protection across devices, and privacy-aware Classroom tools
+            for approved teachers and their learners.
           </p>
           <div class="store-row">
             <a class="store-link google-play" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.vocamingo" target="_blank" rel="noopener noreferrer" aria-label="Find VocaMingo on Google Play">
@@ -2104,8 +2287,8 @@
           </article>
           <article class="audience-card" style="--audience-color: #8e64c7;">
             <span class="audience-label">For language teachers</span>
-            <h3>Ready-made prompts with built-in support</h3>
-            <p>Bring 95 discussion topics and 1,900 questions into class. Suggested vocabulary, contextual examples, and model answers help learners start speaking without starting from zero.</p>
+            <h3>Teach with prompts, classes, and progress</h3>
+            <p>Bring ready-made speaking support into a lesson, then use optional Teacher Access to create classes, approve learners, and review limited, privacy-aware progress.</p>
           </article>
         </div>
 
@@ -2119,6 +2302,51 @@
             <span class="loop-step" style="--loop-color: #d89527;">Review</span>
             <span class="loop-step" style="--loop-color: #536fc2;">Remember</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="classroom" class="classroom-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Teacher Access &middot; Optional Classroom tools</p>
+          <h2>Connect teaching with visible progress.</h2>
+          <p class="lead">Approved teachers can create private classes and review a focused progress report. Learners stay in control of joining and leaving, and private answers remain private.</p>
+        </div>
+
+        <div class="classroom-grid">
+          <article class="classroom-card" style="--role-color: #51cfa8;">
+            <span class="classroom-role">For teachers</span>
+            <h3>Create, invite, approve, support</h3>
+            <p>Teacher Access is reviewed before classroom management becomes available.</p>
+            <div class="classroom-steps">
+              <div class="classroom-step">Protect your profile with a verified passwordless email.</div>
+              <div class="classroom-step">Request Teacher Access and wait for administrator review.</div>
+              <div class="classroom-step">Create a class and share its private six-character code.</div>
+              <div class="classroom-step">Approve requests and view limited learning and game progress.</div>
+            </div>
+          </article>
+
+          <article class="classroom-card" style="--role-color: #4fc8ed;">
+            <span class="classroom-role">For learners</span>
+            <h3>Find, confirm, request, learn</h3>
+            <p>A class is never joined silently; the learner and teacher both take action.</p>
+            <div class="classroom-steps">
+              <div class="classroom-step">Connect and verify an email, then open My Classes.</div>
+              <div class="classroom-step">Enter the code and confirm the class and teacher names.</div>
+              <div class="classroom-step">Use a recognizable classroom name and request to join.</div>
+              <div class="classroom-step">Wait for approval, or cancel the request and leave later at any time.</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="classroom-trust">
+          <div class="classroom-trust-icon" aria-hidden="true">✓</div>
+          <div>
+            <strong>A focused report, not a window into private work</strong>
+            <p>Teachers can see aggregate lesson, speaking, Leitner, and game progress. They cannot see learner email, recordings, transcripts, searches, typed guesses, or custom answers.</p>
+          </div>
+          <a class="classroom-link" href="/apps/tools/vocamingo/classroom/">Explore Classroom</a>
         </div>
       </div>
     </section>
@@ -2181,6 +2409,8 @@
               VocaMingo starts with an anonymous app profile, so an email is not required to begin.
               On Android and iOS, you can optionally protect that same profile with a passwordless email link,
               sign in on another device, and safely merge local and cloud progress without replacing newer achievements.
+              A linked and verified email plus a recognizable classroom name are required only when you request
+              Teacher Access, create a class, or ask to join one.
               Email-protected accounts also include a verified flow for permanently deleting the account and associated cloud data.
               Settings also provide controls for reminders, diagnostics, ad privacy, and progress reset.
               Speaking recordings and transcripts stay in private local app storage.
@@ -2200,7 +2430,7 @@
           <div>
             <p class="section-kicker">Learn &middot; Speak &middot; Play &middot; Remember</p>
             <h2>Ready to make English something you use?</h2>
-            <p>Download VocaMingo free&mdash;for your own practice, your learners, or your next English lesson.</p>
+            <p>Download VocaMingo free&mdash;for independent practice, your learners, or an optional privacy-aware classroom.</p>
           </div>
           <div class="download-actions">
             <a class="store-link google-play" href="https://play.google.com/store/apps/details?id=com.bpzone.ca.vocamingo" target="_blank" rel="noopener noreferrer" aria-label="Find VocaMingo on Google Play">
@@ -2221,7 +2451,7 @@
   </main>
 
   <footer>
-    VocaMingo by BPZone &nbsp;|&nbsp; <a href="https://www.youtube.com/@vocamingo" target="_blank" rel="noopener noreferrer">YouTube</a> &nbsp;|&nbsp; <a href="/support/?app=vocamingo">Support</a> &nbsp;|&nbsp; <a href="/apps/tools/vocamingo/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="/apps/tools/vocamingo/delete-account/">Delete Account</a>
+    VocaMingo by BPZone &nbsp;|&nbsp; <a href="/apps/tools/vocamingo/classroom/">Classroom</a> &nbsp;|&nbsp; <a href="https://www.youtube.com/@vocamingo" target="_blank" rel="noopener noreferrer">YouTube</a> &nbsp;|&nbsp; <a href="/support/?app=vocamingo">Support</a> &nbsp;|&nbsp; <a href="/apps/tools/vocamingo/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="/apps/tools/vocamingo/delete-account/">Delete Account</a>
   </footer>
 </body>
 </html>

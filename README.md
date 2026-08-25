@@ -23,6 +23,7 @@ https://bpzone.info/support/?app=lovely-kiss
 https://bpzone.info/support/?app=romantic-kiss
 https://bpzone.info/support/?app=romantic-kiss-2
 https://bpzone.info/support/?app=sweet-kiss
+https://bpzone.info/support/?app=vocamingo
 ```
 
 App names, icons, colors, page links, privacy links, platforms, and app-specific FAQ text are configured in `support/support.js`.
@@ -36,3 +37,16 @@ https://bpzone.info/apps/tools/vocamingo/delete-account/
 ```
 
 The page explains the verified Android and iOS in-app deletion flow and the external email-request path for users who no longer have access to the app.
+
+## VocaMingo Classroom and languages
+
+The English and Persian VocaMingo pages are available at:
+
+```text
+https://bpzone.info/apps/tools/vocamingo/
+https://bpzone.info/apps/tools/vocamingo/fa/
+https://bpzone.info/apps/tools/vocamingo/classroom/
+https://bpzone.info/apps/tools/vocamingo/fa/classroom/
+```
+
+Privacy and account-deletion pages also provide matching English and Persian routes.
