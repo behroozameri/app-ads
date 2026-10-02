@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy - Love Note Studio</title>
+  <meta
+    name="description"
+    content="Privacy Policy for Love Note Studio on iOS, including on-device editing, advertising, analytics, remote configuration, notifications, and optional WhatsApp and Telegram exports."
+  />
   <style>
     :root {
       color-scheme: light;
@@ -124,15 +128,15 @@
     <header class="summary">
       <h1>Privacy Policy</h1>
       <p><strong>Love Note Studio</strong></p>
-      <p class="muted">Effective date: June 25, 2026</p>
+      <p class="muted">Effective date: October 2, 2026</p>
       <p>
         This Privacy Policy explains how information is handled when you use the iOS app
-        <strong>Love Note Studio</strong>, published by BPZone.
+        <strong>Love Note Studio</strong>, version 2.0 and later, published by BPZone.
       </p>
       <p>
-        Love Note Studio is a standalone romantic greeting creator. You can browse bundled artwork,
-        choose message templates, customize a greeting image, save favorites on your device, and copy
-        or share finished images through the iOS share sheet.
+        Love Note Studio is a romantic greeting and sticker creator. You can browse bundled artwork,
+        choose message ideas, create layered designs in Note Studio, save favorites, copy or share
+        finished images, and optionally export supported sticker packs to WhatsApp or Telegram.
       </p>
     </header>
 
@@ -167,12 +171,17 @@
       </p>
       <ul>
         <li>Favorite artwork selections</li>
-        <li>Basic app preferences or settings</li>
+        <li>Saved Note Studio drafts, text layers, layout choices, and editing settings</li>
+        <li>Previously shown featured artwork and message ideas, used to reduce repetition</li>
+        <li>Unlocked sticker-pack status and advertising frequency or cooldown information</li>
+        <li>Notification registration information, including the Firebase registration token</li>
+        <li>Basic app preferences, permission status, and review-prompt state</li>
         <li>Temporary rendered image files when preparing content for sharing</li>
       </ul>
       <p>
-        This local data is not sent by us to our own servers. You can remove local app data by deleting
-        the app from your device.
+        Most of this data remains on your device. A notification registration token is also processed
+        by Apple Push Notification service and Firebase Cloud Messaging so notifications can be
+        delivered when you allow them. You can remove local app data by deleting the app.
       </p>
     </section>
 
@@ -180,27 +189,38 @@
       <h2>4. How Core App Features Work</h2>
       <p>
         Love Note Studio includes bundled sticker-style artwork and message templates. The greeting
-        editor combines the selected artwork, typed text, layout, background, font, color, and other
-        style choices locally on your device.
+        editor combines selected artwork, typed text, decorations, layers, layout, background, borders,
+        filters, font, color, and other style choices locally on your device.
       </p>
       <p>
         When you choose to copy or share a greeting, the app uses standard iOS features such as the
         pasteboard and share sheet. The destination you select in the share sheet may process the
         shared image according to that destination app's own privacy policy.
       </p>
+      <p>
+        The optional “Add to WhatsApp” feature prepares the selected sticker pack locally and hands it
+        to WhatsApp through its supported iOS integration. Pasteboard data used for this handoff is
+        local to the device and configured to expire after a short period. The optional “Add to
+        Telegram” feature opens an official HTTPS <code>t.me</code> sticker-pack link. If either app is
+        unavailable, Love Note Studio's core browsing, editing, favorites, copy, and sharing features
+        remain available.
+      </p>
     </section>
 
     <section>
       <h2>5. Third-Party Services</h2>
       <p>
-        The app uses third-party SDKs to support advertising and app analytics. These providers may
-        process information independently according to their own privacy policies and terms.
+        The app uses third-party SDKs to support advertising, consent choices, analytics, remote
+        configuration, and push notifications. These providers may process information according to
+        their own privacy policies and terms.
       </p>
 
       <h3>Google AdMob</h3>
       <p>
-        Love Note Studio uses Google AdMob to display banner ads. Ads are not required to use the
-        app's greeting editor, bundled artwork, favorites, copy, or share features.
+        Love Note Studio uses Google AdMob to display banner, native, interstitial, and rewarded ads.
+        Rewarded ads may be offered as an optional way to unlock selected sticker collections. No
+        payment is required, and ads are not required to use the app's core editor, available bundled
+        artwork, favorites, copy, or share features.
       </p>
       <p>Depending on your device settings, region, and consent choices, AdMob may process data such as:</p>
       <ul>
@@ -222,6 +242,15 @@
         <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google partner sites and apps explanation</a>.
       </p>
 
+      <h3>Google User Messaging Platform</h3>
+      <p>
+        Google User Messaging Platform (UMP) may display a consent message and provide privacy choices
+        where required. It may process consent status, approximate location derived from network
+        information, device or app information, product interaction, and performance information to
+        determine and operate the appropriate consent experience. When required, privacy choices can
+        be reopened from the app's Info screen.
+      </p>
+
       <h3>Firebase Analytics</h3>
       <p>
         The app may use Firebase Analytics to understand general app usage and improve the product.
@@ -237,10 +266,40 @@
         Learn more from
         <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy and Security</a>.
       </p>
+
+      <h3>Firebase Remote Config</h3>
+      <p>
+        Firebase Remote Config lets us configure supported app features and advertising behavior
+        without requiring a new app download. It may process information such as country code,
+        language, time zone, operating-system version, app version, Firebase app identifier, bundle
+        identifier, SDK version, and related diagnostics. Remote Config does not contain the custom
+        greeting text you enter in Note Studio.
+      </p>
+
+      <h3>Firebase Cloud Messaging and Apple Push Notification Service</h3>
+      <p>
+        If you allow notifications, Apple Push Notification service (APNs) and Firebase Cloud Messaging
+        (FCM) process a device-specific notification token and app-installation identifier to route
+        notifications to your device. Firebase may also process device model, language, time zone,
+        operating-system version, app identifier, app version, delivery information, and notification
+        interaction events. Notification permission is optional and can be changed at any time in iOS
+        Settings. Declining notifications does not limit the app's core features.
+      </p>
+      <p>
+        Learn more from
+        <a href="https://firebase.google.com/docs/cloud-messaging" target="_blank" rel="noopener">Firebase Cloud Messaging</a>
+        and
+        <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.
+      </p>
     </section>
 
     <section>
       <h2>6. Data Categories and Purposes</h2>
+      <p>
+        Depending on app features used, region, consent choices, and third-party service behavior, the
+        following categories may be processed. This table is intended to align with the app's current
+        App Store privacy disclosures.
+      </p>
       <div class="table-wrap">
         <table>
           <thead>
@@ -253,9 +312,9 @@
           </thead>
           <tbody>
             <tr>
-              <td>Favorites and app preferences</td>
+              <td>Favorites, drafts, unlock status, and app preferences</td>
               <td>Stored locally by the app</td>
-              <td>Remember your selected favorite artwork and app settings</td>
+              <td>Provide app functionality and remember your choices</td>
               <td>Not shared by us with our own servers</td>
             </tr>
             <tr>
@@ -265,15 +324,33 @@
               <td>Not sent by us to our own servers; shared only if you choose a destination through iOS sharing</td>
             </tr>
             <tr>
-              <td>Advertising and device signals</td>
-              <td>Google AdMob SDK</td>
-              <td>Show ads, measure ads, prevent fraud, and support ad operations</td>
+              <td>Coarse location</td>
+              <td>Google AdMob and UMP, typically estimated from IP address</td>
+              <td>Analytics, third-party advertising, developer advertising or marketing, and app functionality</td>
               <td>Google and its advertising partners as described in Google's policies</td>
             </tr>
             <tr>
-              <td>Analytics events and app/device information</td>
-              <td>Firebase Analytics SDK</td>
-              <td>Understand app usage and improve features and stability</td>
+              <td>Device identifiers and notification tokens</td>
+              <td>Google AdMob, Firebase, FCM, and APNs</td>
+              <td>App functionality, analytics, advertising, measurement, fraud prevention, and notification delivery</td>
+              <td>Google, Apple, and advertising partners where applicable</td>
+            </tr>
+            <tr>
+              <td>Product interaction and advertising data</td>
+              <td>Google AdMob, UMP, and Firebase Analytics</td>
+              <td>App functionality, analytics, ad delivery, ad measurement, and advertising operations</td>
+              <td>Google and its advertising partners as described in Google's policies</td>
+            </tr>
+            <tr>
+              <td>Crash, performance, and other diagnostic data</td>
+              <td>Google AdMob and Firebase services</td>
+              <td>App functionality, analytics, advertising operations, troubleshooting, and service reliability</td>
+              <td>Google and Firebase as service providers</td>
+            </tr>
+            <tr>
+              <td>Other app and device metadata</td>
+              <td>Firebase Messaging and Remote Config</td>
+              <td>Analytics, feature configuration, notification delivery, compatibility, and reliability</td>
               <td>Google Firebase as a service provider</td>
             </tr>
           </tbody>
@@ -284,17 +361,20 @@
     <section>
       <h2>7. Tracking, Ads, and Privacy Choices</h2>
       <p>
-        The app's current privacy manifest declares that the app itself does not track users across
-        apps and websites. The current iOS app does not present Apple's App Tracking Transparency
-        prompt.
+        Google Mobile Ads may use a device identifier for advertising and measurement, and certain
+        identifiers may be used for tracking as Apple defines that term where permitted by platform
+        rules, applicable law, device settings, and consent choices. The app's App Store privacy
+        disclosure therefore identifies Device ID as data that may be used for tracking.
       </p>
       <p>
-        You can manage advertising choices through iOS settings, including limiting personalized ads
-        where Apple provides that control. If privacy choices are required for your region, Google
-        consent messages may be shown by the Google SDK.
+        The current version does not request access to Apple's advertising identifier through an App
+        Tracking Transparency prompt. You can manage applicable advertising choices through iOS
+        Settings. Where required, Google UMP displays a consent message and makes a Privacy Choices
+        control available from the app's Info screen.
       </p>
       <p>
-        Access to Love Note Studio's core features does not depend on accepting personalized ads.
+        Access to Love Note Studio's core features does not depend on accepting personalized ads or
+        consenting to optional advertising purposes.
       </p>
     </section>
 
@@ -304,32 +384,52 @@
         The app does not request access to Contacts, Photos, Camera, Microphone, Bluetooth, precise
         Location, Health, HomeKit, or Calendars. Copying and sharing use standard iOS system features.
       </p>
+      <p>
+        The app may request permission to send alerts, sounds, and badge notifications. Notification
+        permission is optional. You can change it at any time under iOS Settings &gt; Notifications &gt;
+        Love Note Studio.
+      </p>
     </section>
 
     <section>
       <h2>9. Data Sharing</h2>
       <p>
         We may share information with service providers only as needed to operate, analyze, and
-        monetize the app. These service providers include Google AdMob and Firebase. We do not sell
-        your name, email address, phone number, contacts, messages, or personal photos because the app
-        does not collect those items from you.
+        monetize the app. These service providers include Google AdMob, Google UMP, Firebase, and Apple
+        Push Notification service. Advertising partners may process device, ad, usage, and diagnostic
+        information as described above. We do not sell your name, email address, phone number,
+        contacts, messages, or personal photos for money, and the app does not collect those items from
+        you.
+      </p>
+      <p>
+        If you deliberately use WhatsApp, Telegram, or another destination in the iOS share sheet, the
+        selected content or sticker-pack link is provided to that service at your direction and is then
+        handled under that service's own terms and privacy policy.
       </p>
     </section>
 
     <section>
       <h2>10. Data Retention and Deletion</h2>
       <p>
-        Local favorites and settings remain on your device until you remove them through app behavior
-        where available, clear device data where available, or delete the app.
+        Local favorites, Note Studio drafts, settings, unlock status, notification token copy, and
+        related preferences remain on your device until removed through available app behavior, reset
+        by the operating system, or deleted with the app. Depending on your Apple device settings,
+        local app data may be included in an Apple device or iCloud backup.
       </p>
       <p>
         Temporary exported image files may be created when preparing content for sharing and are stored
         in the app's temporary storage. iOS or the app may clear temporary files over time.
       </p>
       <p>
-        Third-party providers retain data according to their own policies and controls. For data
-        processed by Google services, review Google's and Firebase's privacy documentation linked in
-        this policy.
+        You can stop future notifications by disabling notification permission in iOS Settings.
+        Deleting the app removes its local registration token copy; Firebase and Apple manage server-side
+        notification tokens and expiration according to their systems and policies.
+      </p>
+      <p>
+        Third-party providers retain and delete data according to their own policies and controls. For
+        information processed by Google and Apple services, review the privacy documentation linked in
+        this policy. You may also contact us using the address below for privacy-related questions or
+        requests.
       </p>
     </section>
 
